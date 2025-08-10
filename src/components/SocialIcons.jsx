@@ -1,0 +1,5 @@
+export { default as TwitterIcon } from '@/components/icons/TwitterIcon'
+export { default as InstagramIcon } from '@/components/icons/InstagramIcon'
+export { default as GitHubIcon } from '@/components/icons/GitHubIcon'
+export { default as LinkedInIcon } from '@/components/icons/LinkedInIcon'
+export { default as AmazonIcon } from '@/components/icons/AmazonIcon'
