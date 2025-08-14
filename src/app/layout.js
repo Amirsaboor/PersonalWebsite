@@ -4,9 +4,7 @@ import { Header } from '@/components/Header'
 import '@/styles/tailwind.css'
 import 'focus-visible'
 import './global.css'
-
-
-
+ 
 
 export const metadata = {
   title: 'Name Family - Leader, artist, and frontend enthusiast',
