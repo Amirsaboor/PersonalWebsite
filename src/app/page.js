@@ -19,9 +19,7 @@ export default function Home() {
           </h1>
           <p className=" mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I&apos;m Victoria, a computer science student and the Founder and
-            President of Girls Who Code at Texas State University. I am
-            passionate about frontend engineering, empowering women in tech, and
-            creating inclusive spaces for beginners in computer science
+            President of Girls Who Code at Texas State University.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
