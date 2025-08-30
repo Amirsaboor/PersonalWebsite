@@ -3,6 +3,7 @@ import { SocialLink } from '@/components/SocialLink'
 import { Resume } from '@/components/Resume'
 import { Photos } from '@/components/Photos'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import Job from './home/Job'
 
 export const metadata = {
   title: 'Name Family - Leader, artist, and frontend enthusiast',
@@ -17,11 +18,10 @@ export default function Home() {
           <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
             برنامه‌نویس FrontEnd و طراح سایت
           </h1>
-          <p className=" mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Victoria, a computer science student and the Founder and
-            President of Girls Who Code at Texas State University.
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="flex gap-6 mt-6">
             <SocialLink
               href="/"
               aria-label="Follow on GitHub"
@@ -34,14 +34,15 @@ export default function Home() {
             />
           </div>
         </div>
+        
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-2 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Resume />
+        <div className="grid max-w-xl grid-cols-12 mx-auto gap-2 lg:max-w-none ">
+          <div className="col-span-12 md:col-span-7">
+            <Job />
           </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+          <div className="col-span-12 md:col-span-5">
             <Resume />
           </div>
         </div>

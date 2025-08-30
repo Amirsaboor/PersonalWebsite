@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'IRANSansWebFaNum';
-  src: url('../fonts/IRANSansWebFaNum.woff2') format('woff2'),
+  src: url('../assets/fonts/IRANSansWebFaNum.woff2') format('woff2'),
   /* src: url('../fonts/IRANSansWebFaNum.woff2') format('woff2'), */
-       url('../fonts/IRANSansWebFaNum.woff') format('woff');
+       url('../assets/fonts/IRANSansWebFaNum.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -10,4 +10,38 @@
 
 html ,body {
   font-family: 'IRANSansWebFaNum';
+}
+
+/* استایل کلی اسکرول‌بار */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* پس‌زمینه اسکرول‌بار (لایت مود) */
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+/* خود اسکرول (لایت مود) */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+/* هاور اسکرول (لایت مود) */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* 🌙 حالت دارک مود */
+.dark ::-webkit-scrollbar-track {
+  @apply bg-zinc-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-zinc-600 rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-500;
 }

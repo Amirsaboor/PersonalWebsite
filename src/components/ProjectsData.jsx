@@ -1,8 +1,8 @@
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import youphoria from '@/images/logos/YOUphoria.png'
-import orb from '@/images/logos/orb.gif'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoHeart from '@/images/logos/gwc.png'
+import logoAnimaginary from '@/assets/images/logos/animaginary.svg'
+import youphoria from '@/assets/images/logos/YOUphoria.png'
+import orb from '@/assets/images/logos/orb.gif'
+import logoOpenShuttle from '@/assets/images/logos/open-shuttle.svg'
+import logoHeart from '@/assets/images/logos/gwc.png'
 
 export const projects = [
   {

@@ -7,7 +7,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/assets/images/portrait.jpg'
 
 export const metadata = {
   title: 'About - Name Family',
@@ -24,7 +24,7 @@ export default function About() {
               src={portraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              className="object-cover aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800"
             />
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function About() {
             I&apos;m Victoria. A leader, artist, and frontend enthusiast in
             Austin, TX.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
             <p>
               I&apos;m a non-traditional first-generation student pursuing a
               Bachelor of Science in Computer Science. I&apos;m entering my
