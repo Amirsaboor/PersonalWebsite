@@ -1,44 +1,74 @@
 import logoAnimaginary from '@/assets/images/logos/animaginary.svg'
 import youphoria from '@/assets/images/logos/YOUphoria.png'
 import orb from '@/assets/images/logos/orb.gif'
-import logoOpenShuttle from '@/assets/images/logos/open-shuttle.svg'
 import logoHeart from '@/assets/images/logos/gwc.png'
+
+// آیکون‌ها از react-icons
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaReact, FaWordpress } from "react-icons/fa"
+import { SiElementor, SiWoocommerce } from "react-icons/si"
 
 export const projects = [
   {
-    name: 'YOUphoria: A comprehensive sex education app for teens',
+    name: 'Hadisa shop',
     description:
-      "YOUphoria is built with Flutter and Firebase Authentication for seamless user experience and secure data handling. Google Maps API provides location-based resources, and ChatGPT API is leveraged to create an inclusive, age-appropriate AI chatbot, addressing teens' nuanced questions with personalized responses.",
+      "وبسایت ساخته شده با وردپرس و المنتور در حوزه فروش پوشاک زنانه، شامل درگاه پرداخت زرین پال.",
+    tags: [
+      { id: 1, name: 'Wordpress', icon: FaWordpress },
+      { id: 2, name: 'Elementor', icon: SiElementor },
+      { id: 3, name: 'Woocommerce', icon: SiWoocommerce },
+    ],
     link: {
-      href: 'https://github.com/halcyonCore/youphoria',
-      label: 'GitHub',
+      href: 'https://hadisashop.ir',
+      label: 'View Website',
     },
     logo: youphoria,
   },
   {
-    name: 'Tailwind Animation Exploration',
-    description:
-      'Leveraging Tailwind CSS, this captivating one-page project showcases mesmerizing animations and innovative blend modes for striking color and movement',
+    name: 'Hexa shop',
+    description: 'نمونه فروشگاه که با React کدنویسی شده است.',
+    tags: [
+      { id: 1, name: 'Html', icon: FaHtml5 },
+      { id: 2, name: 'Css', icon: FaCss3Alt },
+      { id: 3, name: 'Bootstrap', icon: FaBootstrap },
+      { id: 4, name: 'Js', icon: FaJs },
+      { id: 5, name: 'React.js', icon: FaReact },
+    ],
     link: {
-      href: 'https://tailwind-animation-exploration.vercel.app/',
-      label: 'tailwind-animation-exploration.vercel.app/',
+      href: 'https://github.com/Amirsaboor',
+      label: 'Github',
     },
     logo: orb,
   },
   {
-    name: 'Girls Who Code TXST',
-    description:
-      "I've created the entire structure of our Girls Who Code chapter, including our website! It utilizes Stripe's API to accept donations that fund our events and activities.",
-    link: { href: 'http://gwc-txst.com', label: 'gwc-txst.com' },
+    name: 'Movie',
+    description: "وبسایت نمایش فیلم که با React نوشته شده است.",
+    tags: [
+      { id: 1, name: 'Html', icon: FaHtml5 },
+      { id: 2, name: 'Css', icon: FaCss3Alt },
+      { id: 3, name: 'Bootstrap', icon: FaBootstrap },
+      { id: 4, name: 'Js', icon: FaJs },
+      { id: 5, name: 'React.js', icon: FaReact },
+    ],
+    link: {
+      href: 'https://github.com/Amirsaboor',
+      label: 'Github',
+    },
     logo: logoHeart,
   },
   {
-    name: 'Java vs. C++',
+    name: 'Fast Food',
     description:
-      'Creating an ad-free website that highlights the syntax differences between Java and C++ to benefit the curriculum of my Object Oriented Programming class.',
+      'وبسایت نمایش غذاهای یک فست فود همراه با ورود و احراز هویت که با Next.js نوشته شده است.',
+    tags: [
+      { id: 1, name: 'Html', icon: FaHtml5 },
+      { id: 2, name: 'Css', icon: FaCss3Alt },
+      { id: 3, name: 'Bootstrap', icon: FaBootstrap },
+      { id: 4, name: 'Js', icon: FaJs },
+      { id: 5, name: 'React.js', icon: FaReact },
+    ],
     link: {
-      href: 'https://cpp-vs-java.vercel.app/',
-      label: 'cpp-vs-java.vercel.app',
+      href: 'https://github.com/Amirsaboor',
+      label: 'Github',
     },
     logo: logoAnimaginary,
   },

@@ -2,8 +2,9 @@ import { Container } from '@/components/Container'
 import { SocialLink } from '@/components/SocialLink'
 import { Resume } from '@/components/Resume'
 import { Photos } from '@/components/Photos'
-import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import Job from './home/Job'
+import { FaLinkedin } from "react-icons/fa"; 
+import { AiFillGithub } from "react-icons/ai";
+import Job from '@/components/home/Job'
 
 export const metadata = {
   title: 'Name Family - Leader, artist, and frontend enthusiast',
@@ -25,12 +26,12 @@ export default function Home() {
             <SocialLink
               href="/"
               aria-label="Follow on GitHub"
-              icon={GitHubIcon}
+              icon={AiFillGithub}
             />
             <SocialLink
               href="/"
               aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
+              icon={FaLinkedin}
             />
           </div>
         </div>

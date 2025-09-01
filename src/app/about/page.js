@@ -1,13 +1,10 @@
 import Image from 'next/image'
-
 import { Container } from '@/components/Container'
 import { AboutSocialLink } from '@/components/AboutSocialLink'
-import { MailIcon } from '@/components/icons'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
 import portraitImage from '@/assets/images/portrait.jpg'
+import { AiOutlineMail } from "react-icons/ai"; 
+import { FaLinkedin } from "react-icons/fa"; 
+import { AiFillGithub } from "react-icons/ai"; 
 
 export const metadata = {
   title: 'About - Name Family',
@@ -63,14 +60,15 @@ export default function About() {
           </div>
         </div>
         <div className="lg:pl-20">
+
           <ul role="list">
-            <AboutSocialLink href="/" icon={GitHubIcon}>
+            <AboutSocialLink href="/" icon={AiFillGithub}>
               Follow on GitHub
             </AboutSocialLink>
-            <AboutSocialLink href="/" icon={LinkedInIcon}>
+            <AboutSocialLink href="/" icon={FaLinkedin}>
               Follow on LinkedIn
             </AboutSocialLink>
-            <AboutSocialLink href="/uses" icon={MailIcon}>
+            <AboutSocialLink href="/uses" icon={AiOutlineMail}>
               Uses
             </AboutSocialLink>
           </ul>

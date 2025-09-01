@@ -49,7 +49,6 @@ export default function Jobs() {
     }
   ];
 
-  // تابع محاسبه اختلاف تاریخ (فقط سال و ماه)
   const getDifference = (dateStart, dateEnd) => {
     const [y1, m1, d1] = dateStart.split('-').map(Number);
     const [y2, m2, d2] = dateEnd.split('-').map(Number);
@@ -57,7 +56,7 @@ export default function Jobs() {
     let years = y2 - y1;
     let months = m2 - m1;
 
-    if (d2 < d1) months -= 1; // اگر روز end کمتر بود، یک ماه کم کن
+    if (d2 < d1) months -= 1;
     if (months < 0) {
       years -= 1;
       months += 12;

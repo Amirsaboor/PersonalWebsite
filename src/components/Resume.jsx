@@ -1,8 +1,6 @@
 import { PiBagSimple } from "react-icons/pi";
 import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiNextdotjs, SiWordpress, SiHyperskill } from "react-icons/si";
-import { Button } from "./Button";
-import { ArrowDownIcon } from "./icons";
 
 export function Resume() {
 

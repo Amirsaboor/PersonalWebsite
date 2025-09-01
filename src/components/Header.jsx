@@ -7,8 +7,12 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { Fragment, useEffect, useRef } from 'react'
-import { CloseIcon, ChevronDownIcon, SunIcon, MoonIcon } from '@/components/icons'
 import avatarImage from '@/assets/images/avatar.png'
+import { AiOutlineClose } from "react-icons/ai"; 
+import { BiChevronDown } from "react-icons/bi"; 
+import { BsSun } from "react-icons/bs"; 
+import { BiMoon } from "react-icons/bi"; 
+
 
 // ==== Mobile Navigation ====
 function MobileNavItem({ href, children }) {
@@ -26,7 +30,7 @@ function MobileNavigation(props) {
     <Popover {...props}>
       <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-lg group bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         Menu
-        <ChevronDownIcon className="w-2 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+        <BiChevronDown className="w-2 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -55,7 +59,7 @@ function MobileNavigation(props) {
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
-                <CloseIcon className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
+                <AiOutlineClose className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                 Navigation
@@ -63,11 +67,10 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 text-base divide-y divide-zinc-100 text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/">خانه</MobileNavItem>
-                <MobileNavItem href="/about">درباره</MobileNavItem>
-                <MobileNavItem href="/behind-the-scenes">پشت‌پرده</MobileNavItem>
-                <MobileNavItem href="/works">نمونه کار ها</MobileNavItem>
-
+                <NavItem href="/">خانه</NavItem>
+                <NavItem href="/projects">نمونه کارها</NavItem>
+                <NavItem href="/about">درباره</NavItem>
+                <NavItem href="/behind-the-scenes">پشت‌پرده</NavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -107,9 +110,9 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/">خانه</NavItem>
-<NavItem href="/about">درباره</NavItem>
-<NavItem href="/notes">یادداشت‌ها</NavItem>
-<NavItem href="/behind-the-scenes">پشت‌پرده</NavItem>
+        <NavItem href="/projects">نمونه کارها</NavItem>
+        <NavItem href="/about">درباره</NavItem>
+        <NavItem href="/behind-the-scenes">پشت‌پرده</NavItem>
 
       </ul>
     </nav>
@@ -146,8 +149,8 @@ function ModeToggle() {
       className="px-3 py-2 transition rounded-full shadow-lg group bg-white/90 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
-      <SunIcon className="w-6 h-6 transition fill-zinc-100 stroke-zinc-500 group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden" />
-      <MoonIcon className="hidden w-6 h-6 transition fill-zinc-700 stroke-zinc-500 dark:block" />
+      <BsSun className="w-6 h-6 transition text-yellow-300 group-hover:text-yellow-500 group-hover:stroke-zinc-900 dark:hidden" />
+      <BiMoon className="hidden w-6 h-6 transition fill-zinc-300 stroke-zinc-500 dark:block" />
     </button>
   )
 }
