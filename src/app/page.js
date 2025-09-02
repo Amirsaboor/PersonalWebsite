@@ -2,7 +2,7 @@ import { Container } from '@/components/Container'
 import { SocialLink } from '@/components/SocialLink'
 import { Resume } from '@/components/Resume'
 import { Photos } from '@/components/Photos'
-import { FaLinkedin } from "react-icons/fa"; 
+import { FaLinkedin } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 import Job from '@/components/home/Job'
 
@@ -35,7 +35,7 @@ export default function Home() {
             />
           </div>
         </div>
-        
+
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">

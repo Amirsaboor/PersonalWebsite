@@ -8,10 +8,10 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { Fragment, useEffect, useRef } from 'react'
 import avatarImage from '@/assets/images/avatar.png'
-import { AiOutlineClose } from "react-icons/ai"; 
-import { BiChevronDown } from "react-icons/bi"; 
-import { BsSun } from "react-icons/bs"; 
-import { BiMoon } from "react-icons/bi"; 
+import { AiOutlineClose } from "react-icons/ai";
+import { BiChevronDown } from "react-icons/bi";
+import { BsSun } from "react-icons/bs";
+import { BiMoon } from "react-icons/bi";
 
 
 // ==== Mobile Navigation ====
