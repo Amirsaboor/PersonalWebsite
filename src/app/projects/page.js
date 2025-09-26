@@ -17,6 +17,7 @@ export default function ProjectsPage() {
     >
       {/* پروژه‌ها رو به کامپوننت client پاس می‌دیم */}
       <ProjectsClient initialProjects={projects} />
+
     </SimpleLayout>
   );
 }
