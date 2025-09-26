@@ -54,12 +54,11 @@ export const projects = [
     link: { href: "https://github.com/Amirsaboor", label: "Github" },
     logo: logoHeart,
     images: [
-      "/images/project/hadisa/1.png",
-      "/images/project/hadisa/2.png",
-      "/images/project/hadisa/3.png",
-      "/images/project/hadisa/4.png",
-      "/images/project/hadisa/5.png",
-      "/images/project/hadisa/6.png",
+      "/images/project/movie/1.png",
+      "/images/project/movie/2.png",
+      "/images/project/movie/3.png",
+      "/images/project/movie/4.png",
+      "/images/project/movie/5.png",
     ],
   },
   {
