@@ -1,15 +1,16 @@
 @font-face {
-  font-family: 'IRANSansWebFaNum';
-  src: url('../assets/fonts/IRANSansWebFaNum.woff2') format('woff2'),
-  /* src: url('../fonts/IRANSansWebFaNum.woff2') format('woff2'), */
-       url('../assets/fonts/IRANSansWebFaNum.woff') format('woff');
+  font-family: "IRANSansWebFaNum";
+  src:
+    url("../assets/fonts/IRANSansWebFaNum.woff2") format("woff2"),
+    /* src: url('../fonts/IRANSansWebFaNum.woff2') format('woff2'), */
+      url("../assets/fonts/IRANSansWebFaNum.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
-
-html ,body {
-  font-family: 'IRANSansWebFaNum';
+html,
+body {
+  font-family: "IRANSansWebFaNum";
 }
 
 /* استایل کلی اسکرول‌بار */
@@ -25,7 +26,7 @@ html ,body {
 
 /* خود اسکرول (لایت مود) */
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 rounded-full;
+  @apply rounded-full bg-gray-400;
 }
 
 /* هاور اسکرول (لایت مود) */
@@ -39,7 +40,7 @@ html ,body {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  @apply bg-zinc-600 rounded-full;
+  @apply rounded-full bg-zinc-600;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
