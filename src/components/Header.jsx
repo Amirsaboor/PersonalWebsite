@@ -70,7 +70,6 @@ function MobileNavigation(props) {
                 <NavItem href="/">خانه</NavItem>
                 <NavItem href="/projects">نمونه کارها</NavItem>
                 <NavItem href="/about">درباره</NavItem>
-                <NavItem href="/behind-the-scenes">پشت‌پرده</NavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -92,18 +91,19 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-primary-500 dark:text-primary-400'
-            : 'hover:text-primary-500 dark:hover:text-primary-400',
+            ? 'text-red-500 dark:text-red-400' 
+            : 'hover:text-red-500 dark:hover:text-red-400',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-primary-500/0 via-primary-500/40 to-primary-500/0 dark:from-primary-400/0 dark:via-primary-400/40 dark:to-primary-400/0" />
+          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-red-500/0 via-red-500/40 to-red-500/0 dark:from-red-400/0 dark:via-red-400/40 dark:to-red-400/0" />
         )}
       </Link>
     </li>
   )
 }
+
 
 function DesktopNavigation(props) {
   return (
@@ -112,7 +112,6 @@ function DesktopNavigation(props) {
         <NavItem href="/">خانه</NavItem>
         <NavItem href="/projects">نمونه کارها</NavItem>
         <NavItem href="/about">درباره</NavItem>
-        <NavItem href="/behind-the-scenes">پشت‌پرده</NavItem>
 
       </ul>
     </nav>
