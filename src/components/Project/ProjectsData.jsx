@@ -19,6 +19,27 @@ import { RiNextjsLine } from "react-icons/ri";
 
 export const projects = [
   {
+    name: "Fast Food",
+    description:
+      "وبسایت نمایش غذاهای یک فست فود همراه با ورود و احراز هویت که با Next.js نوشته شده است.",
+    tags: [
+      { id: 1, name: "Html", icon: "FaHtml5" },
+      { id: 2, name: "Css", icon: "FaCss3Alt" },
+      { id: 3, name: "Bootstrap", icon: "FaBootstrap" },
+      { id: 4, name: "Js", icon: "FaJs" },
+      { id: 5, name: "Next.js", icon: "RiNextjsLine" },
+    ],
+    link: { href: "https://github.com/Amirsaboor", label: "Github" },
+    logo: logoAnimaginary,
+    images: [
+      "/images/project/FastFood/1.png",
+      "/images/project/FastFood/2.png",
+      "/images/project/FastFood/3.png",
+      "/images/project/FastFood/4.png",
+      "/images/project/FastFood/5.png",
+    ],
+  },
+  {
     name: "Hadisa shop",
     description: "وبسایت ساخته شده با وردپرس...",
     tags: [
@@ -62,26 +83,23 @@ export const projects = [
     ],
   },
   {
-    name: "Fast Food",
-    description:
-      "وبسایت نمایش غذاهای یک فست فود همراه با ورود و احراز هویت که با Next.js نوشته شده است.",
+    name: "Menu",
+    description: "وبسایت نمایش منو که با React نوشته شده است.",
     tags: [
       { id: 1, name: "Html", icon: "FaHtml5" },
       { id: 2, name: "Css", icon: "FaCss3Alt" },
       { id: 3, name: "Bootstrap", icon: "FaBootstrap" },
       { id: 4, name: "Js", icon: "FaJs" },
-      { id: 5, name: "Next.js", icon: "RiNextjsLine" },
+      { id: 5, name: "React.js", icon: "FaReact" },
     ],
     link: { href: "https://github.com/Amirsaboor", label: "Github" },
-    logo: logoAnimaginary,
+    logo: logoHeart,
     images: [
-      "/images/project/FastFood/1.png",
-      "/images/project/FastFood/2.png",
-      "/images/project/FastFood/3.png",
-      "/images/project/FastFood/4.png",
-      "/images/project/FastFood/5.png",
+      "/images/project/Menu/1.png",
+      "/images/project/Menu/2.png",
     ],
   },
+
   {
     name: "Paper Cafe",
     description: "وبسایت ساخته شده با وردپرس...",
