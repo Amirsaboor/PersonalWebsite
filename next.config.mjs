@@ -7,12 +7,16 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,
-  async redirects() {
-    return [
-      { source: '/home', destination: '/', permanent: false },
-    ]
+
+  // GitHub Pages serves this project from /PersonalWebsite.
+  output: 'export',
+  basePath: '/PersonalWebsite',
+  trailingSlash: true,
+
+  // Static export cannot use Next.js' image optimization server.
+  images: {
+    unoptimized: true,
   },
 }
 
-
-export default (nextConfig)
+export default nextConfig
