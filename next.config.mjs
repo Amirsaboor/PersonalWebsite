@@ -16,6 +16,13 @@ const nextConfig = {
   // Static export cannot use Next.js' image optimization server.
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/Amirsaboor/Talar/**',
+      },
+    ],
   },
 }
 
