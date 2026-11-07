@@ -1,20 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiLink } from "react-icons/bi";
 import Image from "next/image";
 import * as FaIcons from "react-icons/fa";
 import * as BiIcons from "react-icons/bi";
 
+const withBasePath = (src) =>
+  src?.startsWith("/")
+    ? `${process.env.NODE_ENV === "production" ? "/PersonalWebsite" : ""}${src}`
+    : src;
+
 export default function Modal({ isOpen, onClose, project }) {
-  if (!isOpen || !project) return null;
-
-  const [selectedImage, setSelectedImage] = useState(
-    project.images?.length ? project.images[0] : null,
-  );
-
-  // حالت برای بزرگنمایی عکس
+  const [selectedImage, setSelectedImage] = useState(null);
   const [isZoomOpen, setIsZoomOpen] = useState(false);
+
+  useEffect(() => {
+    setSelectedImage(project?.images?.[0] ?? null);
+    setIsZoomOpen(false);
+  }, [project]);
+
+  if (!isOpen || !project) return null;
 
   return (
     <div
@@ -22,16 +28,12 @@ export default function Modal({ isOpen, onClose, project }) {
       role="dialog"
       aria-modal="true"
     >
-      {/* بک‌دراپ */}
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
 
-      {/* مدال اصلی */}
       <div
-        className="relative z-10 w-full max-w-lg transform rounded-lg bg-white p-6 shadow-lg
-                   transition-all duration-200 dark:bg-zinc-900"
+        className="relative z-10 w-full max-w-lg transform rounded-lg bg-white p-6 shadow-lg transition-all duration-200 dark:bg-zinc-900"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* دکمه بستن */}
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
@@ -40,7 +42,6 @@ export default function Modal({ isOpen, onClose, project }) {
           ✕
         </button>
 
-        {/* لوگو + اسم */}
         <div className="mb-4 flex items-center gap-4">
           {project.logo && (
             <Image
@@ -56,38 +57,34 @@ export default function Modal({ isOpen, onClose, project }) {
           </h2>
         </div>
 
-        {/* گالری عکس‌ها */}
-        {project.images && project.images.length > 0 && (
+        {project.images?.length > 0 && selectedImage && (
           <>
-            {/* عکس بزرگ */}
             <div
               className="relative mb-4 h-64 w-full cursor-zoom-in"
-              onClick={() => setIsZoomOpen(true)} // کلیک برای بزرگنمایی
+              onClick={() => setIsZoomOpen(true)}
             >
               <Image
-                src={selectedImage}
+                src={withBasePath(selectedImage)}
                 alt={project.name}
                 fill
                 className="rounded-lg object-contain"
               />
             </div>
 
-            {/* thumbnails */}
             <div className="mb-4 flex gap-2 overflow-x-auto">
               {project.images.map((img, index) => (
                 <button
-                  key={index}
+                  key={img}
                   onClick={() => setSelectedImage(img)}
-                  className={`relative h-20 w-20 rounded-md border-2 
-                            ${
-                              selectedImage === img
-                                ? "border-blue-500"
-                                : "border-transparent"
-                            }`}
+                  className={`relative h-20 w-20 rounded-md border-2 ${
+                    selectedImage === img
+                      ? "border-blue-500"
+                      : "border-transparent"
+                  }`}
                 >
                   <Image
-                    src={img}
-                    alt={`thumbnail-${index}`}
+                    src={withBasePath(img)}
+                    alt={`thumbnail-${index + 1}`}
                     fill
                     className="rounded-md object-cover"
                   />
@@ -97,12 +94,10 @@ export default function Modal({ isOpen, onClose, project }) {
           </>
         )}
 
-        {/* توضیحات */}
         <p className="text-sm text-zinc-700 dark:text-zinc-300">
           {project.description}
         </p>
 
-        {/* تگ‌ها */}
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => {
             const Icon = FaIcons[tag.icon] || BiIcons[tag.icon] || null;
@@ -118,7 +113,6 @@ export default function Modal({ isOpen, onClose, project }) {
           })}
         </div>
 
-        {/* لینک */}
         <a
           href={project.link.href}
           target="_blank"
@@ -130,8 +124,7 @@ export default function Modal({ isOpen, onClose, project }) {
         </a>
       </div>
 
-      {/* لایت‌باکس برای بزرگنمایی */}
-      {isZoomOpen && (
+      {isZoomOpen && selectedImage && (
         <div
           className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90"
           onClick={() => setIsZoomOpen(false)}
@@ -144,7 +137,7 @@ export default function Modal({ isOpen, onClose, project }) {
           </button>
           <div className="relative h-[90vh] w-[90vw]">
             <Image
-              src={selectedImage}
+              src={withBasePath(selectedImage)}
               alt="zoomed"
               fill
               className="object-contain"
