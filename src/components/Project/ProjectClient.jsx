@@ -1,10 +1,14 @@
-// components/ProjectsClient.jsx
 "use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Modal from "./ProjectModal";
 import { BiLink } from "react-icons/bi";
+
+const withBasePath = (src) =>
+  src?.startsWith("/")
+    ? `${process.env.NODE_ENV === "production" ? "/PersonalWebsite" : ""}${src}`
+    : src;
 
 export default function ProjectsClient({ initialProjects = [] }) {
   const [projects] = useState(initialProjects);
@@ -21,7 +25,6 @@ export default function ProjectsClient({ initialProjects = [] }) {
     setSelectedProject(null);
   };
 
-  // بستن با ESC
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") closeModal();
@@ -42,17 +45,16 @@ export default function ProjectsClient({ initialProjects = [] }) {
             className="group relative flex h-[500px] cursor-pointer flex-col items-start overflow-hidden rounded-xl bg-white p-4 shadow-md dark:bg-zinc-900"
             onClick={() => openModal(project)}
           >
-            {/* عکس اول و دوم با hover */}
             <div className="relative h-48 w-full overflow-hidden rounded-lg shadow-sm">
               <Image
-                src={project.images[0]}
+                src={withBasePath(project.images[0])}
                 alt={project.name}
                 fill
                 className="object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
               />
               {project.images[1] && (
                 <Image
-                  src={project.images[1]}
+                  src={withBasePath(project.images[1])}
                   alt={`${project.name} preview`}
                   fill
                   className="object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -60,9 +62,7 @@ export default function ProjectsClient({ initialProjects = [] }) {
               )}
             </div>
 
-            {/* محتویات کارت */}
             <div className="mt-4 flex w-full flex-1 flex-col justify-between">
-              {/* اسم و توضیحات */}
               <div>
                 <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
                   {project.name}
@@ -72,7 +72,6 @@ export default function ProjectsClient({ initialProjects = [] }) {
                 </p>
               </div>
 
-              {/* تگ‌ها و لینک */}
               <div className="mt-4 flex flex-col gap-2">
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -100,7 +99,6 @@ export default function ProjectsClient({ initialProjects = [] }) {
         ))}
       </ul>
 
-      {/* استفاده از مدال */}
       <Modal isOpen={isOpen} onClose={closeModal} project={selectedProject} />
     </>
   );
