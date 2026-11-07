@@ -118,5 +118,31 @@ export const projects = [
       "/images/project/2.png",
       "/images/project/3.png",
     ],
+  },,
+
+  {
+    name: "Talar | تالارگاه",
+    description:
+      "پلتفرم معرفی و نمایش تالارها و باغ‌تالارها با رابط کاربری مدرن؛ توسعه‌یافته با Next.js، React و TypeScript.",
+    tags: [
+      { id: 1, name: "Next.js", icon: "FaReact" },
+      { id: 2, name: "React", icon: "FaReact" },
+      { id: 3, name: "TypeScript", icon: "FaJs" },
+      { id: 4, name: "Tailwind CSS", icon: "FaCss3Alt" },
+    ],
+    link: {
+      href: "https://github.com/Amirsaboor/Talar",
+      label: "GitHub",
+    },
+    images: [
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/banner.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/1.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/2.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/3.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/4.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/5.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/6.webp",
+    ],
   },
+
 ];
