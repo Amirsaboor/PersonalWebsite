@@ -13,6 +13,18 @@ export const metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL('https://amirsaboor.github.io/PersonalWebsite/'),
+  openGraph: {
+    type: 'website',
+    siteName: siteConfig.name,
+    title: siteConfig.name + ' — ' + siteConfig.role,
+    description: siteConfig.description,
+    url: 'https://amirsaboor.github.io/PersonalWebsite/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name + ' — ' + siteConfig.role,
+    description: siteConfig.description,
+  },
 }
 
 export default function RootLayout({ children }) {
