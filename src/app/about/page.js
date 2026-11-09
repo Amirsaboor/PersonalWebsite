@@ -6,6 +6,7 @@ import { useLocale } from '@/i18n/LocaleProvider'
 import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch } from 'react-icons/fi'
 import { skillGroups } from '@/data/skills'
 import { experience } from '@/data/experience'
+import { siteConfig } from '@/data/site-config'
 
 export default function About() {
   const { isFa } = useLocale()
@@ -14,7 +15,7 @@ export default function About() {
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">{isFa ? 'درباره من' : 'About'}</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">{isFa ? 'کمی درباره فردی که پشت این رابط کاربری قرار دارد.' : 'A little about the person behind the interface.'}</h1>
-        <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">{isFa ? 'من الکس مورگان هستم؛ مهندس فرانت‌اندی خیالی در کپنهاگ. از نقطه تلاقی طراحی دقیق و مهندسی قدرتمند لذت می‌برم؛ به‌ویژه تصمیم‌های کوچکی که تجربه محصولات دیجیتال را ساده و روان می‌کنند.' : 'I’m Alex Morgan, a fictional frontend engineer based in Copenhagen. I enjoy the space where thoughtful design meets robust engineering—and the small decisions that make digital products feel effortless.'}</p>
+        <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">{isFa ? `من ${siteConfig.name} هستم؛ مهندس فرانت‌اندی خیالی در ${siteConfig.location}. از نقطه تلاقی طراحی دقیق و مهندسی قدرتمند لذت می‌برم؛ به‌ویژه تصمیم‌های کوچکی که تجربه محصولات دیجیتال را ساده و روان می‌کنند.` : `I’m ${siteConfig.name}, a fictional frontend engineer based in ${siteConfig.location}. I enjoy the space where thoughtful design meets robust engineering—and the small decisions that make digital products feel effortless.`}</p>
       </header>
       <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1fr_280px]">
         <div className="space-y-5 text-base leading-8 text-zinc-600 dark:text-zinc-400">
