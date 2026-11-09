@@ -55,7 +55,7 @@ export function ProjectCarousel() {
               <div className="mt-5 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">{project.category} <span className="px-1">·</span> {project.role}</p>
-                  <h3 className="mt-1.5 text-lg font-semibold tracking-tight text-zinc-900 transition-colors group-hover:text-teal-700 dark:text-zinc-100 dark:group-hover:text-teal-400">{project.name}</h3>
+                  <h3 className="mt-1.5 text-lg font-semibold tracking-tight text-zinc-900 transition-colors group-hover:text-violet-700 dark:text-zinc-100 dark:group-hover:text-violet-300">{project.name}</h3>
                 </div>
                 <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-zinc-400 group-hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:text-white">
                   <FiArrowRight />
