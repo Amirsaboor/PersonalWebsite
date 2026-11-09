@@ -1,4 +1,4 @@
-export function ProjectArtwork({ project, cover = false }) {
+export function ProjectArtwork({ project, cover = false, isFa = false }) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-zinc-200 dark:bg-zinc-800">
       <img
@@ -10,7 +10,7 @@ export function ProjectArtwork({ project, cover = false }) {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/5" />
       {cover && (
         <span className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-black/30 px-3 py-1.5 text-[10px] font-medium tracking-wide text-white backdrop-blur-md">
-          {project.category}
+          {isFa ? project.categoryFa : project.category}
         </span>
       )}
     </div>
