@@ -20,26 +20,21 @@ export default function ProjectsPage() {
         </p>
       </header>
 
-      <div className="mt-14 grid gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <article key={project.id} className="group min-w-0">
-            <div className="aspect-[5/4] overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-white/10">
-              <ProjectArtwork project={project} />
-            </div>
-            <div className="mt-5 flex items-start justify-between gap-3">
-              <div>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">{project.category}</p>
-                <h2 className="mt-1.5 text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{project.name}</h2>
+            <div className="flex items-center gap-4">
+              <div className="h-16 w-16 flex-none overflow-hidden rounded-2xl ring-1 ring-zinc-900/5 dark:ring-white/10">
+                <ProjectArtwork project={project} />
               </div>
-              {(project.href || project.source) && (
-                <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-400 transition group-hover:border-zinc-400 group-hover:text-teal-700 dark:border-zinc-700 dark:group-hover:text-teal-400">
-                  <FiArrowUpRight />
-                </span>
-              )}
+              <div className="min-w-0">
+                <p className="text-xs text-zinc-500 dark:text-zinc-400">{project.category}</p>
+                <h2 className="mt-1 text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{project.name}</h2>
+              </div>
             </div>
-            <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">{project.description}</p>
+            <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-400">{project.description}</p>
             <p className="mt-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">{project.role}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-2">
               {project.stack.map((tag) => (
                 <span key={tag} className="rounded-full bg-zinc-100 px-2.5 py-1 text-[11px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tag}</span>
               ))}
