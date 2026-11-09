@@ -1,4 +1,4 @@
-import { FiBriefcase, FiCalendar, FiArrowUpLeft, FiMapPin } from "react-icons/fi";
+import { FiBriefcase, FiCalendar, FiArrowUpLeft } from "react-icons/fi";
 
 const experiences = [
   {
