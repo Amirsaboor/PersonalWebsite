@@ -3,14 +3,15 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { useLocale } from '@/i18n/LocaleProvider'
+import { siteConfig } from '@/data/site-config'
 import { FiMail, FiGithub, FiLinkedin, FiArrowUpRight, FiMapPin } from 'react-icons/fi'
 
 export default function ContactPage() {
   const { isFa } = useLocale()
   const channels = [
-    { label: 'Email', value: 'hello@alexmorgan.dev', detail: isFa ? 'برای پروژه‌ها و گفت‌وگوهای حرفه‌ای' : 'Project enquiries and thoughtful conversations', Icon: FiMail },
-    { label: 'GitHub', value: 'github.com/alexmorgan', detail: isFa ? 'آزمایش‌ها، پروژه‌های متن‌باز و کدنویسی' : 'Experiments, open-source work, and code notes', Icon: FiGithub },
-    { label: 'LinkedIn', value: 'linkedin.com/in/alexmorgan', detail: isFa ? 'به‌روزرسانی‌های حرفه‌ای و همکاری' : 'Professional updates and collaboration', Icon: FiLinkedin },
+    { label: 'Email', value: siteConfig.email, detail: isFa ? 'برای پروژه‌ها و گفت‌وگوهای حرفه‌ای' : 'Project enquiries and thoughtful conversations', Icon: FiMail },
+    { label: 'GitHub', value: siteConfig.social.github.replace('https://',''), detail: isFa ? 'آزمایش‌ها، پروژه‌های متن‌باز و کدنویسی' : 'Experiments, open-source work, and code notes', Icon: FiGithub },
+    { label: 'LinkedIn', value: siteConfig.social.linkedin.replace('https://',''), detail: isFa ? 'به‌روزرسانی‌های حرفه‌ای و همکاری' : 'Professional updates and collaboration', Icon: FiLinkedin },
   ]
   return (
     <Container className="mt-16 sm:mt-24" dir={isFa ? 'rtl' : 'ltr'}>
