@@ -1,19 +1,18 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { FiArrowUpRight } from 'react-icons/fi'
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-zinc-200 py-10 dark:border-zinc-800">
-      <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div><p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Alex Morgan <span className="font-normal text-zinc-400">/ Frontend Engineer</span></p><p className="mt-1 text-xs text-zinc-500">© {new Date().getFullYear()} · A fictional portfolio concept</p></div>
-        <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-          <Link href="/about" className="transition hover:text-violet-600 dark:hover:text-violet-300">About</Link>
-          <Link href="/projects" className="transition hover:text-violet-600 dark:hover:text-violet-300">Projects</Link>
-          <Link href="/articles" className="transition hover:text-violet-600 dark:hover:text-violet-300">Articles</Link>
-          <Link href="/uses" className="transition hover:text-violet-600 dark:hover:text-violet-300">Uses</Link>
-          <Link href="/contact" className="inline-flex items-center gap-1 text-zinc-800 transition hover:text-violet-600 dark:text-zinc-200 dark:hover:text-violet-300">Contact <FiArrowUpRight /></Link>
+    <footer className="mt-20 border-t border-zinc-200/80 py-8 dark:border-white/[0.055]">
+      <Container className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-semibold text-zinc-600 dark:text-zinc-400">
+          <Link href="/about" className="transition hover:text-zinc-950 dark:hover:text-white">About</Link>
+          <Link href="/projects" className="transition hover:text-zinc-950 dark:hover:text-white">Projects</Link>
+          <Link href="/speaking" className="transition hover:text-zinc-950 dark:hover:text-white">Speaking</Link>
+          <Link href="/uses" className="transition hover:text-zinc-950 dark:hover:text-white">Uses</Link>
+          <Link href="/contact" className="transition hover:text-zinc-950 dark:hover:text-white">Contact</Link>
         </nav>
+        <p className="text-[11px] text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()} Alex Morgan. All rights reserved.</p>
       </Container>
     </footer>
   )
