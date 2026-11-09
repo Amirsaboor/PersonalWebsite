@@ -10,6 +10,7 @@ import { useLocale } from '@/i18n/LocaleProvider'
 import { siteConfig } from '@/data/site-config'
 
 function ThemeToggle() {
+  const { isFa } = useLocale()
   const [dark, setDark] = useState(siteConfig.appearance.defaultTheme === 'dark')
   useEffect(() => {
     const stored = window.localStorage.getItem('spotlight-theme')
@@ -24,7 +25,7 @@ function ThemeToggle() {
     setDark(next)
   }
   return (
-    <button type="button" onClick={toggle} aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'} title={dark ? 'Light theme' : 'Dark theme'} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100/90 text-zinc-500 shadow-sm ring-1 ring-black/5 transition hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800/90 dark:text-zinc-400 dark:ring-white/5 dark:hover:bg-zinc-700 dark:hover:text-white">
+    <button type="button" onClick={toggle} aria-label={dark ? (isFa ? 'تغییر به حالت روشن' : 'Switch to light theme') : (isFa ? 'تغییر به حالت تاریک' : 'Switch to dark theme')} title={dark ? (isFa ? 'حالت روشن' : 'Light theme') : (isFa ? 'حالت تاریک' : 'Dark theme')} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100/90 text-zinc-500 shadow-sm ring-1 ring-black/5 transition hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800/90 dark:text-zinc-400 dark:ring-white/5 dark:hover:bg-zinc-700 dark:hover:text-white">
       {dark ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
     </button>
   )
