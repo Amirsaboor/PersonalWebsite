@@ -88,10 +88,11 @@ body {
 }
 
 
-/* Let the inspiration gallery break out of the reading column and reach the shell edges. */
+/* The photo strip intentionally breaks out beyond both sides of the content container. */
 .photo-ribbon {
-  width: calc(100% + 10rem);
-  margin-inline: -5rem;
+  position: relative;
+  width: calc(100% + 12rem);
+  margin-inline: -6rem;
   overflow: hidden;
   padding-block: 0.65rem 1rem;
 }
@@ -112,7 +113,6 @@ body {
     width: calc(100% + 6rem);
     margin-inline: -3rem;
   }
-  .photo-ribbon-track { padding-inline: 0; }
 }
 
 @media (max-width: 639px) {
@@ -120,7 +120,7 @@ body {
     width: calc(100% + 2rem);
     margin-inline: -1rem;
   }
-  .photo-ribbon-track { gap: 0.75rem; padding-inline: 0; }
+  .photo-ribbon-track { gap: 0.75rem; }
   .photo-ribbon-card { width: min(72vw, 13rem); height: 13.5rem; }
 }
 
