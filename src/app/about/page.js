@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch, FiShield, FiMonitor, FiZap, FiFigma } from 'react-icons/fi'
+import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch } from 'react-icons/fi'
 
 export const metadata = {
   title: 'About',
