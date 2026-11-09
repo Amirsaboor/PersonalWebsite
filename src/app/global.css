@@ -125,7 +125,7 @@ body {
 
 /* Bilingual layout foundation. Bundle a licensed local Vazirmatn font before commercial release. */
 html.locale-fa body {
-  font-family: Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-family: Vazirmatn, Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
 }
 html[dir="rtl"] .photo-ribbon-track { direction: ltr; }
 html[dir="rtl"] .project-carousel { direction: ltr; }
