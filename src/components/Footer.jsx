@@ -8,7 +8,7 @@ export function Footer() {
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-semibold text-zinc-600 dark:text-zinc-400">
           <Link href="/about" className="transition hover:text-zinc-950 dark:hover:text-white">About</Link>
           <Link href="/projects" className="transition hover:text-zinc-950 dark:hover:text-white">Projects</Link>
-          <Link href="/speaking" className="transition hover:text-zinc-950 dark:hover:text-white">Speaking</Link>
+          <Link href="/speaking" className="transition hover:text-zinc-950 dark:hover:text-white">Education</Link>
           <Link href="/uses" className="transition hover:text-zinc-950 dark:hover:text-white">Uses</Link>
           <Link href="/contact" className="transition hover:text-zinc-950 dark:hover:text-white">Contact</Link>
         </nav>
