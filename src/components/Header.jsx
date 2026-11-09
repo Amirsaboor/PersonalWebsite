@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { FiSun, FiMoon, FiX, FiGlobe } from 'react-icons/fi'
+import { FiSun, FiMoon, FiX } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleProvider'
 import { siteConfig } from '@/data/site-config'
 
@@ -85,8 +85,8 @@ export function Header() {
             </ul>
           </nav>
           <div className="flex items-center justify-end gap-2">
-            <button type="button" onClick={toggleLocale} aria-label="Change language" title={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} className="flex h-9 items-center gap-1.5 rounded-full bg-zinc-100 px-3 text-[11px] font-semibold text-zinc-600 ring-1 ring-black/5 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-white/5 dark:hover:bg-zinc-700">
-              <FiGlobe className="h-3.5 w-3.5" /> {t('language')}
+            <button type="button" onClick={toggleLocale} aria-label={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} title={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-lg ring-1 ring-black/5 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:ring-white/5 dark:hover:bg-zinc-700">
+              <span aria-hidden="true">{isFa ? '🇬🇧' : '🇮🇷'}</span>
             </button>
             <ThemeToggle />
           </div>
@@ -102,7 +102,7 @@ export function Header() {
               <button type="button" onClick={() => setMenuOpen(false)} aria-label={t('close')} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><FiX /></button>
             </div>
             <nav><ul className="grid grid-cols-2 gap-2">{links.map(({ href, label }) => <li key={href}><Link href={href} className="block rounded-xl bg-zinc-50 px-4 py-3 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700">{label}</Link></li>)}</ul></nav>
-            <button type="button" onClick={toggleLocale} className="mt-3 w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm font-semibold dark:border-zinc-700">{t('language')}</button>
+            <button type="button" onClick={toggleLocale} aria-label={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} title={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} className="mt-3 flex h-11 w-full items-center justify-center rounded-xl border border-zinc-200 text-xl dark:border-zinc-700"><span aria-hidden="true">{isFa ? '🇬🇧' : '🇮🇷'}</span></button>
           </section>
         </div>
       )}
