@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { ProjectCarousel } from '@/components/ProjectCarousel'
 import { useLocale } from '@/i18n/LocaleProvider'
+import { siteConfig } from '@/data/site-config'
 import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase } from 'react-icons/fi'
 import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiFigma, SiNodedotjs, SiGithub } from 'react-icons/si'
 
@@ -42,14 +43,14 @@ export default function Home() {
           {isFa ? 'طراح نرم‌افزار، سازنده محصولات دیجیتال و کاوشگر ایده‌های تازه.' : 'Software designer, founder, and amateur astronaut.'}
         </h1>
         <p className="mt-4 max-w-[32rem] text-[13px] leading-[1.95] text-zinc-600 dark:text-zinc-400">
-          {isFa ? 'من الکس هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در کپنهاگ. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.' : 'I’m Alex, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.'}
+          {isFa ? 'من {siteConfig.name} هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در کپنهاگ. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.' : 'I’m {siteConfig.name}, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.'}
         </p>
         <div className="mt-5 flex items-center gap-5 text-zinc-500 dark:text-zinc-400">
-          <a href="https://x.com/" aria-label="X profile" className="transition hover:text-zinc-950 dark:hover:text-white"><span className="text-sm font-semibold">𝕏</span></a>
-          <a href="https://instagram.com/" aria-label="Instagram profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiInstagram className="h-[15px] w-[15px]" /></a>
-          <a href="https://github.com/" aria-label="GitHub profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiGithub className="h-[16px] w-[16px]" /></a>
-          <a href="https://linkedin.com/" aria-label="LinkedIn profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiLinkedin className="h-[15px] w-[15px]" /></a>
-          <a href="mailto:hello@alexmorgan.dev" aria-label="Email Alex" className="transition hover:text-zinc-950 dark:hover:text-white"><FiMail className="h-[15px] w-[15px]" /></a>
+          <a href={siteConfig.social.x} aria-label="X profile" className="transition hover:text-zinc-950 dark:hover:text-white"><span className="text-sm font-semibold">𝕏</span></a>
+          <a href={siteConfig.social.instagram} aria-label="Instagram profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiInstagram className="h-[15px] w-[15px]" /></a>
+          <a href={siteConfig.social.github} aria-label="GitHub profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiGithub className="h-[16px] w-[16px]" /></a>
+          <a href={siteConfig.social.linkedin} aria-label="LinkedIn profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiLinkedin className="h-[15px] w-[15px]" /></a>
+          <a href={"mailto:" + siteConfig.email} aria-label="Email Alex" className="transition hover:text-zinc-950 dark:hover:text-white"><FiMail className="h-[15px] w-[15px]" /></a>
         </div>
       </section>
 
