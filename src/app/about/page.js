@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { useLocale } from '@/i18n/LocaleProvider'
-import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch } from 'react-icons/fi'
+import { FiArrowUpRight, FiCode } from 'react-icons/fi'
 import { skillGroups } from '@/data/skills'
 import { experience } from '@/data/experience'
 import { siteConfig } from '@/data/site-config'
