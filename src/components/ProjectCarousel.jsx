@@ -34,8 +34,7 @@ export function ProjectCarousel() {
     const track = trackRef.current
     if (!track) return
     const card = track.querySelector('[data-project-card]')
-    const gap = 24
-    const distance = card ? card.getBoundingClientRect().width + gap : 360
+    const distance = card ? card.getBoundingClientRect().width + 24 : 360
     track.scrollBy({ left: direction * distance, behavior: 'smooth' })
   }
 
@@ -51,7 +50,7 @@ export function ProjectCarousel() {
           <article key={project.id} data-project-card className="w-[min(82vw,360px)] flex-none snap-start sm:w-[380px]">
             <Link href="/projects" className="group block">
               <div className="aspect-[5/4] overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-white/10">
-                <ProjectArtwork project={project} />
+                <ProjectArtwork project={project} cover />
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
                 <div>
@@ -71,12 +70,8 @@ export function ProjectCarousel() {
       <div className="mt-3 flex items-center justify-between">
         <p className="text-xs text-zinc-500 dark:text-zinc-400">Selected projects · Scroll to explore</p>
         <div className="flex gap-2">
-          <button type="button" onClick={() => move(-1)} disabled={!canGoBack} aria-label="Previous projects" className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 transition hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500">
-            <FiChevronLeft />
-          </button>
-          <button type="button" onClick={() => move(1)} disabled={!canGoForward} aria-label="Next projects" className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 transition hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500">
-            <FiChevronRight />
-          </button>
+          <button type="button" onClick={() => move(-1)} disabled={!canGoBack} aria-label="Previous projects" className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 transition hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500"><FiChevronLeft /></button>
+          <button type="button" onClick={() => move(1)} disabled={!canGoForward} aria-label="Next projects" className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 transition hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-30 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500"><FiChevronRight /></button>
         </div>
       </div>
     </div>
