@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiBriefcase, FiCode, FiLayers } from 'react-icons/fi'
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiCalendar, FiBriefcase } from 'react-icons/fi'
 
 const articles = [
   { date: 'May 12, 2025', title: 'Building interfaces that feel effortless', category: 'Design', read: '6 min read' },
@@ -14,10 +14,12 @@ const roles = [
   { company: 'Freelance', role: 'Independent Developer', period: '2019 — 2021', detail: 'Partnered with small teams to turn early ideas into polished websites.' },
 ]
 
-const stats = [
-  { label: 'Years building', value: '06', Icon: FiBriefcase },
-  { label: 'Projects shipped', value: '24', Icon: FiLayers },
-  { label: 'Technologies', value: '12', Icon: FiCode },
+const snapshots = [
+  { label: 'Studio days', tone: 'from-amber-100 via-orange-200 to-rose-200', shape: 'rounded-[2.5rem] rotate-2' },
+  { label: 'A little inspiration', tone: 'from-sky-100 via-cyan-100 to-emerald-200', shape: 'rounded-2xl -rotate-2' },
+  { label: 'On the move', tone: 'from-violet-100 via-fuchsia-100 to-pink-200', shape: 'rounded-[2rem] rotate-2' },
+  { label: 'The details', tone: 'from-lime-100 via-yellow-100 to-amber-200', shape: 'rounded-2xl -rotate-3' },
+  { label: 'After hours', tone: 'from-slate-200 via-zinc-200 to-stone-300', shape: 'rounded-[2.5rem] rotate-2' },
 ]
 
 export const metadata = {
@@ -28,53 +30,36 @@ export const metadata = {
 export default function Home() {
   return (
     <Container className="mt-16 sm:mt-24">
-      <section className="grid gap-12 lg:grid-cols-[1fr_280px] lg:items-center">
-        <div>
-          <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 text-xl font-semibold text-zinc-800 shadow-lg shadow-orange-900/10">AM</div>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
-            Designer, developer, and curious human building things for the web.
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-400">
-            I’m Alex, a digital product designer and software engineer based in Brooklyn. I care about the details that make software feel clear, useful, and a little more human.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="mailto:alex@example.com" className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">Get in touch <FiArrowUpRight /></a>
-            <a href="https://github.com" className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-zinc-500 dark:border-zinc-700 dark:text-zinc-300"><FiGithub /> GitHub</a>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
-            <span className="inline-flex items-center gap-2"><FiMapPin /> Brooklyn, NY</span>
-            <a className="inline-flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white" href="https://linkedin.com"><FiLinkedin /> LinkedIn</a>
-            <a className="inline-flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white" href="mailto:alex@example.com"><FiMail /> Email</a>
-          </div>
+      <section className="max-w-3xl">
+        <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">I’m Alex Morgan. I live in Brooklyn, where I design the future.</h1>
+        <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">I’m a designer and developer who loves turning complex problems into simple, beautiful, and intuitive experiences. When I’m not pushing pixels or writing code, you’ll find me exploring the city, taking photos, or hunting down a good cup of coffee.</p>
+        <div className="mt-6 flex flex-wrap items-center gap-5 text-sm text-zinc-500 dark:text-zinc-400">
+          <span className="inline-flex items-center gap-2"><FiMapPin /> Brooklyn, NY</span>
+          <a href="https://github.com" aria-label="GitHub" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiGithub className="h-5 w-5" /></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiLinkedin className="h-5 w-5" /></a>
+          <a href="mailto:alex@example.com" aria-label="Email" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiMail className="h-5 w-5" /></a>
         </div>
-        <aside className="hidden lg:block">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-amber-100 via-orange-200 to-rose-300 p-5 shadow-xl shadow-zinc-900/10">
-            <div className="absolute -right-10 top-8 h-48 w-48 rounded-full border-[24px] border-white/30" />
-            <div className="absolute -bottom-10 -left-8 h-56 w-56 rounded-full bg-rose-400/40 blur-2xl" />
-            <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/40 bg-white/50 p-4 backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">Currently exploring</p>
-              <p className="mt-2 text-lg font-semibold text-zinc-900">Creative code & thoughtful products</p>
-            </div>
-          </div>
-        </aside>
       </section>
 
-      <section className="mt-20 grid grid-cols-3 gap-3 border-y border-zinc-200 py-7 dark:border-zinc-800 sm:gap-8">
-        {stats.map(({ label, value, Icon }) => <div key={label} className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><Icon /></span><div><p className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{value}</p><p className="text-xs text-zinc-500 dark:text-zinc-400 sm:text-sm">{label}</p></div></div>)}
+      <section aria-label="Snapshots" className="mt-16 overflow-hidden py-4">
+        <div className="flex min-w-max justify-center gap-5 px-2 sm:gap-7">
+          {snapshots.map((item, index) => <div key={item.label} className={'relative flex h-44 w-36 shrink-0 items-end overflow-hidden bg-gradient-to-br p-4 shadow-lg shadow-zinc-900/5 sm:h-56 sm:w-44 ' + item.tone + ' ' + item.shape}><div className="absolute -right-8 -top-8 h-28 w-28 rounded-full border-[16px] border-white/30" /><div className="absolute -bottom-10 -left-8 h-32 w-32 rounded-full bg-white/30 blur-xl" /><span className="relative rounded-full border border-white/40 bg-white/30 px-3 py-1.5 text-[10px] font-medium text-zinc-700 backdrop-blur">{item.label}</span><span className="absolute right-4 top-4 text-xs font-semibold text-zinc-700/50">0{index + 1}</span></div>)}
+        </div>
       </section>
 
-      <div className="mt-20 grid gap-16 lg:grid-cols-[1fr_300px]">
+      <div className="mt-20 grid gap-16 lg:grid-cols-[minmax(0,1fr)_300px]">
         <section>
-          <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Writing</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A few things I’ve written</h2></div><Link href="/articles" className="text-sm text-zinc-500 hover:text-orange-600 dark:hover:text-orange-400">All articles ↗</Link></div>
+          <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Writing</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Latest articles</h2></div><Link href="/articles" className="text-sm text-zinc-500 hover:text-orange-600 dark:hover:text-orange-400">All articles ↗</Link></div>
           <div className="mt-8 divide-y divide-zinc-200 dark:divide-zinc-800">
             {articles.map((article) => <article key={article.title} className="py-6 first:pt-0"><div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500"><time>{article.date}</time><span>·</span><span>{article.category}</span><span>·</span><span>{article.read}</span></div><h3 className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">{article.title}</h3><p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">Thoughts, lessons, and practical notes from the work of making digital products.</p></article>)}
           </div>
         </section>
         <aside>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Experience</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Where I’ve worked</h2>
+          <div className="flex items-center gap-2"><FiBriefcase className="text-orange-600 dark:text-orange-400" /><p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Career</p></div>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Work experience</h2>
           <div className="mt-8 space-y-7">{roles.map((role) => <div key={role.company}><p className="text-xs text-zinc-500">{role.period}</p><h3 className="mt-1 font-medium text-zinc-900 dark:text-zinc-100">{role.role}</h3><p className="mt-1 text-sm text-orange-700 dark:text-orange-400">{role.company}</p><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{role.detail}</p></div>)}</div>
           <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-orange-600 dark:text-zinc-300 dark:hover:text-orange-400">More about me <FiArrowUpRight /></Link>
+          <div className="mt-12 rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800"><FiCalendar className="h-5 w-5 text-orange-600 dark:text-orange-400" /><h3 className="mt-3 font-medium text-zinc-900 dark:text-zinc-100">Let’s work together</h3><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">Have an interesting project or just want to say hello?</p><a href="mailto:alex@example.com" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-orange-700 dark:text-orange-400">Get in touch <FiArrowUpRight /></a></div>
         </aside>
       </div>
     </Container>
