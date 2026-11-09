@@ -9,7 +9,6 @@ import { articles } from '@/data/articles'
 import { experience } from '@/data/experience'
 import { toolSkills } from '@/data/skills'
 import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase } from 'react-icons/fi'
-import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiFigma, SiNodedotjs, SiGithub } from 'react-icons/si'
 
 const gallery = [
   { src: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=85', alt: 'Aerial view from a small aircraft', className: 'rotate-[-1.5deg]' },
@@ -28,7 +27,7 @@ export default function Home() {
           {isFa ? 'طراح نرم‌افزار، سازنده محصولات دیجیتال و کاوشگر ایده‌های تازه.' : 'Software designer, founder, and amateur astronaut.'}
         </h1>
         <p className="mt-4 max-w-[32rem] text-[13px] leading-[1.95] text-zinc-600 dark:text-zinc-400">
-          {isFa ? `من ${siteConfig.name} هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در کپنهاگ. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.` : `I’m ${siteConfig.name}, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.`}
+          {isFa ? `من ${siteConfig.name} هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در ${siteConfig.location}. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.` : `I’m ${siteConfig.name}, a software designer and creative technologist based in ${siteConfig.location}. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.`}
         </p>
         <div className="mt-5 flex items-center gap-5 text-zinc-500 dark:text-zinc-400">
           <a href={siteConfig.social.x} aria-label="X profile" className="transition hover:text-zinc-950 dark:hover:text-white"><span className="text-sm font-semibold">𝕏</span></a>
