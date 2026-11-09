@@ -7,12 +7,13 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { FiSun, FiMoon, FiX, FiGlobe } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleProvider'
+import { siteConfig } from '@/data/site-config'
 
 function ThemeToggle() {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(siteConfig.appearance.defaultTheme === 'dark')
   useEffect(() => {
     const stored = window.localStorage.getItem('spotlight-theme')
-    const enabled = stored ? stored === 'dark' : true
+    const enabled = stored ? stored === 'dark' : siteConfig.appearance.defaultTheme === 'dark'
     document.documentElement.classList.toggle('dark', enabled)
     setDark(enabled)
   }, [])
@@ -70,8 +71,8 @@ export function Header() {
       <header className="sticky top-0 z-50 h-[4.5rem] border-b border-zinc-200/70 bg-white/85 backdrop-blur-xl dark:border-white/[0.045] dark:bg-[#18181b]/90">
         <div className="relative mx-auto grid h-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-8">
           <div className="flex items-center">
-            <Link href="/" aria-label="Alex Morgan — home" className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-1 ring-black/10 transition hover:scale-105 dark:ring-white/10">
-              <Image src="/PersonalWebsite/images/avatar.jpg" alt="Alex Morgan" width={40} height={40} className="h-full w-full object-cover" priority unoptimized />
+            <Link href="/" aria-label={siteConfig.name + " — home"} className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-1 ring-black/10 transition hover:scale-105 dark:ring-white/10">
+              <Image src={siteConfig.profileImage} alt={siteConfig.name} width={40} height={40} className="h-full w-full object-cover" priority unoptimized />
             </Link>
             <button type="button" onClick={() => setMenuOpen(true)} aria-haspopup="dialog" aria-expanded={menuOpen} className="ml-3 inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3.5 py-2 text-xs font-semibold text-zinc-700 ring-1 ring-black/5 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-white/5 md:hidden">
               {isFa ? 'فهرست' : 'Menu'} <span aria-hidden="true">⌄</span>
