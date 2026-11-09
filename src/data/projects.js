@@ -48,6 +48,18 @@ export const projects = [
     tone: 'blue',
   },
   {
+    id: 'towing-task',
+    name: 'TowingTask',
+    category: 'Web application',
+    year: '2025',
+    description: 'A frontend project for a towing-service workflow, with a clear interface for handling service requests.',
+    stack: ['Frontend', 'Web application'],
+    href: null,
+    image: null,
+    mark: 'TT',
+    tone: 'sand',
+  },
+  {
     id: 'fasihi',
     name: 'Fasihi Exchange',
     category: 'Financial services',
