@@ -10,8 +10,21 @@ body {
 
 ::selection {
   color: #fff;
-  background: #ea580c;
+  background: #0f766e;
 }
+
+.project-art--warm { background: #e9e1d6; }
+.project-art--ink { background: #d9dde0; }
+.project-art--rose { background: #eadfdf; }
+.project-art--blue { background: #dce3e8; }
+.project-art--green { background: #dfe5dc; }
+.project-art--sand { background: #e8e3d9; }
+.project-carousel {
+  scroll-padding-inline: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.project-carousel::-webkit-scrollbar { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -29,11 +42,3 @@ body {
 .dark ::-webkit-scrollbar-track { background: #27272a; }
 .dark ::-webkit-scrollbar-thumb { background: #52525b; }
 .dark ::-webkit-scrollbar-thumb:hover { background: #71717a; }
-
-.project-art--warm { background: #e9e1d6; }
-.project-art--ink { background: #d9dde0; }
-.project-art--rose { background: #eadfdf; }
-.project-art--blue { background: #dce3e8; }
-.project-art--green { background: #dfe5dc; }
-.project-art--sand { background: #e8e3d9; }
-.project-carousel { scroll-padding-inline: 0.25rem; -webkit-overflow-scrolling: touch; }
