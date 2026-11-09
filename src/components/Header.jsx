@@ -32,7 +32,35 @@ function ThemeToggle() {
     setDark(next)
   }
 
-  return <button type="button" onClick={toggle} aria-label="Toggle color theme" className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 transition hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">{dark ? <FiSun /> : <FiMoon />}</button>
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+      className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-600 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition hover:text-orange-600 dark:bg-zinc-800/90 dark:text-zinc-300 dark:ring-white/10 dark:hover:text-orange-400"
+    >
+      {dark ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
+    </button>
+  )
+}
+
+function NavLinks({ pathname, onNavigate }) {
+  return links.map(({ href, label }) => (
+    <Link
+      key={href}
+      href={href}
+      onClick={onNavigate}
+      aria-current={pathname === href ? 'page' : undefined}
+      className={clsx(
+        'block rounded-full px-3 py-2 text-sm transition',
+        pathname === href
+          ? 'bg-zinc-100 text-zinc-900 dark:bg-zinc-700 dark:text-white'
+          : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-700/70 dark:hover:text-white'
+      )}
+    >
+      {label}
+    </Link>
+  ))
 }
 
 export function Header() {
@@ -42,15 +70,87 @@ export function Header() {
   useEffect(() => setOpen(false), [pathname])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200/70 bg-white/80 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/80">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 to-rose-300 text-xs font-bold text-zinc-800">AM</span><span className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Alex Morgan</span></Link>
-        <nav className="hidden items-center gap-1 rounded-full border border-zinc-200 bg-white/70 p-1 dark:border-zinc-800 dark:bg-zinc-900/70 md:flex" aria-label="Main navigation">
-          {links.map(({ href, label }) => <Link key={href} href={href} className={clsx('rounded-full px-4 py-2 text-sm transition', pathname === href ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900' : 'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800')}>{label}</Link>)}
-        </nav>
-        <div className="flex items-center gap-2"><ThemeToggle /><button type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)} className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 dark:border-zinc-800 dark:text-zinc-300 md:hidden">{open ? <FiX /> : <FiMenu />}</button></div>
+    <header className="pointer-events-none relative z-50 flex h-24 flex-col pt-6">
+      <div className="mx-auto w-full max-w-5xl px-6 sm:px-8">
+        <div className="relative flex items-center justify-between gap-4">
+          <div className="flex flex-1">
+            <Link
+              href="/"
+              aria-label="Alex Morgan — Home"
+              className="pointer-events-auto inline-flex rounded-full outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+            >
+              <img
+                src="/PersonalWebsite/images/avatar.jpg"
+                alt=""
+                width="40"
+                height="40"
+                className="h-10 w-10 rounded-full bg-zinc-100 object-cover shadow-lg shadow-zinc-800/10 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-white/10"
+              />
+            </Link>
+          </div>
+
+          <nav
+            aria-label="Main navigation"
+            className="pointer-events-auto hidden rounded-full bg-white/90 px-2 py-1.5 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur md:flex dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+          >
+            <NavLinks pathname={pathname} />
+          </nav>
+
+          <div className="flex flex-1 items-center justify-end gap-3">
+            <div className="pointer-events-auto md:hidden">
+              <button
+                type="button"
+                onClick={() => setOpen((value) => !value)}
+                aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={open}
+                aria-controls="mobile-navigation"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition hover:text-orange-600 dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:text-orange-400"
+              >
+                {open ? <FiX className="h-4 w-4" /> : <FiMenu className="h-4 w-4" />}
+              </button>
+            </div>
+            <ThemeToggle />
+          </div>
+
+          {open && (
+            <nav
+              id="mobile-navigation"
+              aria-label="Mobile navigation"
+              className="pointer-events-auto absolute right-0 top-12 w-64 rounded-2xl bg-white/95 p-2 shadow-xl shadow-zinc-800/10 ring-1 ring-zinc-900/5 backdrop-blur-xl dark:bg-zinc-800/95 dark:ring-white/10 md:hidden"
+            >
+              <div className="flex items-center justify-between px-3 pb-2 pt-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-400">Navigation</span>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close navigation menu"
+                  className="rounded-full p-1.5 text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-700 dark:hover:text-white"
+                >
+                  <FiX className="h-4 w-4" />
+                </button>
+              </div>
+              <div className="space-y-1">
+                {links.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    aria-current={pathname === href ? 'page' : undefined}
+                    className={clsx(
+                      'block rounded-xl px-3 py-2.5 text-sm transition',
+                      pathname === href
+                        ? 'bg-zinc-100 font-medium text-zinc-900 dark:bg-zinc-700 dark:text-white'
+                        : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-700/70 dark:hover:text-white'
+                    )}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          )}
+        </div>
       </div>
-      {open && <nav className="border-t border-zinc-200 px-5 py-3 dark:border-zinc-800 md:hidden" aria-label="Mobile navigation"><div className="mx-auto grid max-w-5xl grid-cols-2 gap-2">{links.map(({ href, label }) => <Link key={href} href={href} className={clsx('rounded-xl px-4 py-3 text-sm', pathname === href ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900' : 'bg-zinc-100 text-zinc-700 dark:bg-zinc-900 dark:text-zinc-300')}>{label}</Link>)}</div></nav>}
     </header>
   )
 }
