@@ -50,10 +50,11 @@ The repository is configured for GitHub Pages at `/PersonalWebsite`. The static 
 
 1. Edit `src/data/site-config.js` for the name, role, email, location, social URLs, and appearance defaults.
 2. Edit `src/data/projects.js` to add, remove, or update project cards and modal content.
-3. Replace the sample profile image at `public/images/avatar.jpg`.
-4. Replace the sample text in the About, Articles, Education, Uses, and Contact routes.
+3. Edit `src/data/articles.js`, `src/data/experience.js`, and `src/data/skills.js` to update the shared content datasets.
+4. Replace the sample profile image at `public/images/avatar.jpg`.
+5. Replace the sample text in the About, Articles, Education, Uses, and Contact routes.
 5. Replace sample Unsplash image URLs with properly licensed images. For a commercial release, prefer hosting optimized image assets locally and retain proof of each image's license.
-6. Add a locally hosted Persian font (for example, a properly licensed Vazirmatn webfont) before shipping a polished Persian edition.
+7. Add a locally hosted Persian font (for example, a properly licensed Vazirmatn webfont) before shipping a polished Persian edition.
 
 ## GitHub Pages
 
