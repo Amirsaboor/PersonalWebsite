@@ -1,25 +1,13 @@
-import { ContainerOuter, ContainerInner } from "@/components/Container";
-import NavLink from "@/components/navigation/NavLink";
+import Link from 'next/link'
+import { Container } from '@/components/Container'
 
 export function Footer() {
   return (
-    <footer className="mt-28">
-      <ContainerOuter>
-        <div className="border-t border-zinc-100 py-8 dark:border-zinc-700/50">
-          <ContainerInner>
-            <div className="flex flex-col items-center justify-between gap-5 sm:flex-row">
-              <nav aria-label="پیوندهای پایین صفحه" className="flex gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                <NavLink href="/">خانه</NavLink>
-                <NavLink href="/projects">نمونه‌کارها</NavLink>
-                <NavLink href="/about">درباره من</NavLink>
-              </nav>
-              <p className="text-xs text-zinc-400 dark:text-zinc-500">
-                © {new Date().getFullYear()} امیر صبور · طراحی و توسعه با علاقه
-              </p>
-            </div>
-          </ContainerInner>
-        </div>
-      </ContainerOuter>
+    <footer className="mt-24 border-t border-zinc-200 py-10 dark:border-zinc-800">
+      <Container className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">© {new Date().getFullYear()} Alex Morgan. All rights reserved.</p>
+        <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600 dark:text-zinc-400"><Link href="/">Home</Link><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/speaking">Speaking</Link><Link href="/uses">Uses</Link></nav>
+      </Container>
     </footer>
-  );
+  )
 }
