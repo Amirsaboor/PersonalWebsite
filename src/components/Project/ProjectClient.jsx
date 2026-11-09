@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Modal from "./ProjectModal";
-import { FiArrowUpLeft, FiExternalLink, FiLayers } from "react-icons/fi";
+import { FiArrowUpLeft, FiExternalLink, FiLayers, FiShoppingBag, FiTarget } from "react-icons/fi";
 
 const filters = ["همه", "Next.js", "React", "WordPress"];
 
@@ -74,25 +74,52 @@ export default function ProjectsClient({ initialProjects = [] }) {
               className="relative block w-full overflow-hidden bg-zinc-100 text-right dark:bg-zinc-800"
               aria-label={`مشاهده جزئیات پروژه ${project.name}`}
             >
-              <div className={`relative w-full ${project.featured ? "aspect-[16/7]" : "aspect-[16/10]"}`}>
-                <Image
-                  src={withBasePath(project.images[0])}
-                  alt={`تصویر پروژه ${project.name}`}
-                  fill
-                  sizes={project.featured ? "(min-width: 1280px) 66vw, 100vw" : "(min-width: 640px) 50vw, 100vw"}
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]"
-                />
-                <span className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-70" />
-                <span className="absolute bottom-3 right-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur">
-                  <FiLayers className="h-3.5 w-3.5" />
-                  {project.category}
-                </span>
-                {project.featured && (
-                  <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1.5 text-[11px] font-medium text-white">
-                    پروژه منتخب
+              {project.images?.[0] ? (
+                <div className={`relative w-full ${project.featured ? "aspect-[16/7]" : "aspect-[16/10]"}`}>
+                  <Image
+                    src={withBasePath(project.images[0])}
+                    alt={`تصویر پروژه ${project.name}`}
+                    fill
+                    sizes={project.featured ? "(min-width: 1280px) 66vw, 100vw" : "(min-width: 640px) 50vw, 100vw"}
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-70" />
+                  <span className="absolute bottom-3 right-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur">
+                    <FiLayers className="h-3.5 w-3.5" />
+                    {project.category}
                   </span>
-                )}
-              </div>
+                  {project.featured && (
+                    <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1.5 text-[11px] font-medium text-white">
+                      پروژه منتخب
+                    </span>
+                  )}
+                </div>
+              ) : (
+                <div className={`relative flex w-full items-center justify-center overflow-hidden ${project.featured ? "aspect-[16/7]" : "aspect-[16/10]"} ${project.cover === "leather" ? "bg-gradient-to-br from-stone-950 via-amber-950 to-orange-900" : "bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950"}`}>
+                  <div className="absolute -left-12 -top-16 h-48 w-48 rounded-full bg-orange-500/25 blur-3xl" />
+                  <div className="absolute -bottom-20 -right-12 h-56 w-56 rounded-full bg-amber-400/15 blur-3xl" />
+                  <div className="relative flex flex-col items-center gap-3 text-center text-white">
+                    <span className="grid h-16 w-16 place-items-center rounded-[22px] border border-white/15 bg-white/10 shadow-2xl shadow-black/20 backdrop-blur">
+                      {project.cover === "leather" ? <FiShoppingBag className="h-7 w-7 text-orange-300" /> : <FiTarget className="h-7 w-7 text-orange-300" />}
+                    </span>
+                    <span className="text-[10px] font-semibold tracking-[0.28em] text-orange-200/80">
+                      {project.cover === "leather" ? "LEATHER COMMERCE" : "GOALS & KEY RESULTS"}
+                    </span>
+                    <span className="text-xl font-bold sm:text-2xl">
+                      {project.cover === "leather" ? "NAFIS LEATHER" : "OKR MANAGEMENT"}
+                    </span>
+                  </div>
+                  <span className="absolute bottom-3 right-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/25 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur">
+                    <FiLayers className="h-3.5 w-3.5" />
+                    {project.category}
+                  </span>
+                  {project.featured && (
+                    <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1.5 text-[11px] font-medium text-white">
+                      پروژه منتخب
+                    </span>
+                  )}
+                </div>
+              )}
             </button>
 
             <div className="flex flex-1 flex-col p-5 sm:p-6">
