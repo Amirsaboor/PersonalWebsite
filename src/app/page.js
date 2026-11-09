@@ -1,8 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { ProjectCarousel } from '@/components/ProjectCarousel'
-import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase } from 'react-icons/fi'
+import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase, FiCode, FiLayers, FiDatabase, FiGitBranch, FiMonitor, FiZap, FiFigma } from 'react-icons/fi'
 
 export const metadata = {
   title: 'Alex Morgan — Software designer, founder, and amateur astronaut',
@@ -10,12 +9,12 @@ export const metadata = {
 }
 
 const gallery = [
-  { src: '/images/photos/image-1.jpg', alt: 'Aerial view from a small aircraft', className: 'rotate-[-1.5deg]' },
-  { src: '/images/photos/image-2.jpg', alt: 'A large creative technology conference', className: 'rotate-[1deg]' },
-  { src: '/images/photos/image-3.jpg', alt: 'A minimal creative workspace', className: 'rotate-[-1deg]' },
-  { src: '/images/photos/image-4.jpg', alt: 'A hiker looking across a mountain landscape', className: 'rotate-[1.5deg]' },
-  { src: '/images/photos/image-5.jpg', alt: 'An astronaut exploring a red desert', className: 'rotate-[-1deg]' },
-  { src: '/images/photos/image-6.png', alt: 'An abstract visual experiment', className: 'rotate-[1deg]' },
+  { src: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=85', alt: 'Aerial view from a small aircraft', className: 'rotate-[-1.5deg]' },
+  { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85', alt: 'A large creative technology conference', className: 'rotate-[1deg]' },
+  { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df71?auto=format&fit=crop&w=900&q=85', alt: 'A minimal creative workspace', className: 'rotate-[-1deg]' },
+  { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85', alt: 'A hiker looking across a mountain landscape', className: 'rotate-[1.5deg]' },
+  { src: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=900&q=85', alt: 'An astronaut exploring a red desert', className: 'rotate-[-1deg]' },
+  { src: 'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85', alt: 'An abstract visual experiment', className: 'rotate-[1deg]' },
 ]
 
 const articles = [
@@ -31,7 +30,12 @@ const work = [
   { company: 'Studio Current', role: 'Interaction Designer', period: '2013 — 2016', mark: 'S', tone: 'bg-emerald-600' },
 ]
 
-const skills = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Design systems', 'Motion design', 'Creative coding']
+const skills = [
+  { name: 'React', Icon: FiCode }, { name: 'Next.js', Icon: FiLayers },
+  { name: 'TypeScript', Icon: FiCode }, { name: 'JavaScript', Icon: FiZap },
+  { name: 'Tailwind CSS', Icon: FiMonitor }, { name: 'Design systems', Icon: FiLayers },
+  { name: 'Motion design', Icon: FiZap }, { name: 'Creative coding', Icon: FiFigma },
+]
 
 export default function Home() {
   return (
@@ -56,7 +60,7 @@ export default function Home() {
         <div className="photo-ribbon-track">
           {gallery.map((photo) => (
             <div key={photo.src} className={'photo-ribbon-card ' + photo.className}>
-              <Image src={photo.src} alt={photo.alt} width={420} height={320} sizes="(max-width: 640px) 72vw, 220px" className="h-full w-full object-cover" />
+              <img src={photo.src} alt={photo.alt} loading="lazy" className="h-full w-full object-cover" />
             </div>
           ))}
         </div>
@@ -113,7 +117,7 @@ export default function Home() {
 
           <section className="rounded-xl border border-zinc-200 p-4 dark:border-white/[0.07]">
             <h2 className="text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">A few tools in my kit</h2>
-            <div className="mt-3 flex flex-wrap gap-1.5">{skills.map((skill) => <span key={skill} className="rounded-full bg-zinc-100 px-2.5 py-1 text-[9px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{skill}</span>)}</div>
+            <div className="mt-3 flex flex-wrap gap-1.5">{skills.map(({ name, Icon }) => <span key={name} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[9px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><Icon className="h-3 w-3 text-teal-600 dark:text-teal-400" />{name}</span>)}</div>
             <Link href="/uses" className="mt-3 inline-flex items-center gap-1 text-[10px] font-semibold text-teal-600 dark:text-teal-400">Full setup <FiExternalLink /></Link>
           </section>
         </aside>
