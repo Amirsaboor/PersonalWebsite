@@ -24,6 +24,7 @@ export default function Home() {
   return (
     <Container className="mt-12 sm:mt-16">
       <section className="max-w-3xl">
+        <img src="/PersonalWebsite/images/avatar.jpg" alt="Alex Morgan" width="64" height="64" className="mb-8 h-16 w-16 rounded-full object-cover" />
         <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
           I’m Alex Morgan. I live in Brooklyn, where I design the future.
         </h1>
