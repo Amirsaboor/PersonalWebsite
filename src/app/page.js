@@ -11,7 +11,7 @@ export const metadata = {
 const gallery = [
   { src: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=85', alt: 'Aerial view from a small aircraft', className: 'rotate-[-1.5deg]' },
   { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85', alt: 'A large creative technology conference', className: 'rotate-[1deg]' },
-  { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df71?auto=format&fit=crop&w=900&q=85', alt: 'A minimal creative workspace', className: 'rotate-[-1deg]' },
+  { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85', alt: 'A minimal creative workspace', className: 'rotate-[-1deg]' },
   { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85', alt: 'A hiker looking across a mountain landscape', className: 'rotate-[1.5deg]' },
   { src: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=900&q=85', alt: 'An astronaut exploring a red desert', className: 'rotate-[-1deg]' },
   { src: 'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85', alt: 'An abstract visual experiment', className: 'rotate-[1deg]' },
