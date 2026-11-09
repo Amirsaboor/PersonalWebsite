@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -125,7 +127,16 @@ body {
 
 /* Bilingual layout foundation. Bundle a licensed local Vazirmatn font before commercial release. */
 html.locale-fa body {
-  font-family: Vazirmatn, Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Vazirmatn', Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
+html.locale-fa :is(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: normal;
+}
+
+html.locale-fa :is(button, input, textarea, select) {
+  font-family: inherit;
 }
 html[dir="rtl"] .photo-ribbon-track { direction: ltr; }
 html[dir="rtl"] .project-carousel { direction: ltr; }
