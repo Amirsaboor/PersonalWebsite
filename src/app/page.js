@@ -37,9 +37,6 @@ export default function Home() {
   return (
     <Container className="pt-10 sm:pt-11">
       <section className="max-w-[34rem]">
-        <div className="mb-5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-violet-300 via-zinc-500 to-zinc-900 text-xs font-bold tracking-tight text-white ring-2 ring-white/70 dark:ring-white/10">
-          <Image src="/images/avatar.jpg" alt="Alex Morgan profile portrait" width={48} height={48} className="h-full w-full object-cover" priority />
-        </div>
         <h1 className="max-w-[34rem] text-[2rem] font-bold leading-[1.12] tracking-[-0.045em] text-zinc-900 dark:text-zinc-100 sm:text-[2.35rem]">
           Software designer, founder, and amateur astronaut.
         </h1>
