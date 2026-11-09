@@ -50,7 +50,7 @@ export function Header() {
     { href: '/', label: t('home') },
     { href: '/about', label: t('about') },
     { href: '/articles', label: t('articles') },
-    { href: '/#projects', label: t('projects'), project: true },
+    { href: '/projects', label: t('projects') },
     { href: '/speaking', label: t('education') },
     { href: '/uses', label: t('uses') },
     { href: '/contact', label: t('contact') },
@@ -81,7 +81,7 @@ export function Header() {
           </div>
           <nav aria-label="Main navigation" className="hidden md:block">
             <ul className="flex items-center gap-0.5 rounded-full bg-zinc-100/90 p-1 ring-1 ring-black/[0.035] dark:bg-zinc-800/80 dark:ring-white/[0.04]">
-              {links.map(({ href, label, project }) => <NavItem key={href} href={href} active={project ? pathname === '/' : pathname === href || (href !== '/' && pathname.startsWith(href + '/'))}>{label}</NavItem>)}
+              {links.map(({ href, label }) => <NavItem key={href} href={href} active={pathname === href || (href !== '/' && pathname.startsWith(href + '/'))}>{label}</NavItem>)}
             </ul>
           </nav>
           <div className="flex items-center justify-end gap-2">
