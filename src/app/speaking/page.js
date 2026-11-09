@@ -1,28 +1,55 @@
 import { Container } from '@/components/Container'
-import { FiArrowUpRight, FiMapPin } from 'react-icons/fi'
+import { FiAward, FiBookOpen, FiCalendar, FiExternalLink } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Speaking',
-  description: 'Fictional frontend engineering talks and community sessions.',
+  title: 'Education & Credentials',
+  description: 'Fictional education history, professional certificates, and continued learning.',
 }
 
-const talks = [
-  { event: 'Frontend Futures 2025', location: 'Amsterdam, NL', date: 'October 2025', type: 'Conference talk', title: 'Interfaces that stay fast as products grow', detail: 'A practical look at performance budgets, component boundaries, and the habits that keep a frontend codebase healthy.' },
-  { event: 'Design Systems Social', location: 'Copenhagen, DK', date: 'June 2025', type: 'Community session', title: 'A shared language between design and code', detail: 'How tokens, documentation, and small collaboration rituals help teams ship more coherent experiences.' },
-  { event: 'Web Makers Meetup', location: 'Online', date: 'March 2025', type: 'Live workshop', title: 'Accessible interactions from the first commit', detail: 'A hands-on session on semantic HTML, keyboard interaction, focus management, and testing real user flows.' },
+const education = [
+  { school: 'Copenhagen Institute of Digital Design', degree: 'MSc, Interaction Design', period: '2016 — 2018', detail: 'Focused on human-computer interaction, interface systems, prototyping, and research-led product design.', mark: 'CID' },
+  { school: 'Northern Europe University', degree: 'BSc, Computer Science', period: '2012 — 2016', detail: 'Coursework in software engineering, algorithms, web technologies, databases, and applied mathematics.', mark: 'NEU' },
 ]
 
-export default function Speaking() {
+const certificates = [
+  { issuer: 'Meta', title: 'Frontend Developer Professional Certificate', date: '2024', detail: 'Modern frontend foundations, React development, version control, and practical interface projects.' },
+  { issuer: 'Google', title: 'UX Design Certificate', date: '2023', detail: 'User research, wireframing, prototyping, usability testing, and accessible design principles.' },
+  { issuer: 'AWS Training', title: 'Cloud Practitioner Essentials', date: '2022', detail: 'Core cloud concepts, infrastructure fundamentals, security, and deployment workflows.' },
+  { issuer: 'W3C', title: 'Web Accessibility Fundamentals', date: '2021', detail: 'Semantic HTML, accessible interaction patterns, WCAG principles, and inclusive user experiences.' },
+]
+
+const learning = [
+  { title: 'Advanced TypeScript Patterns', provider: 'Frontend Masters', date: '2025' },
+  { title: 'Design Systems for Developers', provider: 'Interaction Design Foundation', date: '2024' },
+  { title: 'Web Performance Optimization', provider: 'Google Developers', date: '2023' },
+]
+
+export default function EducationPage() {
   return (
     <Container className="mt-16 sm:mt-24">
       <header className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Speaking & community</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">Sharing ideas beyond the screen.</h1>
-        <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">A fictional archive of talks, workshops, and conversations about building thoughtful products for the web.</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Education & credentials</p>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">Learning is part of the work.</h1>
+        <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">A record of formal education, professional certifications, and focused learning across frontend engineering and digital product design.</p>
       </header>
-      <div className="mt-14 space-y-5">{talks.map((talk) => <article key={talk.title} className="rounded-2xl border border-zinc-200 p-6 transition hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700 sm:p-8"><div className="flex flex-wrap items-center gap-3 text-xs"><span className="font-semibold uppercase tracking-[0.14em] text-violet-700 dark:text-violet-300">{talk.type}</span><span className="text-zinc-300 dark:text-zinc-700">·</span><span className="text-zinc-500">{talk.date}</span></div><h2 className="mt-3 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{talk.title}</h2><p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">{talk.detail}</p><div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-zinc-500"><span className="font-medium text-zinc-700 dark:text-zinc-300">{talk.event}</span><span className="inline-flex items-center gap-1"><FiMapPin /> {talk.location}</span></div></article>)}</div>
-      <div className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800"><p className="text-sm text-zinc-500">Interested in a conversation about frontend craft or design systems?</p><a href="mailto:hello@alexmorgan.dev" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-300">Invite Alex to speak <FiArrowUpRight /></a></div>
-      <p className="mt-8 text-xs text-zinc-400">All event names, dates, and talk details are fictional sample content.</p>
+
+      <section className="mt-14">
+        <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 text-violet-700 dark:bg-zinc-800 dark:text-violet-300"><FiBookOpen /></span><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Academic background</p><h2 className="mt-1 text-xl font-semibold text-zinc-900 dark:text-zinc-100">Education</h2></div></div>
+        <div className="mt-7 space-y-4">{education.map((item) => <article key={item.school} className="grid gap-4 rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800 sm:grid-cols-[1fr_auto] sm:items-start sm:p-6"><div><p className="text-xs font-semibold text-violet-700 dark:text-violet-300">{item.period}</p><h3 className="mt-2 text-lg font-semibold text-zinc-900 dark:text-zinc-100">{item.degree}</h3><p className="mt-1 text-sm font-medium text-zinc-600 dark:text-zinc-300">{item.school}</p><p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-500">{item.detail}</p></div><span className="flex h-12 min-w-12 items-center justify-center rounded-xl bg-zinc-100 px-3 text-xs font-bold tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{item.mark}</span></article>)}</div>
+      </section>
+
+      <section className="mt-16 border-t border-zinc-200 pt-12 dark:border-zinc-800">
+        <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 text-violet-700 dark:bg-zinc-800 dark:text-violet-300"><FiAward /></span><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Professional development</p><h2 className="mt-1 text-xl font-semibold text-zinc-900 dark:text-zinc-100">Certificates</h2></div></div>
+        <div className="mt-7 grid gap-4 sm:grid-cols-2">{certificates.map((item) => <article key={item.title} className="rounded-2xl border border-zinc-200 p-5 transition hover:-translate-y-1 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"><div className="flex items-center justify-between gap-3"><span className="text-xs font-semibold text-violet-700 dark:text-violet-300">{item.issuer}</span><span className="inline-flex items-center gap-1 text-[10px] text-zinc-400"><FiCalendar /> {item.date}</span></div><h3 className="mt-3 text-base font-semibold leading-6 text-zinc-900 dark:text-zinc-100">{item.title}</h3><p className="mt-2 text-sm leading-7 text-zinc-500">{item.detail}</p></article>)}</div>
+      </section>
+
+      <section className="mt-16 border-t border-zinc-200 pt-12 dark:border-zinc-800">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Always learning</p>
+        <h2 className="mt-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100">Selected courses & workshops</h2>
+        <div className="mt-6 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">{learning.map((item) => <div key={item.title} className="flex flex-wrap items-center justify-between gap-3 py-4"><div><h3 className="text-sm font-medium text-zinc-800 dark:text-zinc-200">{item.title}</h3><p className="mt-1 text-xs text-zinc-500">{item.provider}</p></div><span className="text-xs text-zinc-400">{item.date}</span></div>)}</div>
+      </section>
+
+      <p className="mt-10 text-xs leading-6 text-zinc-400">All institutions, qualifications, certificate titles, and dates are fictional sample content for this portfolio concept.</p>
     </Container>
   )
 }
