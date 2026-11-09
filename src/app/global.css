@@ -48,3 +48,39 @@ body {
 .dark ::-webkit-scrollbar-track { background: #27272a; }
 .dark ::-webkit-scrollbar-thumb { background: #52525b; }
 .dark ::-webkit-scrollbar-thumb:hover { background: #71717a; }
+
+
+.photo-ribbon {
+  margin-inline: -3rem;
+  overflow: hidden;
+  padding-block: 0.4rem 0.8rem;
+}
+
+.photo-ribbon-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 3rem;
+}
+
+.photo-ribbon-card {
+  width: 12.75rem;
+  height: 14.25rem;
+  flex: none;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: #27272a;
+  box-shadow: 0 14px 30px rgb(0 0 0 / 16%);
+  transition: transform 450ms cubic-bezier(.2,.8,.2,1);
+}
+
+.photo-ribbon-card:hover {
+  transform: translateY(-0.4rem) rotate(0deg) scale(1.025);
+}
+
+@media (max-width: 639px) {
+  .photo-ribbon { margin-inline: -1rem; }
+  .photo-ribbon-track { gap: 0.75rem; padding-inline: 1rem; }
+  .photo-ribbon-card { width: min(72vw, 13rem); height: 13.5rem; }
+}
