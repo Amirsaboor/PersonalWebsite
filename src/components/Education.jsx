@@ -6,7 +6,7 @@ const education = [
 ];
 const courses = [
   { title: "توسعه فرانت‌اند", institute: "Coding Front · دوره ۴ ماهه", year: "۱۴۰۲" },
-  { title: "آموزش تخصصی کامپیوتر و نرم‌افزار", institute: "مجتمع فنی تهران · دوره یک‌ساله", year: "۱۴۰۱" },
+  { title: "دوره آموزشی مجتمع فنی تهران", institute: "مجتمع فنی تهران · دوره یک‌ساله", year: "۱۴۰۱" },
 ];
 
 export function Education() {

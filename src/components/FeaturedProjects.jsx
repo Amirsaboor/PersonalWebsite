@@ -7,6 +7,8 @@ const projects = [
   { name: "OKR Management", subtitle: "داشبورد مدیریت اهداف سازمانی", description: "داشبورد مدیریت اهداف و نتایج کلیدی با ساختار واحدهای سازمانی، گزارش‌ها، نمودارها، نقش‌ها و تقویم شمسی.", tags: ["Next.js", "React", "Dashboard", "Charts"], Icon: FiTarget, style: "from-zinc-950 via-slate-900 to-orange-950", href: "/projects", label: "مشاهده سایر پروژه‌ها" },
 ];
 
+const linkClass = "mt-5 inline-flex items-center gap-2 border-t border-zinc-100 pt-4 text-xs font-bold text-zinc-700 transition-colors hover:text-orange-600 dark:border-zinc-800 dark:text-zinc-200 dark:hover:text-orange-300";
+
 export function FeaturedProjects() {
   return (
     <section aria-labelledby="featured-projects-title">
@@ -14,7 +16,9 @@ export function FeaturedProjects() {
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
         {projects.map(({ name, subtitle, description, tags, Icon, style, href, label }, index) => <article key={name} className="group overflow-hidden rounded-[1.7rem] border border-zinc-200/80 bg-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl hover:shadow-zinc-900/[0.06] dark:border-zinc-700/60 dark:bg-zinc-900/60 dark:hover:border-orange-500/40">
           <div className={`project-cover relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-gradient-to-br ${style}`}><div className="absolute -left-10 -top-12 h-40 w-40 rounded-full bg-orange-400/20 blur-3xl transition-transform duration-700 group-hover:scale-150" /><div className="absolute -bottom-16 -right-8 h-48 w-48 rounded-full bg-white/10 blur-3xl" /><div className="relative flex flex-col items-center gap-3 text-center text-white"><span className="grid h-16 w-16 place-items-center rounded-[1.35rem] border border-white/15 bg-white/10 shadow-2xl backdrop-blur transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110"><Icon className="h-7 w-7 text-orange-200" /></span><span className="text-[10px] font-bold tracking-[0.24em] text-white/60">CASE STUDY · 0{index + 1}</span><span className="text-xl font-black tracking-wide">{name}</span></div></div>
-          <div className="p-5"><p className="text-xs font-semibold text-orange-600 dark:text-orange-300">{subtitle}</p><p className="mt-3 min-h-[5.5rem] text-sm leading-7 text-zinc-600 dark:text-zinc-400">{description}</p><div className="mt-4 flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-lg bg-zinc-100 px-2.5 py-1.5 text-[10px] font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tag}</span>)}</div><a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="mt-5 inline-flex items-center gap-2 border-t border-zinc-100 pt-4 text-xs font-bold text-zinc-700 transition-colors hover:text-orange-600 dark:border-zinc-800 dark:text-zinc-200 dark:hover:text-orange-300">{label} {href.startsWith("http") ? <FiExternalLink className="h-3.5 w-3.5" /> : <FiArrowUpLeft className="h-3.5 w-3.5" />}</a></div>
+          <div className="p-5"><p className="text-xs font-semibold text-orange-600 dark:text-orange-300">{subtitle}</p><p className="mt-3 min-h-[5.5rem] text-sm leading-7 text-zinc-600 dark:text-zinc-400">{description}</p><div className="mt-4 flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-lg bg-zinc-100 px-2.5 py-1.5 text-[10px] font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tag}</span>)}</div>
+            {href.startsWith("/") ? <Link href={href} className={linkClass}>{label} <FiArrowUpLeft className="h-3.5 w-3.5" /></Link> : <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>{label} <FiExternalLink className="h-3.5 w-3.5" /></a>}
+          </div>
         </article>)}
       </div>
     </section>
