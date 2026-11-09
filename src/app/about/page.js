@@ -4,19 +4,8 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { useLocale } from '@/i18n/LocaleProvider'
 import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch } from 'react-icons/fi'
-import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiHtml5, SiCss3, SiTailwindcss, SiRadixui, SiNodedotjs, SiSupabase, SiGraphql, SiGit, SiGithub, SiPlaywright, SiJest, SiFigma } from 'react-icons/si'
-
-const skills = [
-  { en: 'Core frontend', fa: 'فرانت‌اند اصلی', Icon: FiCode, items: [{ name: 'JavaScript', Icon: SiJavascript }, { name: 'TypeScript', Icon: SiTypescript }, { name: 'React', Icon: SiReact }, { name: 'Next.js', Icon: SiNextdotjs }, { name: 'HTML5', Icon: SiHtml5 }, { name: 'CSS3', Icon: SiCss3 }] },
-  { en: 'UI engineering', fa: 'مهندسی رابط کاربری', Icon: FiLayers, items: [{ name: 'Tailwind CSS', Icon: SiTailwindcss }, { name: 'Radix UI', Icon: SiRadixui }, { name: 'CSS Modules' }, { name: 'Responsive design' }, { name: 'Accessibility' }] },
-  { en: 'Data & integration', fa: 'داده و یکپارچه‌سازی', Icon: FiDatabase, items: [{ name: 'REST APIs' }, { name: 'GraphQL', Icon: SiGraphql }, { name: 'Node.js', Icon: SiNodedotjs }, { name: 'Supabase', Icon: SiSupabase }, { name: 'Authentication' }] },
-  { en: 'Quality & workflow', fa: 'کیفیت و گردش کار', Icon: FiGitBranch, items: [{ name: 'Git', Icon: SiGit }, { name: 'GitHub', Icon: SiGithub }, { name: 'Playwright', Icon: SiPlaywright }, { name: 'Jest', Icon: SiJest }, { name: 'Figma', Icon: SiFigma }, { name: 'Performance tuning' }] },
-]
-const experience = [
-  { company: 'Northstar Digital', role: 'Senior Frontend Engineer', roleFa: 'مهندس ارشد فرانت‌اند', period: '2023 — Present', place: 'Copenhagen · Hybrid', placeFa: 'کپنهاگ · ترکیبی', detail: 'Own frontend delivery for customer-facing products, establish shared component patterns, and improve application reliability and performance.', detailFa: 'مسئولیت توسعه فرانت‌اند محصولات مشتری‌محور، ایجاد الگوهای مشترک کامپوننت‌ها و بهبود پایداری و عملکرد نرم‌افزار.' },
-  { company: 'Fieldwork Studio', role: 'Frontend Developer', roleFa: 'توسعه‌دهنده فرانت‌اند', period: '2021 — 2023', place: 'Remote', placeFa: 'دورکاری', detail: 'Implemented e-commerce and marketing experiences, from responsive interfaces and API integration to ongoing optimization.', detailFa: 'پیاده‌سازی تجربه‌های فروشگاهی و بازاریابی؛ از رابط واکنش‌گرا و اتصال API تا بهینه‌سازی مستمر.' },
-  { company: 'Independent', role: 'Web Developer', roleFa: 'توسعه‌دهنده وب', period: '2019 — 2021', place: 'Freelance', placeFa: 'فریلنس', detail: 'Helped small teams turn early product ideas into polished websites and interactive prototypes.', detailFa: 'همراهی با تیم‌های کوچک برای تبدیل ایده‌های اولیه محصول به وب‌سایت‌های حرفه‌ای و نمونه‌های تعاملی.' },
-]
+import { skillGroups } from '@/data/skills'
+import { experience } from '@/data/experience'
 
 export default function About() {
   const { isFa } = useLocale()
@@ -38,7 +27,7 @@ export default function About() {
       <section className="mt-20 border-t border-zinc-200 pt-12 dark:border-zinc-800">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">{isFa ? 'توانمندی‌ها' : 'Capabilities'}</p>
         <h2 className="mt-3 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">{isFa ? 'ابزارهایی برای ساخت تجربه‌های کامل.' : 'A toolkit for building complete experiences.'}</h2>
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">{skills.map((group) => <div key={group.en}><h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100"><group.Icon className="h-4 w-4 text-violet-600 dark:text-violet-300" />{isFa ? group.fa : group.en}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{item.Icon ? <item.Icon className="h-3.5 w-3.5" aria-hidden="true" /> : <FiCode className="h-3 w-3 text-violet-500" />}{item.name}</span>)}</div></div>)}</div>
+        <div className="mt-8 grid gap-8 sm:grid-cols-2">{skillGroups.map((group) => <div key={group.en}><h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100"><group.Icon className="h-4 w-4 text-violet-600 dark:text-violet-300" />{isFa ? group.fa : group.en}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{item.Icon ? <item.Icon className="h-3.5 w-3.5" aria-hidden="true" /> : <FiCode className="h-3 w-3 text-violet-500" />}{item.name}</span>)}</div></div>)}</div>
       </section>
       <section id="experience" className="mt-20 border-t border-zinc-200 pt-12 dark:border-zinc-800">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">{isFa ? 'سوابق کاری' : 'Experience'}</p>
