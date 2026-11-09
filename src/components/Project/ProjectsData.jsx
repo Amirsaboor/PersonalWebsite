@@ -18,7 +18,6 @@ export const projects = [
   {
     name: "Talargah | تالارگاه",
     category: "Next.js",
-    featured: true,
     description:
       "پلتفرم جست‌وجوی تالارهای پذیرایی با فیلترهای شهر، ظرفیت، بودجه و امتیاز؛ همراه با جست‌وجوی زنده، صفحه‌بندی، نمایشگر ۳۶۰ درجه، متادیتای پویا، sitemap و JSON-LD.",
     tags: [
