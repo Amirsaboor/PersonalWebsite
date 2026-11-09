@@ -90,7 +90,7 @@ export function Header() {
         <div className="relative mx-auto grid h-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
           <div className="flex items-center">
             <Link href="/" aria-label="Alex Morgan — home" className="group inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-1 ring-black/10 transition hover:scale-105 dark:ring-white/10">
-              <Image src="/images/avatar.jpg" alt="Alex Morgan" width={40} height={40} className="h-full w-full object-cover" priority />
+              <Image src="/PersonalWebsite/images/avatar.jpg" alt="Alex Morgan" width={40} height={40} className="h-full w-full object-cover" priority />
             </Link>
             <button
               type="button"
