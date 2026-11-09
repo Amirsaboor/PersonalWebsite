@@ -1,17 +1,15 @@
-# Spotlight Portfolio Starter
+# Amir Saboor — Personal Website
 
-A responsive personal portfolio starter inspired by the editorial layout and page structure of Tailwind UI's Spotlight template.
-
-This repository currently contains fictional sample content for **Alex Morgan**. Replace the copy, links, projects, profile details, and sample data with your own content when customizing the site.
+A responsive personal portfolio inspired by the editorial layout and navigation patterns of Tailwind UI Spotlight, customized with Amir's own projects and frontend work.
 
 ## Pages
 
-- `/` — Home, introduction, snapshots, recent writing, and work experience
-- `/about` — Biography and personal values
-- `/projects` — Selected projects
-- `/articles` — Sample writing index
-- `/speaking` — Talks, workshops, and events
-- `/uses` — Hardware, software, and development tools
+- `/` — Introduction and a featured-project carousel
+- `/about` — Background and frontend approach
+- `/projects` — Selected projects and technologies
+- `/articles` — Writing archive (currently empty)
+- `/speaking` — Speaking and community events
+- `/uses` — Hardware and development stack
 
 ## Stack
 
@@ -38,10 +36,10 @@ npm run build
 
 The project is configured for GitHub Pages under the `/PersonalWebsite` base path and exports static files to `out/`.
 
-## Sample content
+## Projects
 
-All names, companies, dates, project descriptions, event details, and contact addresses in the starter pages are fictional placeholders. They are intended to be replaced during the personalization phase.
+The portfolio includes work on Nafis Leather, Talar, Mahan IT, CSeven, Markizco, Hadisa Shop, and smaller practice projects. Client and private projects may not have public source-code links.
 
-## License note
+## Design reference
 
-This project is an independent implementation inspired by the public-facing layout of Spotlight. It is not an official Tailwind UI distribution. Use of any separately licensed Tailwind UI source code or assets remains subject to the applicable Tailwind UI license.
+The layout is independently implemented and customized using Spotlight as a visual reference. It is not an official Tailwind Plus distribution. Any separately licensed Tailwind Plus source code or assets remain subject to the applicable Tailwind Plus license.
