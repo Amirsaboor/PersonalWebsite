@@ -12,6 +12,7 @@ export function ProjectCarousel() {
   const [canGoBack, setCanGoBack] = useState(false)
   const [canGoForward, setCanGoForward] = useState(true)
   const [selectedProject, setSelectedProject] = useState(null)
+  const closeProject = useCallback(() => setSelectedProject(null), [])
   const { t, isFa } = useLocale()
 
   const updateControls = useCallback(() => {
@@ -71,7 +72,7 @@ export function ProjectCarousel() {
           </div>
         </div>
       </div>
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ProjectModal project={selectedProject} onClose={closeProject} />
     </>
   )
 }
