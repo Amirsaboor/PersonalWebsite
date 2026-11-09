@@ -1,6 +1,6 @@
 {
-  "name": "tailwindui-template",
-  "version": "0.1.0",
+  "name": "personal-portfolio-template",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -41,5 +41,6 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  }
+  },
+  "description": "Bilingual, modal-based Next.js portfolio template with static GitHub Pages export."
 }
