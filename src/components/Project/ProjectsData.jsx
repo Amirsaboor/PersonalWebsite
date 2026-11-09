@@ -13,7 +13,7 @@ export const projects = [
       { id: 5, name: "E-commerce" },
     ],
     link: { href: "https://nafisleatherco.net", label: "مشاهده وب‌سایت" },
-    images: ["/images/project/1.png", "/images/project/2.png", "/images/project/3.png"],
+    cover: "leather",
   },
   {
     name: "Talargah | تالارگاه",
@@ -50,7 +50,7 @@ export const projects = [
       { id: 4, name: "Charts" },
       { id: 5, name: "Jalali Date" },
     ],
-    images: ["/images/project/2.png", "/images/project/3.png", "/images/project/1.png"],
+    cover: "okr",
   },
   {
     name: "Fast Food",
