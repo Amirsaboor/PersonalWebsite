@@ -1,8 +1,9 @@
 import HomePage from '@/components/HomePage'
+import { siteConfig } from '@/data/site-config'
 
 export const metadata = {
-  title: 'Alex Morgan — Software designer, founder, and amateur astronaut',
-  description: 'A fictional creative technologist building thoughtful digital products and tools for the web.',
+  title: siteConfig.name + ' — ' + siteConfig.role,
+  description: siteConfig.description,
 }
 
 export default function Home() {
