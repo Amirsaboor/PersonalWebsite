@@ -33,19 +33,22 @@ const messages = {
 
 export function LocaleProvider({ children }) {
   const [locale, setLocale] = useState('en')
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const saved = window.localStorage.getItem('portfolio-locale')
     const next = saved === 'fa' ? 'fa' : 'en'
     setLocale(next)
+    setReady(true)
   }, [])
 
   useEffect(() => {
+    if (!ready) return
     document.documentElement.lang = locale
     document.documentElement.dir = locale === 'fa' ? 'rtl' : 'ltr'
     document.documentElement.classList.toggle('locale-fa', locale === 'fa')
     window.localStorage.setItem('portfolio-locale', locale)
-  }, [locale])
+  }, [locale, ready])
 
   const value = useMemo(() => ({
     locale,
