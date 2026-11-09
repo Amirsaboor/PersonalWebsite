@@ -1,79 +1,60 @@
-import Image from 'next/image'
-import { Container } from '@/components/Container'
-import { AboutSocialLink } from '@/components/AboutSocialLink'
-import portraitImage from '@/assets/images/photos/6.jpg'
-import { AiOutlineMail } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/Container";
+import portraitImage from "@/assets/images/photos/6.jpg";
 import { AiFillGithub } from "react-icons/ai";
+import { FiArrowUpLeft } from "react-icons/fi";
 
 export const metadata = {
-  title: 'About - Name Family',
-  description: 'I\'m Name Family. A leader, artist, and frontend enthusiast.',
-}
+  title: "درباره من | امیر صبور",
+  description:
+    "با امیر صبور، توسعه‌دهنده فرانت‌اند و علاقه‌مند به React و Next.js بیشتر آشنا شوید.",
+};
 
 export default function About() {
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12 ">
-        <div className="flex flex-row justify-center p-5">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
+    <Container className="mt-16 sm:mt-24">
+      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20">
+        <div>
+          <p className="text-xs font-medium tracking-wide text-red-500">ABOUT ME</p>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+            کمی درباره من
+          </h1>
+          <div className="mt-7 max-w-2xl space-y-5 text-justify text-sm leading-8 text-zinc-600 dark:text-zinc-400 sm:text-base">
+            <p>
+              من امیر صبور، توسعه‌دهنده فرانت‌اند و فارغ‌التحصیل مهندسی نرم‌افزار از دانشگاه آزاد اسلامی مشهد هستم. علاقه‌ام ساخت وب‌سایت‌هایی است که در کنار ظاهر جذاب، سریع، قابل استفاده و قابل نگهداری باشند.
+            </p>
+            <p>
+              در مسیر توسعه وب با HTML، CSS، JavaScript، TypeScript، React و Next.js کار کرده‌ام و از ابزارهایی مانند Tailwind CSS و کتابخانه‌های رابط کاربری برای پیاده‌سازی تجربه‌های واکنش‌گرا استفاده می‌کنم.
+            </p>
+            <p>
+              تجربه کار روی فروشگاه‌های اینترنتی، وب‌سایت‌های شرکتی و پروژه‌های مستقل به من کمک کرده تا از طراحی رابط تا اتصال به API و بهینه‌سازی جزئیات محصول را در نظر بگیرم. همیشه از یادگیری فناوری‌های تازه و حل مسئله‌های واقعی لذت می‌برم.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-red-600 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-red-400">
+              دیدن نمونه‌کارها <FiArrowUpLeft className="h-4 w-4" />
+            </Link>
+            <a href="https://github.com/Amirsaboor" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300">
+              <AiFillGithub className="h-4 w-4" /> GitHub
+            </a>
+          </div>
+        </div>
+        <aside className="mx-auto w-full max-w-xs lg:mx-0">
+          <div className="overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100 p-2 dark:border-zinc-700/60 dark:bg-zinc-800">
             <Image
               src={portraitImage}
-              alt=""
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              className="object-cover aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800"
+              alt="تصویر امیر صبور"
+              sizes="(min-width: 1024px) 20rem, 80vw"
+              className="aspect-[4/5] w-full rounded-xl object-cover"
+              priority
             />
           </div>
-        </div>
-        <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            لورم ایپسوم متن ساختگی
-          </h1>
-          <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400 px-5 text-justify">
-            <p className=''>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
-              از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون
-              و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-              و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-              متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
-              رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی
-              ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در
-              ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز
-              شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته
-              اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-
-            <p className=''>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
-              از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون
-              و سطرآنچنان که لازم است، و برای شرایط فعلی تکنول
-              اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-
-            <p className=''>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
-              از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون
-              اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-            
-          </div>
-        </div>
-        <div className="ps-5">
-
-          <ul role="list">
-            <AboutSocialLink href="/" icon={AiFillGithub}>
-              Follow on GitHub
-            </AboutSocialLink>
-            <AboutSocialLink href="/" icon={FaLinkedin}>
-              Follow on LinkedIn
-            </AboutSocialLink>
-            <AboutSocialLink href="/uses" icon={AiOutlineMail}>
-              Uses
-            </AboutSocialLink>
-          </ul>
-        </div>
+          <p className="mt-4 text-center text-xs text-zinc-400">
+            Frontend Developer · React & Next.js
+          </p>
+        </aside>
       </div>
     </Container>
-  )
+  );
 }
