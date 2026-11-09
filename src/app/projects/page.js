@@ -9,6 +9,24 @@ export const metadata = {
   description: 'A fictional collection of frontend and product design case studies.',
 }
 
+const layouts = [
+  'md:col-span-7 md:row-span-1',
+  'md:col-span-5 md:row-span-1 md:mt-16',
+  'md:col-span-5 md:row-span-1 md:-mt-8',
+  'md:col-span-7 md:row-span-1',
+  'md:col-span-4 md:row-span-1 md:mt-10',
+  'md:col-span-4 md:row-span-1 md:-mt-5',
+  'md:col-span-4 md:row-span-1 md:mt-16',
+  'md:col-span-6 md:row-span-1',
+  'md:col-span-6 md:row-span-1 md:mt-12',
+]
+
+const artworkRatios = [
+  'aspect-[16/10]', 'aspect-[4/5]', 'aspect-[4/5]',
+  'aspect-[16/10]', 'aspect-[5/4]', 'aspect-[5/4]',
+  'aspect-[5/4]', 'aspect-[16/10]', 'aspect-[16/10]',
+]
+
 export default function ProjectsPage() {
   return (
     <Container className="mt-16 sm:mt-24">
@@ -18,10 +36,10 @@ export default function ProjectsPage() {
         <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">A fictional body of work spanning commerce, analytics, editorial, and community products. Each concept explores a different challenge in making digital experiences feel simple and considered.</p>
       </header>
 
-      <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-12 md:gap-y-16">
         {projects.map((project, index) => (
-          <article key={project.id} id={project.id} className="group min-w-0">
-            <div className="aspect-[5/4] overflow-hidden rounded-2xl ring-1 ring-zinc-900/5 dark:ring-white/10">
+          <article key={project.id} id={project.id} className={'group min-w-0 ' + layouts[index % layouts.length]}>
+            <div className={'overflow-hidden rounded-[1.35rem] ring-1 ring-zinc-900/5 transition duration-500 group-hover:shadow-2xl group-hover:shadow-black/10 dark:ring-white/10 ' + artworkRatios[index % artworkRatios.length]}>
               <ProjectArtwork project={project} cover />
             </div>
             <div className="mt-5 flex items-center justify-between gap-3">
