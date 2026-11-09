@@ -11,11 +11,11 @@ export function ProjectArtwork({ project }) {
   }
 
   return (
-    <div className={\`project-art project-art--\${project.tone} flex h-full w-full items-center justify-center overflow-hidden\`}>
+    <div className={`project-art project-art--${project.tone} flex h-full w-full items-center justify-center overflow-hidden`}>
       <div className="relative w-[76%] max-w-[340px] border border-black/10 bg-white px-5 py-6 shadow-[0_18px_50px_-30px_rgba(0,0,0,.28)]">
         <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
           <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">{project.category}</span>
-          <span className="text-xs text-zinc-400">{project.year}</span>
+          <span className="text-xs text-zinc-400">{project.role}</span>
         </div>
         <div className="py-8">
           <span className="block text-4xl font-semibold tracking-[-0.07em] text-zinc-900">{project.mark}</span>
