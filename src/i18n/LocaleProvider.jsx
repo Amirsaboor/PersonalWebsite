@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { siteConfig } from '@/data/site-config'
 
 const LocaleContext = createContext(null)
 
@@ -37,7 +38,7 @@ export function LocaleProvider({ children }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem('portfolio-locale')
-    const next = saved === 'fa' ? 'fa' : 'en'
+    const next = siteConfig.language.supported.includes(saved) ? saved : siteConfig.language.default
     setLocale(next)
     setReady(true)
   }, [])
