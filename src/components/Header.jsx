@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { FiSun, FiMoon, FiX } from 'react-icons/fi'
+import { FiSun, FiMoon, FiX, FiGlobe } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleProvider'
 import { siteConfig } from '@/data/site-config'
 
@@ -45,7 +45,8 @@ function NavItem({ href, children, active }) {
 export function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
-  const { t, isFa, toggleLocale } = useLocale()
+  const [localeMenuOpen, setLocaleMenuOpen] = useState(false)
+  const { t, isFa, setLocale } = useLocale()
   const links = [
     { href: '/', label: t('home') },
     { href: '/about', label: t('about') },
@@ -85,9 +86,21 @@ export function Header() {
             </ul>
           </nav>
           <div className="flex items-center justify-end gap-2">
-            <button type="button" onClick={toggleLocale} aria-label={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} title={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-lg ring-1 ring-black/5 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:ring-white/5 dark:hover:bg-zinc-700">
-              <span aria-hidden="true">{isFa ? '🇬🇧' : '🇮🇷'}</span>
-            </button>
+            <div className="relative">
+              <button type="button" onClick={() => setLocaleMenuOpen((open) => !open)} aria-label={isFa ? 'انتخاب زبان' : 'Choose language'} aria-expanded={localeMenuOpen} aria-haspopup="menu" title={isFa ? 'انتخاب زبان' : 'Choose language'} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 ring-1 ring-black/5 transition hover:bg-zinc-200 hover:text-zinc-950 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-white/5 dark:hover:bg-zinc-700 dark:hover:text-white">
+                <FiGlobe className="h-[17px] w-[17px]" />
+              </button>
+              {localeMenuOpen && (
+                <div role="menu" aria-label={isFa ? 'انتخاب زبان' : 'Language selection'} className="absolute right-0 top-11 z-[70] min-w-36 overflow-hidden rounded-xl border border-zinc-200 bg-white p-1.5 shadow-xl dark:border-zinc-700 dark:bg-zinc-900">
+                  <button type="button" role="menuitemradio" aria-checked={isFa} onClick={() => { setLocale('fa'); setLocaleMenuOpen(false) }} className={clsx('flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-xs transition', isFa ? 'bg-zinc-100 font-semibold text-zinc-950 dark:bg-zinc-800 dark:text-white' : 'text-zinc-600 hover:bg-zinc-50 dark:text-zinc-300 dark:hover:bg-zinc-800')}>
+                    <span>فارسی</span><span aria-hidden="true">🇮🇷</span>
+                  </button>
+                  <button type="button" role="menuitemradio" aria-checked={!isFa} onClick={() => { setLocale('en'); setLocaleMenuOpen(false) }} className={clsx('flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-xs transition', !isFa ? 'bg-zinc-100 font-semibold text-zinc-950 dark:bg-zinc-800 dark:text-white' : 'text-zinc-600 hover:bg-zinc-50 dark:text-zinc-300 dark:hover:bg-zinc-800')}>
+                    <span>English</span><span aria-hidden="true">🇬🇧</span>
+                  </button>
+                </div>
+              )}
+            </div>
             <ThemeToggle />
           </div>
         </div>
@@ -102,7 +115,13 @@ export function Header() {
               <button type="button" onClick={() => setMenuOpen(false)} aria-label={t('close')} className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><FiX /></button>
             </div>
             <nav><ul className="grid grid-cols-2 gap-2">{links.map(({ href, label }) => <li key={href}><Link href={href} className="block rounded-xl bg-zinc-50 px-4 py-3 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700">{label}</Link></li>)}</ul></nav>
-            <button type="button" onClick={toggleLocale} aria-label={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} title={isFa ? 'Switch to English' : 'تغییر زبان به فارسی'} className="mt-3 flex h-11 w-full items-center justify-center rounded-xl border border-zinc-200 text-xl dark:border-zinc-700"><span aria-hidden="true">{isFa ? '🇬🇧' : '🇮🇷'}</span></button>
+            <div className="relative mt-3">
+              <button type="button" onClick={() => setLocaleMenuOpen((open) => !open)} aria-label={isFa ? 'انتخاب زبان' : 'Choose language'} aria-expanded={localeMenuOpen} aria-haspopup="menu" className="flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-zinc-200 text-sm text-zinc-700 dark:border-zinc-700 dark:text-zinc-200"><FiGlobe className="h-4 w-4" />{isFa ? 'انتخاب زبان' : 'Choose language'}</button>
+              {localeMenuOpen && <div role="menu" className="mt-2 grid grid-cols-2 gap-2">
+                <button type="button" role="menuitemradio" aria-checked={isFa} onClick={() => { setLocale('fa'); setLocaleMenuOpen(false) }} className={clsx('flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-xs', isFa ? 'bg-zinc-100 font-semibold dark:bg-zinc-800' : 'border border-zinc-200 dark:border-zinc-700')}>🇮🇷 فارسی</button>
+                <button type="button" role="menuitemradio" aria-checked={!isFa} onClick={() => { setLocale('en'); setLocaleMenuOpen(false) }} className={clsx('flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-xs', !isFa ? 'bg-zinc-100 font-semibold dark:bg-zinc-800' : 'border border-zinc-200 dark:border-zinc-700')}>🇬🇧 English</button>
+              </div>}
+            </div>
           </section>
         </div>
       )}
