@@ -48,6 +48,9 @@ export default function Home() {
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">{t('selectedWork')}</p>
             <h2 id="projects-heading" className="mt-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{isFa ? 'چند تجربه دیجیتال که ساخته‌ام.' : 'A few things I’ve made.'}</h2>
           </div>
+          <Link href="/projects" className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-zinc-200 px-3.5 py-2 text-[10px] font-semibold text-zinc-600 transition hover:border-teal-500 hover:text-teal-600 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-teal-400 dark:hover:text-teal-300">
+            {isFa ? 'همه پروژه‌ها' : 'All projects'} <FiArrowUpRight />
+          </Link>
         </div>
         <ProjectCarousel />
       </section>
