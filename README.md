@@ -1,42 +1,47 @@
-# Spotlight
+# Spotlight Portfolio Starter
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+A responsive personal portfolio starter inspired by the editorial layout and page structure of Tailwind UI's Spotlight template.
 
-## Getting started
+This repository currently contains fictional sample content for **Alex Morgan**. Replace the copy, links, projects, profile details, and sample data with your own content when customizing the site.
 
-To get started with this template, first install the npm dependencies:
+## Pages
+
+- `/` — Home, introduction, snapshots, recent writing, and work experience
+- `/about` — Biography and personal values
+- `/projects` — Selected projects
+- `/articles` — Sample writing index
+- `/speaking` — Talks, workshops, and events
+- `/uses` — Hardware, software, and development tools
+
+## Stack
+
+- Next.js 14 App Router
+- React 18
+- Tailwind CSS 3
+- Static export for GitHub Pages
+- React Icons
+
+## Local development
 
 ```bash
-npm install
-```
-
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
-
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
-
-Next, run the development server:
-
-```bash
+npm ci
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Customizing
+## Production build
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+```bash
+npm run build
+```
 
-## License
+The project is configured for GitHub Pages under the `/PersonalWebsite` base path and exports static files to `out/`.
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+## Sample content
 
-## Learn more
+All names, companies, dates, project descriptions, event details, and contact addresses in the starter pages are fictional placeholders. They are intended to be replaced during the personalization phase.
 
-To learn more about the technologies used in this site template, see the following resources:
+## License note
 
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
+This project is an independent implementation inspired by the public-facing layout of Spotlight. It is not an official Tailwind UI distribution. Use of any separately licensed Tailwind UI source code or assets remains subject to the applicable Tailwind UI license.
