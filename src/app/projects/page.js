@@ -1,23 +1,20 @@
-// app/projects/page.jsx
 import ProjectsClient from "@/components/Project/ProjectClient";
 import { projects } from "@/components/Project/ProjectsData";
 import { SimpleLayout } from "@/components/SimpleLayout";
 
-
 export const metadata = {
-  title: "Projects - Name Family",
-  description: "A couple of my favorite personal projects.",
+  title: "نمونه‌کارها",
+  description:
+    "منتخبی از پروژه‌های وب امیر صبور با React، Next.js، TypeScript و WordPress.",
 };
 
 export default function ProjectsPage() {
   return (
     <SimpleLayout
-      title="پروژه های مورد علاقه من"
-      intro="تعدادی از پروژه‌های شخصی و تمرینی من در حوزه وب و برنامه‌نویسی."
+      title="پروژه‌هایی که ساخته‌ام"
+      intro="منتخبی از تجربه‌های من در طراحی و توسعه وب؛ از فروشگاه‌های اینترنتی تا رابط‌های کاربری مبتنی بر React و Next.js."
     >
-      {/* پروژه‌ها رو به کامپوننت client پاس می‌دیم */}
       <ProjectsClient initialProjects={projects} />
-
     </SimpleLayout>
   );
 }
