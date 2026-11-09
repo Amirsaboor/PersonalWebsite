@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi'
 
 const links = [
-  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
   { href: '/speaking', label: 'Speaking' },
