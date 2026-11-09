@@ -49,21 +49,26 @@ export function ProjectModal({ project, onClose }) {
           <img src={project.image} alt={project.imageAlt || project.name} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
           <div className="absolute bottom-5 left-6 right-6 text-white sm:bottom-7 sm:left-8 sm:right-8">
-            <p className="text-xs font-medium text-white/75">{project.category}</p>
-            <h2 id="project-modal-title" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{project.name}</h2>
+            <p className="text-xs font-medium text-white/75">{isFa ? project.categoryFa : project.category}</p>
+            <h2 id="project-modal-title" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{isFa ? project.nameFa : project.name}</h2>
           </div>
         </div>
         <div className="p-6 sm:p-8">
           <div className="grid gap-7 sm:grid-cols-[1fr_190px]">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-violet-600 dark:text-violet-300">{t('overview')}</p>
-              <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{project.description}</p>
-              <p className="mt-4 text-xs leading-6 text-zinc-400">{t('projectNote')}</p>
+              <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{isFa ? project.descriptionFa : project.description}</p>
+              <div className="mt-6 grid gap-5 border-t border-zinc-200 pt-5 dark:border-zinc-800">
+                <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">{isFa ? 'چالش' : 'The challenge'}</p><p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{isFa ? project.challengeFa : project.challenge}</p></div>
+                <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">{isFa ? 'راهکار' : 'The approach'}</p><p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{isFa ? project.approachFa : project.approach}</p></div>
+                <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">{isFa ? 'خروجی' : 'The outcome'}</p><p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{isFa ? project.outcomeFa : project.outcome}</p></div>
+              </div>
+              <p className="mt-5 text-xs leading-6 text-zinc-400">{t('projectNote')}</p>
             </div>
             <aside className="space-y-5 border-t border-zinc-200 pt-5 dark:border-zinc-800 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0">
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400">{t('role')}</p>
-                <p className="mt-2 text-sm font-medium">{project.role}</p>
+                <p className="mt-2 text-sm font-medium">{isFa ? project.roleFa : project.role}</p>
               </div>
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400">{t('technologies')}</p>
