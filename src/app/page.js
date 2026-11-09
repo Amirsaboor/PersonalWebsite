@@ -121,8 +121,8 @@ export default function Home() {
 
       <section className="mt-16 border-t border-zinc-200 pt-9 dark:border-white/[0.06]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">Beyond the screen</p><h2 className="mt-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Talks, experiments & community.</h2><p className="mt-2 max-w-lg text-[11px] leading-6 text-zinc-500">A few notes from events, workshops, and creative experiments along the way.</p></div>
-          <Link href="/speaking" className="inline-flex items-center gap-2 self-start rounded-full border border-zinc-200 px-4 py-2 text-[11px] font-semibold text-zinc-700 transition hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500">Explore speaking <FiArrowUpRight /></Link>
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">Beyond the screen</p><h2 className="mt-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Education, certificates & learning.</h2><p className="mt-2 max-w-lg text-[11px] leading-6 text-zinc-500">A snapshot of academic background, professional certificates, and ongoing learning.</p></div>
+          <Link href="/speaking" className="inline-flex items-center gap-2 self-start rounded-full border border-zinc-200 px-4 py-2 text-[11px] font-semibold text-zinc-700 transition hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500">Explore education <FiArrowUpRight /></Link>
         </div>
       </section>
     </Container>
