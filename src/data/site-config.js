@@ -6,10 +6,10 @@ export const siteConfig = {
   location: 'Copenhagen, Denmark',
   profileImage: '/PersonalWebsite/images/avatar.jpg',
   social: {
-    x: 'https://x.com/',
-    github: 'https://github.com/',
-    linkedin: 'https://linkedin.com/',
-    instagram: 'https://instagram.com/',
+    x: 'https://x.com/alexmorgan_demo',
+    github: 'https://github.com/alexmorgan-demo',
+    linkedin: 'https://linkedin.com/in/alex-morgan-demo',
+    instagram: 'https://instagram.com/alexmorgan.demo',
   },
   appearance: {
     defaultTheme: 'dark',
