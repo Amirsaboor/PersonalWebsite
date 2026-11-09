@@ -8,23 +8,24 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-::selection {
-  color: #fff;
-  background: #0f766e;
-}
+::selection { color: #fff; background: #6d28d9; }
 
-.project-art--warm { background: #e9e1d6; }
-.project-art--ink { background: #d9dde0; }
-.project-art--rose { background: #eadfdf; }
-.project-art--blue { background: #dce3e8; }
-.project-art--green { background: #dfe5dc; }
-.project-art--sand { background: #e8e3d9; }
+.project-art--warm { background: linear-gradient(145deg, #f3e8d7, #d7c5ac); }
+.project-art--ink { background: linear-gradient(145deg, #d9e0e8, #aebdce); }
+.project-art--rose { background: linear-gradient(145deg, #f3e1e7, #d7b5c2); }
+.project-art--blue { background: linear-gradient(145deg, #dceafa, #a8c3e4); }
+.project-art--green { background: linear-gradient(145deg, #e1ecdf, #b5cdb7); }
+.project-art--sand { background: linear-gradient(145deg, #eee8dc, #d1c5ad); }
+.project-art--violet { background: linear-gradient(145deg, #e9e3fb, #bfb0e8); }
+
 .project-carousel {
   scroll-padding-inline: 0.25rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .project-carousel::-webkit-scrollbar { display: none; }
+
+.prose a { text-underline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
