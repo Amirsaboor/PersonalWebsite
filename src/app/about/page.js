@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch } from 'react-icons/fi'
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiHtml5, SiCss3, SiTailwindcss, SiRadixui, SiNodedotjs, SiSupabase, SiGraphql, SiGit, SiGithub, SiPlaywright, SiJest, SiFigma } from 'react-icons/si'
 
 export const metadata = {
   title: 'About',
@@ -8,10 +9,10 @@ export const metadata = {
 }
 
 const skills = [
-  { group: 'Core frontend', Icon: FiCode, items: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML & CSS'] },
-  { group: 'UI engineering', Icon: FiLayers, items: ['Tailwind CSS', 'CSS Modules', 'Radix UI', 'Responsive design', 'Accessibility'] },
-  { group: 'Data & integration', Icon: FiDatabase, items: ['REST APIs', 'GraphQL basics', 'Node.js', 'Supabase', 'Authentication'] },
-  { group: 'Quality & workflow', Icon: FiGitBranch, items: ['Git & GitHub', 'Playwright', 'Jest', 'Figma', 'Performance tuning'] },
+  { group: 'Core frontend', Icon: FiCode, items: [{ name: 'JavaScript', Icon: SiJavascript }, { name: 'TypeScript', Icon: SiTypescript }, { name: 'React', Icon: SiReact }, { name: 'Next.js', Icon: SiNextdotjs }, { name: 'HTML5', Icon: SiHtml5 }, { name: 'CSS3', Icon: SiCss3 }] },
+  { group: 'UI engineering', Icon: FiLayers, items: [{ name: 'Tailwind CSS', Icon: SiTailwindcss }, { name: 'Radix UI', Icon: SiRadixui }, { name: 'CSS Modules' }, { name: 'Responsive design' }, { name: 'Accessibility' }] },
+  { group: 'Data & integration', Icon: FiDatabase, items: [{ name: 'REST APIs' }, { name: 'GraphQL', Icon: SiGraphql }, { name: 'Node.js', Icon: SiNodedotjs }, { name: 'Supabase', Icon: SiSupabase }, { name: 'Authentication' }] },
+  { group: 'Quality & workflow', Icon: FiGitBranch, items: [{ name: 'Git', Icon: SiGit }, { name: 'GitHub', Icon: SiGithub }, { name: 'Playwright', Icon: SiPlaywright }, { name: 'Jest', Icon: SiJest }, { name: 'Figma', Icon: SiFigma }, { name: 'Performance tuning' }] },
 ]
 
 const experience = [
@@ -44,7 +45,7 @@ export default function About() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Capabilities</p>
         <h2 className="mt-3 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">A toolkit for building complete experiences.</h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-2">
-          {skills.map((group) => <div key={group.group}><h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100"><group.Icon className="h-4 w-4 text-violet-600 dark:text-violet-300" />{group.group}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><FiZap className="h-3 w-3 text-violet-500" />{item}</span>)}</div></div>)}
+          {skills.map((group) => <div key={group.group}><h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100"><group.Icon className="h-4 w-4 text-violet-600 dark:text-violet-300" />{group.group}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{item.Icon ? <item.Icon className="h-3.5 w-3.5" aria-hidden="true" /> : <FiCode className="h-3 w-3 text-violet-500" />}{item.name}</span>)}</div></div>)}
         </div>
       </section>
 
