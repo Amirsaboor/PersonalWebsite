@@ -6,17 +6,17 @@ import './global.css'
 
 export const metadata = {
   title: {
-    default: 'Amir Saboor — Frontend Developer',
-    template: '%s — Amir Saboor',
+    default: 'Alex Morgan — Frontend Engineer',
+    template: '%s — Alex Morgan',
   },
-  description: 'The portfolio of Amir Saboor, a frontend developer working with React and Next.js.',
-  metadataBase: new URL('https://amirsaboor.github.io/PersonalWebsite/'),
+  description: 'A fictional portfolio concept for a frontend engineer crafting thoughtful digital products.',
+  metadataBase: new URL('https://example.com/'),
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className="min-h-full bg-white text-zinc-900 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
         <Header />
         <main className="min-h-[70vh]">{children}</main>
         <Footer />
