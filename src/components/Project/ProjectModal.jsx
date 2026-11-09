@@ -47,7 +47,7 @@ export default function Modal({ isOpen, onClose, project }) {
       <div className="relative z-10 flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-700 dark:bg-zinc-900">
         <div className="flex items-center justify-between border-b border-zinc-100 px-5 py-4 dark:border-zinc-800 sm:px-6">
           <div>
-            <p className="text-[11px] font-medium text-red-500">{project.category}</p>
+            <p className="text-[11px] font-medium text-orange-500">{project.category}</p>
             <h2 className="mt-1 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
               {project.name}
             </h2>
@@ -93,7 +93,7 @@ export default function Modal({ isOpen, onClose, project }) {
                     aria-pressed={selectedImage === img}
                     className={`relative h-16 w-24 flex-none overflow-hidden rounded-lg border-2 transition sm:h-20 sm:w-28 ${
                       selectedImage === img
-                        ? "border-red-500"
+                        ? "border-orange-500"
                         : "border-transparent opacity-65 hover:opacity-100"
                     }`}
                   >
@@ -130,7 +130,7 @@ export default function Modal({ isOpen, onClose, project }) {
               href={project.link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-red-600 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-red-400"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-orange-600 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-orange-400"
             >
               <BiLink className="h-4 w-4" />
               {project.link.label}
