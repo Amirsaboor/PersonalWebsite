@@ -1,120 +1,82 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Container } from "@/components/Container";
-import { SocialLink } from "@/components/SocialLink";
-import { Photos } from "@/components/Photos";
-import { AiFillGithub } from "react-icons/ai";
-import {
-  FiArrowUpLeft,
-  FiBriefcase,
-  FiCode,
-  FiLayers,
-  FiMapPin,
-  FiMessageCircle,
-} from "react-icons/fi";
-import Job from "@/components/home/Job";
-import { SocialBox } from "@/components/SocialBox";
-import { Resume } from "@/components/Resume";
-import { Education } from "@/components/Education";
-import { Expertise } from "@/components/Expertise";
-import { FeaturedProjects } from "@/components/FeaturedProjects";
-import portraitImage from "@/assets/images/photos/6.jpg";
+import Link from 'next/link'
+import { Container } from '@/components/Container'
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiBriefcase, FiCode, FiLayers } from 'react-icons/fi'
+
+const articles = [
+  { date: 'May 12, 2025', title: 'Building interfaces that feel effortless', category: 'Design', read: '6 min read' },
+  { date: 'April 03, 2025', title: 'A practical guide to modern React patterns', category: 'Engineering', read: '8 min read' },
+  { date: 'February 18, 2025', title: 'What I learned shipping my first SaaS', category: 'Notes', read: '4 min read' },
+]
+
+const roles = [
+  { company: 'Studio North', role: 'Senior Frontend Engineer', period: '2023 — Present', detail: 'Leading frontend architecture and building thoughtful product experiences.' },
+  { company: 'Pixel & Form', role: 'Frontend Developer', period: '2021 — 2023', detail: 'Worked across design systems, web applications, and performance improvements.' },
+  { company: 'Freelance', role: 'Independent Developer', period: '2019 — 2021', detail: 'Partnered with small teams to turn early ideas into polished websites.' },
+]
+
+const stats = [
+  { label: 'Years building', value: '06', Icon: FiBriefcase },
+  { label: 'Projects shipped', value: '24', Icon: FiLayers },
+  { label: 'Technologies', value: '12', Icon: FiCode },
+]
 
 export const metadata = {
-  title: "امیر صبور | توسعه‌دهنده فرانت‌اند",
-  description:
-    "پورتفولیوی امیر صبور، توسعه‌دهنده فرانت‌اند در انفورماتیک ماهان؛ متخصص React، Next.js و ساخت رابط‌های کاربری مدرن و فروشگاه‌های اینترنتی.",
-};
-
-const highlights = [
-  { value: "۰۳", label: "تجربه کاری", Icon: FiBriefcase },
-  { value: "۰۳", label: "پروژه شاخص", Icon: FiLayers },
-  { value: "۰۴", label: "راه ارتباطی", Icon: FiMessageCircle },
-];
+  title: 'Alex Morgan — Designer & Developer',
+  description: 'The personal website of Alex Morgan, a designer and software developer.',
+}
 
 export default function Home() {
   return (
-    <>
-      <Container className="mt-8 sm:mt-12">
-        <section className="hero-panel relative isolate overflow-hidden rounded-[2rem] border border-zinc-200/80 bg-white/80 px-5 py-8 shadow-xl shadow-zinc-900/[0.04] dark:border-zinc-700/60 dark:bg-zinc-900/70 sm:px-9 sm:py-11 lg:px-12">
-          <div className="hero-glow hero-glow-one" />
-          <div className="hero-glow hero-glow-two" />
-          <div className="relative grid items-center gap-9 lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-12">
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/90 px-3.5 py-2 text-xs font-semibold text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-300">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                </span>
-                برنامه‌نویس فرانت‌اند در انفورماتیک ماهان
-              </div>
-              <p className="mt-7 text-sm font-semibold text-orange-600 dark:text-orange-400">سلام، من امیر صبور هستم</p>
-              <h1 className="mt-2 max-w-3xl text-3xl font-black leading-[1.55] tracking-tight text-zinc-950 dark:text-white sm:text-5xl sm:leading-[1.45]">
-                ایده‌ها را به <span className="hero-gradient mx-2">تجربه‌های وب</span> کاربردی تبدیل می‌کنم.
-              </h1>
-              <p className="mt-5 max-w-2xl text-sm leading-8 text-zinc-600 dark:text-zinc-300 sm:text-base sm:leading-9">
-                فارغ‌التحصیل مهندسی نرم‌افزار و توسعه‌دهنده فرانت‌اند هستم. با React و Next.js وب‌اپلیکیشن‌های سریع، واکنش‌گرا و قابل نگهداری می‌سازم؛ از پیاده‌سازی رابط کاربری و اتصال به API تا توسعه تجربه‌های کامل فروشگاهی.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/10 transition hover:-translate-y-0.5 hover:bg-orange-600 dark:bg-white dark:text-zinc-950 dark:hover:bg-orange-300">
-                  دیدن نمونه‌کارها <FiArrowUpLeft className="h-4 w-4" />
-                </Link>
-                <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/60 px-5 py-3 text-sm font-semibold text-zinc-700 transition hover:-translate-y-0.5 hover:border-orange-400 hover:text-orange-600 dark:border-zinc-700 dark:bg-zinc-950/30 dark:text-zinc-200 dark:hover:border-orange-500 dark:hover:text-orange-300">
-                  شروع گفتگو <FiMessageCircle className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs text-zinc-500 dark:text-zinc-400">
-                <span className="inline-flex items-center gap-2"><FiMapPin className="h-4 w-4 text-orange-500" /> مشهد، ایران</span>
-                <span className="hidden h-4 w-px bg-zinc-300 dark:bg-zinc-700 sm:block" />
-                <span className="inline-flex items-center gap-2"><FiCode className="h-4 w-4 text-orange-500" /> React · Next.js · TypeScript</span>
-                <SocialLink href="https://github.com/Amirsaboor" aria-label="GitHub" icon={AiFillGithub} />
-              </div>
-            </div>
-            <div className="relative mx-auto w-full max-w-[230px] lg:max-w-none">
-              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-orange-400/30 via-rose-400/20 to-amber-300/30 blur-2xl" />
-              <div className="relative rotate-2 overflow-hidden rounded-[1.7rem] border border-white/70 bg-zinc-100 p-2 shadow-2xl shadow-zinc-900/20 dark:border-zinc-600 dark:bg-zinc-800">
-                <Image src={portraitImage} alt="امیر صبور، توسعه‌دهنده فرانت‌اند" priority sizes="(min-width: 1024px) 230px, 65vw" className="aspect-[4/5] w-full rounded-[1.2rem] object-cover" />
-                <div className="absolute bottom-4 right-4 left-4 rounded-xl border border-white/20 bg-zinc-950/70 px-3 py-2 text-white backdrop-blur-md">
-                  <p className="text-sm font-bold">Amir Saboor</p>
-                  <p className="mt-0.5 text-[10px] text-white/70">Frontend Developer</p>
-                </div>
-              </div>
-              <div className="absolute -bottom-5 -left-5 rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-xl dark:border-zinc-700 dark:bg-zinc-800">
-                <p className="text-[10px] text-zinc-500 dark:text-zinc-400">تمرکز اصلی</p>
-                <p className="mt-1 text-sm font-bold text-zinc-900 dark:text-white">React & Next.js</p>
-              </div>
-            </div>
+    <Container className="mt-16 sm:mt-24">
+      <section className="grid gap-12 lg:grid-cols-[1fr_280px] lg:items-center">
+        <div>
+          <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 text-xl font-semibold text-zinc-800 shadow-lg shadow-orange-900/10">AM</div>
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
+            Designer, developer, and curious human building things for the web.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-400">
+            I’m Alex, a digital product designer and software engineer based in Brooklyn. I care about the details that make software feel clear, useful, and a little more human.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="mailto:alex@example.com" className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">Get in touch <FiArrowUpRight /></a>
+            <a href="https://github.com" className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-700 transition hover:border-zinc-500 dark:border-zinc-700 dark:text-zinc-300"><FiGithub /> GitHub</a>
           </div>
-          <div className="relative mt-12 grid grid-cols-3 divide-x divide-x-reverse divide-zinc-200 border-t border-zinc-200 pt-6 dark:divide-zinc-700 dark:border-zinc-700">
-            {highlights.map(({ value, label, Icon }) => (
-              <div key={label} className="flex flex-col items-center gap-1.5 px-2 text-center sm:flex-row sm:justify-center sm:gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-300"><Icon className="h-4 w-4" /></span>
-                <span><strong className="block text-lg font-black text-zinc-900 dark:text-white">{value}</strong><span className="text-[10px] text-zinc-500 dark:text-zinc-400 sm:text-xs">{label}</span></span>
-              </div>
-            ))}
+          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
+            <span className="inline-flex items-center gap-2"><FiMapPin /> Brooklyn, NY</span>
+            <a className="inline-flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white" href="https://linkedin.com"><FiLinkedin /> LinkedIn</a>
+            <a className="inline-flex items-center gap-2 hover:text-zinc-900 dark:hover:text-white" href="mailto:alex@example.com"><FiMail /> Email</a>
           </div>
-        </section>
-      </Container>
-
-      <Photos />
-
-      <Container className="mt-20 space-y-20 sm:mt-24 sm:space-y-24">
-        <Expertise />
-        <FeaturedProjects />
-        <section id="experience" className="scroll-mt-24">
-          <div className="mb-6 max-w-2xl">
-            <p className="text-xs font-bold tracking-[0.18em] text-orange-600 dark:text-orange-400">CAREER JOURNEY</p>
-            <h2 className="mt-2 text-2xl font-black text-zinc-950 dark:text-white sm:text-3xl">مسیر حرفه‌ای من</h2>
-            <p className="mt-2 text-sm leading-7 text-zinc-500 dark:text-zinc-400">تجربه‌هایی در توسعه محصول، مدیریت فروشگاه اینترنتی و پشتیبانی عملیات فروش.</p>
-          </div>
-          <Job />
-        </section>
-        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
-          <Education />
-          <Resume />
         </div>
-        <section id="contact" className="scroll-mt-24"><SocialBox /></section>
-      </Container>
-    </>
-  );
+        <aside className="hidden lg:block">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-amber-100 via-orange-200 to-rose-300 p-5 shadow-xl shadow-zinc-900/10">
+            <div className="absolute -right-10 top-8 h-48 w-48 rounded-full border-[24px] border-white/30" />
+            <div className="absolute -bottom-10 -left-8 h-56 w-56 rounded-full bg-rose-400/40 blur-2xl" />
+            <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/40 bg-white/50 p-4 backdrop-blur">
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">Currently exploring</p>
+              <p className="mt-2 text-lg font-semibold text-zinc-900">Creative code & thoughtful products</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section className="mt-20 grid grid-cols-3 gap-3 border-y border-zinc-200 py-7 dark:border-zinc-800 sm:gap-8">
+        {stats.map(({ label, value, Icon }) => <div key={label} className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><Icon /></span><div><p className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{value}</p><p className="text-xs text-zinc-500 dark:text-zinc-400 sm:text-sm">{label}</p></div></div>)}
+      </section>
+
+      <div className="mt-20 grid gap-16 lg:grid-cols-[1fr_300px]">
+        <section>
+          <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Writing</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A few things I’ve written</h2></div><Link href="/articles" className="text-sm text-zinc-500 hover:text-orange-600 dark:hover:text-orange-400">All articles ↗</Link></div>
+          <div className="mt-8 divide-y divide-zinc-200 dark:divide-zinc-800">
+            {articles.map((article) => <article key={article.title} className="py-6 first:pt-0"><div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500"><time>{article.date}</time><span>·</span><span>{article.category}</span><span>·</span><span>{article.read}</span></div><h3 className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">{article.title}</h3><p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">Thoughts, lessons, and practical notes from the work of making digital products.</p></article>)}
+          </div>
+        </section>
+        <aside>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Experience</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Where I’ve worked</h2>
+          <div className="mt-8 space-y-7">{roles.map((role) => <div key={role.company}><p className="text-xs text-zinc-500">{role.period}</p><h3 className="mt-1 font-medium text-zinc-900 dark:text-zinc-100">{role.role}</h3><p className="mt-1 text-sm text-orange-700 dark:text-orange-400">{role.company}</p><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{role.detail}</p></div>)}</div>
+          <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-orange-600 dark:text-zinc-300 dark:hover:text-orange-400">More about me <FiArrowUpRight /></Link>
+        </aside>
+      </div>
+    </Container>
+  )
 }
