@@ -49,7 +49,7 @@ export function ProjectCarousel() {
         {projects.slice(0, 6).map((project) => (
           <article key={project.id} data-project-card className="w-[min(82vw,360px)] flex-none snap-start sm:w-[380px]">
             <Link href="/projects" className="group block">
-              <div className="aspect-[5/4] overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-white/10">
+              <div className="group aspect-[5/4] overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-white/10">
                 <ProjectArtwork project={project} cover />
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
