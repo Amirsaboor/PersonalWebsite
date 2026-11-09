@@ -1,20 +1,32 @@
-import logoAnimaginary from "@/assets/images/logos/animaginary.svg";
-import youphoria from "@/assets/images/logos/YOUphoria.png";
-import orb from "@/assets/images/logos/orb.gif";
-import logoHeart from "@/assets/images/logos/gwc.png";
-
 export const projects = [
   {
-    name: "Talar | تالارگاه",
+    name: "Nafis Leather | چرم نفیس",
     category: "Next.js",
     featured: true,
     description:
-      "پلتفرم معرفی تالارها و باغ‌تالارها با رابط کاربری مدرن، صفحات معرفی اختصاصی و تجربه‌ای روان برای جست‌وجو و بررسی مجموعه‌ها.",
+      "فروشگاه اینترنتی یک برند چرم مشهدی با ۶ شعبه؛ شامل کاتالوگ محصولات، تخفیف‌ها، سبد خرید و پرداخت، کارت هدیه، باشگاه مشتریان، نقشه شعبه‌ها و پنل مدیریت.",
+    tags: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "React" },
+      { id: 3, name: "JavaScript" },
+      { id: 4, name: "REST API" },
+      { id: 5, name: "E-commerce" },
+    ],
+    link: { href: "https://nafisleatherco.net", label: "مشاهده وب‌سایت" },
+    images: ["/images/project/1.png", "/images/project/2.png", "/images/project/3.png"],
+  },
+  {
+    name: "Talargah | تالارگاه",
+    category: "Next.js",
+    featured: true,
+    description:
+      "پلتفرم جست‌وجوی تالارهای پذیرایی با فیلترهای شهر، ظرفیت، بودجه و امتیاز؛ همراه با جست‌وجوی زنده، صفحه‌بندی، نمایشگر ۳۶۰ درجه، متادیتای پویا، sitemap و JSON-LD.",
     tags: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "React" },
       { id: 3, name: "TypeScript" },
       { id: 4, name: "Tailwind CSS" },
+      { id: 5, name: "SEO" },
     ],
     link: { href: "https://github.com/Amirsaboor/Talar", label: "مشاهده کد در GitHub" },
     images: [
@@ -28,6 +40,20 @@ export const projects = [
     ],
   },
   {
+    name: "OKR Management | مدیریت OKR",
+    category: "Next.js",
+    description:
+      "داشبورد مدیریت اهداف و نتایج کلیدی با واحدهای سازمانی، نمای درختی اهداف، جلسات، درخواست‌ها و گزارش‌ها؛ همراه با نمودار، مدیریت نقش‌ها و تقویم شمسی.",
+    tags: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "React" },
+      { id: 3, name: "Dashboard" },
+      { id: 4, name: "Charts" },
+      { id: 5, name: "Jalali Date" },
+    ],
+    images: ["/images/project/2.png", "/images/project/3.png", "/images/project/1.png"],
+  },
+  {
     name: "Fast Food",
     category: "Next.js",
     description:
@@ -38,7 +64,6 @@ export const projects = [
       { id: 3, name: "Bootstrap" },
     ],
     link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
-    logo: logoAnimaginary,
     images: [
       "/images/project/FastFood/1.png",
       "/images/project/FastFood/2.png",
@@ -58,7 +83,6 @@ export const projects = [
       { id: 3, name: "WooCommerce" },
     ],
     link: { href: "https://hadisashop.ir", label: "مشاهده وب‌سایت" },
-    logo: youphoria,
     images: [
       "/images/project/hadisa/1.png",
       "/images/project/hadisa/2.png",
@@ -79,7 +103,6 @@ export const projects = [
       { id: 3, name: "Bootstrap" },
     ],
     link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
-    logo: logoHeart,
     images: [
       "/images/project/movie/1.png",
       "/images/project/movie/2.png",
@@ -99,7 +122,6 @@ export const projects = [
       { id: 3, name: "CSS" },
     ],
     link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
-    logo: logoHeart,
     images: ["/images/project/Menu/1.png", "/images/project/Menu/2.png"],
   },
   {
@@ -113,11 +135,6 @@ export const projects = [
       { id: 3, name: "WooCommerce" },
     ],
     link: { href: "https://papercafee.ir/", label: "مشاهده وب‌سایت" },
-    logo: orb,
-    images: [
-      "/images/project/1.png",
-      "/images/project/2.png",
-      "/images/project/3.png",
-    ],
+    images: ["/images/project/1.png", "/images/project/2.png", "/images/project/3.png"],
   },
 ];
