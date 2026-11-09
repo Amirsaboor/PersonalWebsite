@@ -1,15 +1,16 @@
-# Amir Saboor — Personal Website
+# Alex Morgan — Portfolio Concept
 
-A responsive personal portfolio inspired by the editorial layout and navigation patterns of Tailwind UI Spotlight, customized with Amir's own projects and frontend work.
+A responsive, fictional frontend engineer portfolio inspired by the navigation and editorial composition of Tailwind UI Spotlight. All names, work history, projects, contact details, events, and profile information are sample content—not real people or client work.
 
 ## Pages
 
-- `/` — Introduction and a featured-project carousel
-- `/about` — Background and frontend approach
-- `/projects` — Selected projects and technologies
-- `/articles` — Writing archive (currently empty)
-- `/speaking` — Speaking and community events
-- `/uses` — Hardware and development stack
+- `/` — Intro, selected projects, skills, experience, and contact preview
+- `/about` — Fictional background, capabilities, and career timeline
+- `/projects` — Nine fictional product and website concepts
+- `/articles` — Editorial previews on frontend engineering and design
+- `/speaking` — Sample talks and community sessions
+- `/uses` — Sample desk setup and development workflow
+- `/contact` — Fictional contact channels
 
 ## Stack
 
@@ -36,10 +37,6 @@ npm run build
 
 The project is configured for GitHub Pages under the `/PersonalWebsite` base path and exports static files to `out/`.
 
-## Projects
+## Design notes
 
-The portfolio includes work on Nafis Leather, Talar, Mahan IT, CSeven, Markizco, Hadisa Shop, and smaller practice projects. Client and private projects may not have public source-code links.
-
-## Design reference
-
-The layout is independently implemented and customized using Spotlight as a visual reference. It is not an official Tailwind Plus distribution. Any separately licensed Tailwind Plus source code or assets remain subject to the applicable Tailwind Plus license.
+The interface follows the broad layout language of Spotlight—compact circular mark, centered pill navigation, balanced theme control, generous typography, and editorial spacing—while using its own sample content and CSS-built project artwork. No personal photographs or real portfolio data are used.
