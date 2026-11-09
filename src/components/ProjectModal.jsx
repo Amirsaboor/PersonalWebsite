@@ -1,23 +1,44 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { FiArrowUpRight, FiX } from 'react-icons/fi'
 import { useLocale } from '@/i18n/LocaleProvider'
 
 export function ProjectModal({ project, onClose }) {
   const { t, isFa } = useLocale()
+  const dialogRef = useRef(null)
+  const closeButtonRef = useRef(null)
 
   useEffect(() => {
     if (!project) return
     const previousOverflow = document.body.style.overflow
+    const previousFocus = document.activeElement
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (event.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll('button:not([disabled]), a[href]')
+        if (!focusable?.length) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first.focus()
+        }
+      }
     }
     document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
     document.addEventListener('keydown', onKeyDown)
     return () => {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', onKeyDown)
+      previousFocus?.focus?.()
     }
   }, [project, onClose])
 
@@ -31,6 +52,7 @@ export function ProjectModal({ project, onClose }) {
       }}
     >
       <section
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
@@ -38,6 +60,7 @@ export function ProjectModal({ project, onClose }) {
         className="relative max-h-[92dvh] w-full max-w-3xl overflow-y-auto rounded-t-[1.75rem] bg-white text-zinc-900 shadow-2xl shadow-black/30 dark:bg-[#18181b] dark:text-zinc-100 sm:rounded-[1.75rem]"
       >
         <button
+          ref={closeButtonRef}
           type="button"
           onClick={onClose}
           aria-label={t('close')}
