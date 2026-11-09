@@ -1,35 +1,43 @@
 import logoAnimaginary from "@/assets/images/logos/animaginary.svg";
 import youphoria from "@/assets/images/logos/YOUphoria.png";
 import orb from "@/assets/images/logos/orb.gif";
-import Hadisa1 from "@/assets/images/project/hadisa/1.png";
-
 import logoHeart from "@/assets/images/logos/gwc.png";
-
-// آیکون‌ها از react-icons
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaBootstrap,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from "react-icons/fa";
-import { SiElementor, SiWoocommerce } from "react-icons/si";
-import { RiNextjsLine } from "react-icons/ri";
 
 export const projects = [
   {
-    name: "Fast Food",
+    name: "Talar | تالارگاه",
+    category: "Next.js",
+    featured: true,
     description:
-      "وبسایت نمایش غذاهای یک فست فود همراه با ورود و احراز هویت که با Next.js نوشته شده است.",
+      "پلتفرم معرفی تالارها و باغ‌تالارها با رابط کاربری مدرن، صفحات معرفی اختصاصی و تجربه‌ای روان برای جست‌وجو و بررسی مجموعه‌ها.",
     tags: [
-      { id: 1, name: "Html", icon: "FaHtml5" },
-      { id: 2, name: "Css", icon: "FaCss3Alt" },
-      { id: 3, name: "Bootstrap", icon: "FaBootstrap" },
-      { id: 4, name: "Js", icon: "FaJs" },
-      { id: 5, name: "Next.js", icon: "RiNextjsLine" },
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "React" },
+      { id: 3, name: "TypeScript" },
+      { id: 4, name: "Tailwind CSS" },
     ],
-    link: { href: "https://github.com/Amirsaboor", label: "Github" },
+    link: { href: "https://github.com/Amirsaboor/Talar", label: "مشاهده کد در GitHub" },
+    images: [
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/banner.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/1.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/2.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/3.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/4.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/5.webp",
+      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/6.webp",
+    ],
+  },
+  {
+    name: "Fast Food",
+    category: "Next.js",
+    description:
+      "وب‌سایت معرفی منو و محصولات یک فست‌فود با صفحات مختلف، رابط واکنش‌گرا و جریان ورود و احراز هویت.",
+    tags: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "JavaScript" },
+      { id: 3, name: "Bootstrap" },
+    ],
+    link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
     logo: logoAnimaginary,
     images: [
       "/images/project/FastFood/1.png",
@@ -40,20 +48,18 @@ export const projects = [
     ],
   },
   {
-    name: "Hadisa shop",
-    description: "وبسایت ساخته شده با وردپرس...",
+    name: "Hadisa Shop",
+    category: "WordPress",
+    description:
+      "فروشگاه اینترنتی پوشاک زنانه با مدیریت محصولات و صفحات فروشگاهی، درگاه پرداخت و بهینه‌سازی پایه موتورهای جست‌وجو.",
     tags: [
-      { id: 1, name: "Wordpress", icon: "FaWordpress" },
-      { id: 2, name: "Elementor", icon: "SiElementor" },
-      { id: 3, name: "Woocommerce", icon: "SiWoocommerce" },
+      { id: 1, name: "WordPress" },
+      { id: 2, name: "Elementor" },
+      { id: 3, name: "WooCommerce" },
     ],
-    link: {
-      href: "https://hadisashop.ir",
-      label: "View Website",
-    },
-    logo: youphoria, // لوگو
+    link: { href: "https://hadisashop.ir", label: "مشاهده وب‌سایت" },
+    logo: youphoria,
     images: [
-      // گالری عکس
       "/images/project/hadisa/1.png",
       "/images/project/hadisa/2.png",
       "/images/project/hadisa/3.png",
@@ -64,15 +70,15 @@ export const projects = [
   },
   {
     name: "Movie",
-    description: "وبسایت نمایش فیلم که با React نوشته شده است.",
+    category: "React",
+    description:
+      "پروژه تمرینی نمایش و دسته‌بندی فیلم‌ها با صفحات جزئیات، دسته‌بندی ژانر و رابط کاربری تعاملی.",
     tags: [
-      { id: 1, name: "Html", icon: "FaHtml5" },
-      { id: 2, name: "Css", icon: "FaCss3Alt" },
-      { id: 3, name: "Bootstrap", icon: "FaBootstrap" },
-      { id: 4, name: "Js", icon: "FaJs" },
-      { id: 5, name: "React.js", icon: "FaReact" },
+      { id: 1, name: "React" },
+      { id: 2, name: "JavaScript" },
+      { id: 3, name: "Bootstrap" },
     ],
-    link: { href: "https://github.com/Amirsaboor", label: "Github" },
+    link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
     logo: logoHeart,
     images: [
       "/images/project/movie/1.png",
@@ -84,65 +90,34 @@ export const projects = [
   },
   {
     name: "Menu",
-    description: "وبسایت نمایش منو که با React نوشته شده است.",
+    category: "React",
+    description:
+      "منوی دیجیتال ساده و واکنش‌گرا برای نمایش دسته‌بندی‌ها و آیتم‌های منو.",
     tags: [
-      { id: 1, name: "Html", icon: "FaHtml5" },
-      { id: 2, name: "Css", icon: "FaCss3Alt" },
-      { id: 3, name: "Bootstrap", icon: "FaBootstrap" },
-      { id: 4, name: "Js", icon: "FaJs" },
-      { id: 5, name: "React.js", icon: "FaReact" },
+      { id: 1, name: "React" },
+      { id: 2, name: "JavaScript" },
+      { id: 3, name: "CSS" },
     ],
-    link: { href: "https://github.com/Amirsaboor", label: "Github" },
+    link: { href: "https://github.com/Amirsaboor", label: "پروفایل GitHub" },
     logo: logoHeart,
-    images: [
-      "/images/project/Menu/1.png",
-      "/images/project/Menu/2.png",
-    ],
+    images: ["/images/project/Menu/1.png", "/images/project/Menu/2.png"],
   },
-
   {
     name: "Paper Cafe",
-    description: "وبسایت ساخته شده با وردپرس...",
+    category: "WordPress",
+    description:
+      "وب‌سایت کافه با تمرکز بر معرفی فضا و ارائه منوی آنلاین در قالبی ساده و قابل استفاده در موبایل.",
     tags: [
-      { id: 1, name: "Wordpress", icon: "FaWordpress" },
-      { id: 2, name: "Elementor", icon: "SiElementor" },
-      { id: 3, name: "Woocommerce", icon: "SiWoocommerce" },
+      { id: 1, name: "WordPress" },
+      { id: 2, name: "Elementor" },
+      { id: 3, name: "WooCommerce" },
     ],
-    link: {
-      href: "https://papercafee.ir/",
-      label: "View Website",
-    },
+    link: { href: "https://papercafee.ir/", label: "مشاهده وب‌سایت" },
     logo: orb,
     images: [
       "/images/project/1.png",
       "/images/project/2.png",
       "/images/project/3.png",
     ],
-  },,
-
-  {
-    name: "Talar | تالارگاه",
-    description:
-      "پلتفرم معرفی و نمایش تالارها و باغ‌تالارها با رابط کاربری مدرن؛ توسعه‌یافته با Next.js، React و TypeScript.",
-    tags: [
-      { id: 1, name: "Next.js", icon: "FaReact" },
-      { id: 2, name: "React", icon: "FaReact" },
-      { id: 3, name: "TypeScript", icon: "FaJs" },
-      { id: 4, name: "Tailwind CSS", icon: "FaCss3Alt" },
-    ],
-    link: {
-      href: "https://github.com/Amirsaboor/Talar",
-      label: "GitHub",
-    },
-    images: [
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/banner.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/1.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/2.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/3.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/4.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/5.webp",
-      "https://raw.githubusercontent.com/Amirsaboor/Talar/master/public/images/6.webp",
-    ],
   },
-
 ];
