@@ -1,91 +1,132 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { ProjectCarousel } from '@/components/ProjectCarousel'
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiCode, FiLayers, FiZap, FiMonitor } from 'react-icons/fi'
+import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Alex Morgan — Frontend Engineer',
-  description: 'A fictional portfolio concept for a frontend engineer building thoughtful digital products.',
+  title: 'Alex Morgan — Software designer, founder, and amateur astronaut',
+  description: 'A fictional creative technologist building thoughtful digital products and tools for the web.',
 }
 
-const skills = [
-  { name: 'JavaScript', level: 'Advanced' },
-  { name: 'TypeScript', level: 'Advanced' },
-  { name: 'React', level: 'Advanced' },
-  { name: 'Next.js', level: 'Advanced' },
-  { name: 'CSS & Tailwind', level: 'Advanced' },
-  { name: 'Accessibility', level: 'Working knowledge' },
-  { name: 'Node.js', level: 'Working knowledge' },
-  { name: 'Testing & tooling', level: 'Working knowledge' },
+const gallery = [
+  { src: '/images/photos/image-1.jpg', alt: 'Aerial view from a small aircraft', className: 'rotate-[-1.5deg]' },
+  { src: '/images/photos/image-2.jpg', alt: 'A large creative technology conference', className: 'rotate-[1deg]' },
+  { src: '/images/photos/image-3.jpg', alt: 'A minimal creative workspace', className: 'rotate-[-1deg]' },
+  { src: '/images/photos/image-4.jpg', alt: 'A hiker looking across a mountain landscape', className: 'rotate-[1.5deg]' },
+  { src: '/images/photos/image-5.jpg', alt: 'An astronaut exploring a red desert', className: 'rotate-[-1deg]' },
+  { src: '/images/photos/image-6.png', alt: 'An abstract visual experiment', className: 'rotate-[1deg]' },
 ]
 
-const experience = [
-  { company: 'Northstar Digital', role: 'Senior Frontend Engineer', period: '2023 — Present', detail: 'Leading interface development for customer-facing products, shaping component architecture, and partnering with design and product teams.' },
-  { company: 'Fieldwork Studio', role: 'Frontend Developer', period: '2021 — 2023', detail: 'Built responsive marketing sites and e-commerce experiences, improved page performance, and maintained a shared UI library.' },
-  { company: 'Independent', role: 'Web Developer', period: '2019 — 2021', detail: 'Delivered small business websites and interactive prototypes while building a strong foundation in modern frontend development.' },
+const articles = [
+  { date: 'September 5, 2025', title: 'Crafting a design system for products that scale', excerpt: 'A design system is more than a library of components. It is a shared language that helps a team make consistent decisions while leaving room for the product to evolve.', read: '8 min read', category: 'Design systems' },
+  { date: 'August 18, 2025', title: 'Introducing Motion Lab: a playground for the web', excerpt: 'A small collection of experiments exploring expressive transitions, subtle feedback, and the role motion can play in making interfaces easier to understand.', read: '6 min read', category: 'Experiments' },
+  { date: 'June 27, 2025', title: 'What I learned rebuilding a product from the ground up', excerpt: 'Revisiting an established application is an exercise in restraint: understand the existing mental model, simplify the rough edges, and improve the foundations without losing what works.', read: '9 min read', category: 'Engineering' },
 ]
 
-const strengths = [
-  { title: 'Thoughtful interfaces', detail: 'Clear hierarchy, accessible patterns, and interactions that feel natural.', Icon: FiLayers },
-  { title: 'Frontend craft', detail: 'Reusable components and maintainable React and TypeScript applications.', Icon: FiCode },
-  { title: 'Performance-minded', detail: 'Fast, responsive experiences that work well across devices.', Icon: FiZap },
-  { title: 'Design collaboration', detail: 'Careful implementation that respects the intent behind each design.', Icon: FiMonitor },
+const work = [
+  { company: 'Northstar Labs', role: 'Founder & Creative Director', period: '2022 — Present', mark: 'N', tone: 'bg-violet-500' },
+  { company: 'Airbnb', role: 'Product Designer', period: '2019 — 2022', mark: 'A', tone: 'bg-rose-500' },
+  { company: 'Meta', role: 'Frontend Engineer', period: '2016 — 2019', mark: 'M', tone: 'bg-blue-500' },
+  { company: 'Studio Current', role: 'Interaction Designer', period: '2013 — 2016', mark: 'S', tone: 'bg-emerald-600' },
 ]
+
+const skills = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Design systems', 'Motion design', 'Creative coding']
 
 export default function Home() {
   return (
-    <Container className="mt-16 sm:mt-20">
-      <section className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-600 dark:text-violet-300">Frontend engineer · Design-minded developer</p>
-        <h1 className="mt-5 text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl sm:leading-[1.08]">
-          Building thoughtful digital experiences, one detail at a time.
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-400 sm:text-lg">
-          I’m Alex — a fictional frontend engineer focused on turning complex ideas into clear, useful, and beautifully considered web products.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-violet-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-violet-200">Explore selected work <FiArrowUpRight /></Link>
-          <Link href="/about" className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-violet-700 dark:text-zinc-300 dark:hover:text-violet-300">More about me <FiArrowUpRight /></Link>
+    <Container className="pt-10 sm:pt-11">
+      <section className="max-w-[34rem]">
+        <div className="mb-5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-violet-300 via-zinc-500 to-zinc-900 text-xs font-bold tracking-tight text-white ring-2 ring-white/70 dark:ring-white/10">
+          <Image src="/images/avatar.jpg" alt="Alex Morgan profile portrait" width={48} height={48} className="h-full w-full object-cover" priority />
         </div>
-        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-          <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Available for select projects</span>
-          <span className="hidden h-1 w-1 rounded-full bg-zinc-300 sm:block" />
-          <span>Based in Copenhagen, Denmark</span>
+        <h1 className="max-w-[34rem] text-[2rem] font-bold leading-[1.12] tracking-[-0.045em] text-zinc-900 dark:text-zinc-100 sm:text-[2.35rem]">
+          Software designer, founder, and amateur astronaut.
+        </h1>
+        <p className="mt-4 max-w-[32rem] text-[13px] leading-[1.85] text-zinc-600 dark:text-zinc-400">
+          I’m Alex, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.
+        </p>
+        <div className="mt-5 flex items-center gap-5 text-zinc-500 dark:text-zinc-400">
+          <a href="https://x.com/" aria-label="X profile" className="transition hover:text-zinc-950 dark:hover:text-white"><span className="text-sm font-semibold">𝕏</span></a>
+          <a href="https://instagram.com/" aria-label="Instagram profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiInstagram className="h-[15px] w-[15px]" /></a>
+          <a href="https://github.com/" aria-label="GitHub profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiGithub className="h-[16px] w-[16px]" /></a>
+          <a href="https://linkedin.com/" aria-label="LinkedIn profile" className="transition hover:text-zinc-950 dark:hover:text-white"><FiLinkedin className="h-[15px] w-[15px]" /></a>
+          <a href="mailto:hello@alexmorgan.dev" aria-label="Email Alex" className="transition hover:text-zinc-950 dark:hover:text-white"><FiMail className="h-[15px] w-[15px]" /></a>
         </div>
       </section>
 
-      <section className="mt-20 sm:mt-24" aria-labelledby="selected-work-heading">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Selected work</p><h2 id="selected-work-heading" className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A selection of recent projects.</h2></div>
-          <Link href="/projects" className="hidden items-center gap-2 text-sm text-zinc-500 transition hover:text-violet-700 dark:hover:text-violet-300 sm:inline-flex">All projects <FiArrowUpRight /></Link>
+      <section aria-label="A few things that inspire me" className="photo-ribbon mt-12 sm:mt-14">
+        <div className="photo-ribbon-track">
+          {gallery.map((photo) => (
+            <div key={photo.src} className={'photo-ribbon-card ' + photo.className}>
+              <Image src={photo.src} alt={photo.alt} width={420} height={320} sizes="(max-width: 640px) 72vw, 220px" className="h-full w-full object-cover" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 sm:mt-20" aria-labelledby="projects-heading">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">Selected work</p>
+            <h2 id="projects-heading" className="mt-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A few things I’ve made.</h2>
+          </div>
+          <Link href="/projects" className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-zinc-500 transition hover:text-teal-600 dark:hover:text-teal-300">All projects <FiArrowUpRight /></Link>
         </div>
         <ProjectCarousel />
       </section>
 
-      <section className="mt-24 grid gap-10 border-t border-zinc-200 pt-12 dark:border-zinc-800 sm:grid-cols-[0.9fr_1.1fr]">
-        <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">What I bring</p><h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A balance of engineering and experience.</h2><p className="mt-4 max-w-lg text-sm leading-7 text-zinc-600 dark:text-zinc-400">Good frontend work is more than making a screen match a design. It is the thoughtful combination of accessibility, performance, interaction, and a codebase a team can confidently build on.</p></div>
-        <div className="grid gap-x-7 gap-y-6 sm:grid-cols-2">
-          {strengths.map(({ title, detail, Icon }) => <div key={title}><Icon className="h-5 w-5 text-violet-600 dark:text-violet-300" /><h3 className="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">{title}</h3><p className="mt-1.5 text-sm leading-6 text-zinc-500 dark:text-zinc-400">{detail}</p></div>)}
+      <section className="mt-16 grid gap-8 border-t border-zinc-200 pt-10 dark:border-white/[0.06] sm:mt-20 sm:grid-cols-[1.15fr_0.85fr] sm:gap-8">
+        <div>
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Latest articles</h2>
+            <Link href="/articles" className="text-[11px] font-medium text-zinc-500 transition hover:text-teal-600 dark:hover:text-teal-300">View all</Link>
+          </div>
+          <div className="space-y-8">
+            {articles.map((article) => (
+              <article key={article.title} className="relative pl-3">
+                <span className="absolute bottom-1 left-0 top-1 w-px bg-zinc-300 dark:bg-zinc-700" />
+                <p className="text-[10px] text-zinc-500">{article.date} <span className="px-1">·</span> {article.category}</p>
+                <h3 className="mt-2 text-[13px] font-semibold leading-6 text-zinc-900 dark:text-zinc-100">{article.title}</h3>
+                <p className="mt-2 text-[11px] leading-[1.8] text-zinc-500 dark:text-zinc-400">{article.excerpt}</p>
+                <Link href="/articles" className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold text-teal-600 transition hover:text-teal-500 dark:text-teal-400">Read article <FiArrowUpRight /></Link>
+              </article>
+            ))}
+          </div>
         </div>
+
+        <aside className="space-y-5">
+          <section className="rounded-xl border border-zinc-200 p-4 dark:border-white/[0.07]">
+            <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300"><FiMail className="h-4 w-4" /><h2 className="text-[11px] font-semibold">Stay up to date</h2></div>
+            <p className="mt-2 text-[11px] leading-[1.8] text-zinc-500">Occasional notes on design, engineering, and things worth exploring. No noise, just the good stuff.</p>
+            <Link href="/articles" className="mt-4 flex items-center justify-between rounded-md bg-zinc-100 px-3 py-2.5 text-[10px] font-semibold text-zinc-700 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700">Explore the journal <FiArrowUpRight /></Link>
+          </section>
+
+          <section className="rounded-xl border border-zinc-200 p-4 dark:border-white/[0.07]">
+            <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300"><FiBriefcase className="h-4 w-4" /><h2 className="text-[11px] font-semibold">Work</h2></div>
+            <div className="mt-4 space-y-4">
+              {work.map((item) => <div key={item.company} className="flex items-center gap-3">
+                <span className={'flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-white ' + item.tone}>{item.mark}</span>
+                <div className="min-w-0 flex-1"><p className="truncate text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">{item.company}</p><p className="mt-0.5 truncate text-[10px] text-zinc-500">{item.role}</p></div>
+                <span className="shrink-0 text-[9px] text-zinc-400">{item.period}</span>
+              </div>)}
+            </div>
+            <Link href="/about#experience" className="mt-4 flex items-center justify-center gap-2 rounded-md bg-zinc-100 px-3 py-2.5 text-[10px] font-semibold text-zinc-700 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700">More about my experience <FiArrowUpRight /></Link>
+          </section>
+
+          <section className="rounded-xl border border-zinc-200 p-4 dark:border-white/[0.07]">
+            <h2 className="text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">A few tools in my kit</h2>
+            <div className="mt-3 flex flex-wrap gap-1.5">{skills.map((skill) => <span key={skill} className="rounded-full bg-zinc-100 px-2.5 py-1 text-[9px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{skill}</span>)}</div>
+            <Link href="/uses" className="mt-3 inline-flex items-center gap-1 text-[10px] font-semibold text-teal-600 dark:text-teal-400">Full setup <FiExternalLink /></Link>
+          </section>
+        </aside>
       </section>
 
-      <section className="mt-24 grid gap-12 border-t border-zinc-200 pt-12 dark:border-zinc-800 lg:grid-cols-[0.8fr_1.2fr]">
-        <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Experience</p><h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Where I’ve made an impact.</h2><p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-400">A snapshot of a fictional career path, from independent projects to product teams.</p><Link href="/about#experience" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-300">Full background <FiArrowUpRight /></Link></div>
-        <div className="space-y-8">{experience.map((item) => <article key={item.company} className="relative border-l border-zinc-200 pl-6 dark:border-zinc-800"><span className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-violet-500 ring-4 ring-white dark:ring-zinc-950" /><div className="flex flex-wrap items-baseline justify-between gap-2"><h3 className="font-semibold text-zinc-900 dark:text-zinc-100">{item.role}</h3><span className="text-xs text-zinc-500">{item.period}</span></div><p className="mt-1 text-sm font-medium text-violet-700 dark:text-violet-300">{item.company}</p><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{item.detail}</p></article>)}</div>
-      </section>
-
-      <section className="mt-24 border-t border-zinc-200 pt-12 dark:border-zinc-800">
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Toolbox</p><h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Skills I use to bring ideas to life.</h2><p className="mt-3 max-w-xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">A practical mix of frontend technologies, interface craft, and product-minded problem solving.</p></div>
-          <Link href="/uses" className="inline-flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-300">My setup <FiArrowUpRight /></Link>
+      <section className="mt-16 border-t border-zinc-200 pt-9 dark:border-white/[0.06]">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">Beyond the screen</p><h2 className="mt-2 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Talks, experiments & community.</h2><p className="mt-2 max-w-lg text-[11px] leading-6 text-zinc-500">A few notes from events, workshops, and creative experiments along the way.</p></div>
+          <Link href="/speaking" className="inline-flex items-center gap-2 self-start rounded-full border border-zinc-200 px-4 py-2 text-[11px] font-semibold text-zinc-700 transition hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-500">Explore speaking <FiArrowUpRight /></Link>
         </div>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{skills.map((skill) => <div key={skill.name} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 px-4 py-3 dark:border-zinc-800"><span className="text-sm font-medium text-zinc-800 dark:text-zinc-200">{skill.name}</span><span className="text-[10px] text-zinc-400">{skill.level}</span></div>)}</div>
-      </section>
-
-      <section id="contact" className="mt-24 rounded-3xl bg-zinc-950 px-7 py-10 text-white dark:bg-zinc-900 sm:px-10 sm:py-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">Have a good project in mind?</p>
-        <div className="mt-4 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"><div><h2 className="max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">Let’s make something meaningful.</h2><p className="mt-3 max-w-lg text-sm leading-7 text-zinc-400">For this portfolio concept, reach out through the sample contact details or explore the fictional social profiles.</p></div><Link href="/contact" className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-violet-100 sm:self-auto">Get in touch <FiArrowUpRight /></Link></div>
-        <div className="mt-8 flex flex-wrap gap-5 border-t border-white/10 pt-6 text-sm text-zinc-400"><span className="inline-flex items-center gap-2"><FiMail /> hello@alexmorgan.dev</span><span className="inline-flex items-center gap-2"><FiGithub /> github.com/alexmorgan</span><span className="inline-flex items-center gap-2"><FiLinkedin /> linkedin.com/in/alexmorgan</span></div>
       </section>
     </Container>
   )
