@@ -6,10 +6,10 @@ import './global.css'
 
 export const metadata = {
   title: {
-    default: 'Alex Morgan — Designer & Developer',
-    template: '%s — Alex Morgan',
+    default: 'Amir Saboor — Frontend Developer',
+    template: '%s — Amir Saboor',
   },
-  description: 'The personal website of Alex Morgan, a designer and software developer.',
+  description: 'The portfolio of Amir Saboor, a frontend developer working with React and Next.js.',
   metadataBase: new URL('https://amirsaboor.github.io/PersonalWebsite/'),
 }
 
