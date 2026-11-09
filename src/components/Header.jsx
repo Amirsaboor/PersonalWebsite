@@ -82,7 +82,11 @@ function MobileNavigation(props) {
 // ==== Desktop Nav ====
 function NavItem({ href, children }) {
   const pathname = usePathname()
-  let isActive = pathname === href
+  const currentPath = pathname?.replace(/\/+$/, '') || '/'
+  const targetPath = href?.replace(/\/+$/, '') || '/'
+  const isActive =
+    currentPath === targetPath ||
+    (targetPath !== '/' && currentPath.startsWith(`${targetPath}/`))
 
   return (
     <li>
@@ -91,13 +95,13 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-red-500 dark:text-red-400' 
-            : 'hover:text-red-500 dark:hover:text-red-400',
+            ? 'rounded-full bg-orange-500/10 font-semibold text-orange-600 dark:bg-orange-400/10 dark:text-orange-400'
+            : 'rounded-full hover:bg-orange-500/[0.07] hover:text-orange-600 dark:hover:text-orange-400',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-red-500/0 via-red-500/40 to-red-500/0 dark:from-red-400/0 dark:via-red-400/40 dark:to-red-400/0" />
+          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-orange-500/0 via-orange-500/50 to-orange-500/0 dark:from-orange-400/0 dark:via-orange-400/50 dark:to-orange-400/0" />
         )}
       </Link>
     </li>
