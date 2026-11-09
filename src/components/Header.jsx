@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -10,7 +11,7 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/articles', label: 'Articles' },
   { href: '/projects', label: 'Projects' },
-  { href: '/speaking', label: 'Speaking' },
+  { href: '/speaking', label: 'Education' },
   { href: '/uses', label: 'Uses' },
 ]
 
@@ -86,14 +87,17 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 h-[4.5rem] border-b border-zinc-200/70 bg-white/85 backdrop-blur-xl dark:border-white/[0.045] dark:bg-[#18181b]/90">
-        <div className="relative mx-auto grid h-full max-w-5xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
+        <div className="relative mx-auto grid h-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
           <div className="flex items-center">
+            <Link href="/" aria-label="Alex Morgan — home" className="group inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-1 ring-black/10 transition hover:scale-105 dark:ring-white/10">
+              <Image src="/images/avatar.jpg" alt="Alex Morgan" width={40} height={40} className="h-full w-full object-cover" priority />
+            </Link>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-haspopup="dialog"
               aria-expanded={menuOpen}
-              className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3.5 py-2 text-xs font-semibold text-zinc-700 ring-1 ring-black/5 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-white/5 md:hidden"
+              className="pointer-events-auto ml-3 inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3.5 py-2 text-xs font-semibold text-zinc-700 ring-1 ring-black/5 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-white/5 md:hidden"
             >
               Menu <span aria-hidden="true">⌄</span>
             </button>
@@ -117,6 +121,7 @@ export function Header() {
             </div>
             <nav className="mt-4">
               <ul className="divide-y divide-zinc-100 text-sm dark:divide-zinc-800">
+                <li><Link href="/" onClick={() => setMenuOpen(false)} className="block py-3 font-medium text-zinc-700 hover:text-violet-600 dark:text-zinc-200 dark:hover:text-violet-300">Home</Link></li>
                 {links.map(({ href, label }) => <li key={href}><Link href={href} onClick={() => setMenuOpen(false)} className="block py-3 font-medium text-zinc-700 hover:text-violet-600 dark:text-zinc-200 dark:hover:text-violet-300">{label}</Link></li>)}
               </ul>
             </nav>
