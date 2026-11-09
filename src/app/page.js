@@ -1,89 +1,75 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { ProjectsCarousel } from '@/components/ProjectsCarousel'
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiMapPin, FiCalendar, FiBriefcase } from 'react-icons/fi'
-
-const articles = [
-  { date: 'May 12, 2025', title: 'Building interfaces that feel effortless', category: 'Design', read: '6 min read' },
-  { date: 'April 03, 2025', title: 'A practical guide to modern React patterns', category: 'Engineering', read: '8 min read' },
-  { date: 'February 18, 2025', title: 'What I learned shipping my first SaaS', category: 'Notes', read: '4 min read' },
-]
-
-const roles = [
-  { company: 'Studio North', role: 'Senior Frontend Engineer', period: '2023 — Present', detail: 'Leading frontend architecture and building thoughtful product experiences.' },
-  { company: 'Pixel & Form', role: 'Frontend Developer', period: '2021 — 2023', detail: 'Worked across design systems, web applications, and performance improvements.' },
-  { company: 'Freelance', role: 'Independent Developer', period: '2019 — 2021', detail: 'Partnered with small teams to turn early ideas into polished websites.' },
-]
+import { ProjectCarousel } from '@/components/ProjectCarousel'
+import { FiArrowUpRight, FiGithub, FiCode, FiLayers, FiMonitor } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Alex Morgan — Designer & Developer',
-  description: 'The personal website of Alex Morgan, a designer and software developer.',
+  title: 'Amir Saboor — Frontend Developer',
+  description: 'Frontend developer building responsive web experiences with React and Next.js.',
 }
+
+const focusAreas = [
+  { title: 'Frontend development', detail: 'React, Next.js, JavaScript and TypeScript', Icon: FiCode },
+  { title: 'Interfaces & systems', detail: 'Responsive UI, reusable components and design systems', Icon: FiLayers },
+  { title: 'Web performance', detail: 'Accessible, maintainable and production-ready experiences', Icon: FiMonitor },
+]
 
 export default function Home() {
   return (
-    <Container className="mt-12 sm:mt-16">
-      <section className="max-w-3xl">
-        <img src="/PersonalWebsite/images/avatar.jpg" alt="Alex Morgan" width="64" height="64" className="mb-8 h-16 w-16 rounded-full object-cover" />
-        <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
-          I’m Alex Morgan. I live in Brooklyn, where I design the future.
+    <Container className="mt-16 sm:mt-20">
+      <section className="max-w-2xl">
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          I’m Amir, a frontend developer building thoughtful web experiences.
         </h1>
         <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">
-          I’m a designer and developer who loves turning complex problems into simple, beautiful, and intuitive experiences. When I’m not pushing pixels or writing code, you’ll find me exploring the city, taking photos, or hunting down a good cup of coffee.
+          I work with React and Next.js to turn product requirements into clear, responsive interfaces. My projects span e-commerce, business websites, and web platforms.
         </p>
-        <div className="mt-6 flex flex-wrap items-center gap-5 text-sm text-zinc-500 dark:text-zinc-400">
-          <span className="inline-flex items-center gap-2"><FiMapPin /> Brooklyn, NY</span>
-          <a href="https://github.com" aria-label="GitHub" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiGithub className="h-5 w-5" /></a>
-          <a href="https://linkedin.com" aria-label="LinkedIn" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiLinkedin className="h-5 w-5" /></a>
-          <a href="mailto:alex@example.com" aria-label="Email" className="transition hover:text-orange-600 dark:hover:text-orange-400"><FiMail className="h-5 w-5" /></a>
+        <div className="mt-6 flex items-center gap-6">
+          <Link href="https://github.com/Amirsaboor" target="_blank" rel="noreferrer" aria-label="GitHub profile" className="text-zinc-500 transition hover:text-teal-600 dark:text-zinc-400 dark:hover:text-teal-400">
+            <FiGithub className="h-6 w-6" />
+          </Link>
+          <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400">
+            Explore my work <FiArrowUpRight />
+          </Link>
         </div>
       </section>
 
-      <ProjectsCarousel />
+      <section className="mt-20 sm:mt-24" aria-labelledby="selected-work-heading">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-teal-400">Selected work</p>
+            <h2 id="selected-work-heading" className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">A few things I’ve worked on.</h2>
+          </div>
+          <Link href="/projects" className="hidden items-center gap-2 text-sm text-zinc-500 transition hover:text-teal-600 dark:hover:text-teal-400 sm:inline-flex">
+            All projects <FiArrowUpRight />
+          </Link>
+        </div>
+        <ProjectCarousel />
+        <Link href="/projects" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal-700 dark:text-teal-400 sm:hidden">
+          View all projects <FiArrowUpRight />
+        </Link>
+      </section>
 
-      <div className="mt-20 grid gap-16 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <section>
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Writing</p>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Latest articles</h2>
-            </div>
-            <Link href="/articles" className="text-sm text-zinc-500 hover:text-orange-600 dark:hover:text-orange-400">All articles ↗</Link>
-          </div>
-          <div className="mt-8 divide-y divide-zinc-200 dark:divide-zinc-800">
-            {articles.map((article) => (
-              <article key={article.title} className="py-6 first:pt-0">
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500">
-                  <time>{article.date}</time><span>·</span><span>{article.category}</span><span>·</span><span>{article.read}</span>
-                </div>
-                <h3 className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">{article.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">Thoughts, lessons, and practical notes from the work of making digital products.</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <aside>
-          <div className="flex items-center gap-2"><FiBriefcase className="text-orange-600 dark:text-orange-400" /><p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400">Career</p></div>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Work experience</h2>
-          <div className="mt-8 space-y-7">
-            {roles.map((role) => (
-              <div key={role.company}>
-                <p className="text-xs text-zinc-500">{role.period}</p>
-                <h3 className="mt-1 font-medium text-zinc-900 dark:text-zinc-100">{role.role}</h3>
-                <p className="mt-1 text-sm text-orange-700 dark:text-orange-400">{role.company}</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{role.detail}</p>
+      <section className="mt-24 grid gap-10 border-t border-zinc-200 pt-12 dark:border-zinc-800 sm:grid-cols-[1fr_1fr]">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-teal-400">What I focus on</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">From first component to finished experience.</h2>
+          <p className="mt-4 max-w-lg text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+            I care about the details that make a product feel consistent: useful interactions, clear hierarchy, responsive behavior, and code that remains understandable as the project grows.
+          </p>
+        </div>
+        <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
+          {focusAreas.map(({ title, detail, Icon }) => (
+            <div key={title} className="flex gap-4 py-4 first:pt-0">
+              <Icon className="mt-0.5 h-5 w-5 flex-none text-teal-700 dark:text-teal-400" />
+              <div>
+                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{title}</h3>
+                <p className="mt-1 text-sm leading-6 text-zinc-500 dark:text-zinc-400">{detail}</p>
               </div>
-            ))}
-          </div>
-          <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-orange-600 dark:text-zinc-300 dark:hover:text-orange-400">More about me <FiArrowUpRight /></Link>
-          <div className="mt-12 rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
-            <FiCalendar className="h-5 w-5 text-orange-600 dark:text-orange-400" />
-            <h3 className="mt-3 font-medium text-zinc-900 dark:text-zinc-100">Let’s work together</h3>
-            <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">Have an interesting project or just want to say hello?</p>
-            <a href="mailto:alex@example.com" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-orange-700 dark:text-orange-400">Get in touch <FiArrowUpRight /></a>
-          </div>
-        </aside>
-      </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </Container>
   )
 }
