@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { useLocale } from '@/i18n/LocaleProvider'
+import { siteConfig } from '@/data/site-config'
 
 export function Footer() {
   const { t, isFa } = useLocale()
@@ -16,7 +17,7 @@ export function Footer() {
           <Link href="/uses" className="transition hover:text-zinc-950 dark:hover:text-white">{t('uses')}</Link>
           <Link href="/contact" className="transition hover:text-zinc-950 dark:hover:text-white">{t('contact')}</Link>
         </nav>
-        <p className="text-[11px] text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()} Alex Morgan. {isFa ? 'تمامی حقوق محفوظ است.' : 'All rights reserved.'}</p>
+        <p className="text-[11px] text-zinc-400 dark:text-zinc-600">© {new Date().getFullYear()} {siteConfig.name}. {isFa ? 'تمامی حقوق محفوظ است.' : 'All rights reserved.'}</p>
       </Container>
     </footer>
   )
