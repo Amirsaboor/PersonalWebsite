@@ -2,49 +2,86 @@
   font-family: "IRANSansWebFaNum";
   src:
     url("../assets/fonts/IRANSansWebFaNum.woff2") format("woff2"),
-    /* src: url('../fonts/IRANSansWebFaNum.woff2') format('woff2'), */
-      url("../assets/fonts/IRANSansWebFaNum.woff") format("woff");
-
+    url("../assets/fonts/IRANSansWebFaNum.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 html,
 body {
-  font-family: "IRANSansWebFaNum";
-
+  font-family: "IRANSansWebFaNum", sans-serif;
 }
 
-/* استایل کلی اسکرول‌بار */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
-/* پس‌زمینه اسکرول‌بار (لایت مود) */
-::-webkit-scrollbar-track {
-  @apply bg-gray-200;
+body {
+  overflow-x: hidden;
 }
 
-/* خود اسکرول (لایت مود) */
-::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-gray-400;
+::selection {
+  color: #fff;
+  background: #ea580c;
 }
 
-/* هاور اسکرول (لایت مود) */
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500;
+.hero-panel {
+  isolation: isolate;
 }
 
-/* 🌙 حالت دارک مود */
-.dark ::-webkit-scrollbar-track {
-  @apply bg-zinc-800;
+.hero-glow {
+  position: absolute;
+  z-index: -1;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.28;
+  animation: hero-float 14s ease-in-out infinite alternate;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-zinc-600;
+.hero-glow-one {
+  top: -13rem;
+  left: -8rem;
+  background: #fb923c;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-500;
+.hero-glow-two {
+  right: 15%;
+  bottom: -18rem;
+  background: #f472b6;
+  animation-delay: -6s;
 }
+
+.hero-gradient {
+  background: linear-gradient(105deg, #ea580c 0%, #f97316 38%, #db2777 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes hero-float {
+  from { transform: translate3d(0, 0, 0) scale(0.95); }
+  to { transform: translate3d(28px, 22px, 0) scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { @apply bg-gray-200; }
+::-webkit-scrollbar-thumb { @apply rounded-full bg-gray-400; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-500; }
+.dark ::-webkit-scrollbar-track { @apply bg-zinc-800; }
+.dark ::-webkit-scrollbar-thumb { @apply bg-zinc-600; }
+.dark ::-webkit-scrollbar-thumb:hover { @apply bg-zinc-500; }
