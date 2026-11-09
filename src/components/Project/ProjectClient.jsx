@@ -50,10 +50,10 @@ export default function ProjectsClient({ initialProjects = [] }) {
               type="button"
               onClick={() => setActiveFilter(filter)}
               aria-pressed={activeFilter === filter}
-              className={`rounded-full px-4 py-2 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
+              className={`rounded-full px-4 py-2 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
                 activeFilter === filter
-                  ? "bg-zinc-900 text-white shadow-sm dark:bg-zinc-100 dark:text-zinc-900"
-                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+                  ? "bg-orange-500 text-white shadow-sm shadow-orange-500/20"
+                  : "bg-zinc-100 text-zinc-600 hover:bg-orange-50 hover:text-orange-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-orange-500/10 dark:hover:text-orange-300"
               }`}
             >
               {filter}
@@ -66,7 +66,7 @@ export default function ProjectsClient({ initialProjects = [] }) {
         {visibleProjects.map((project, index) => (
           <li
             key={project.name}
-            className={`group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-900/5 dark:border-zinc-700/60 dark:bg-zinc-900/60 dark:hover:border-zinc-600 dark:hover:shadow-black/20 ${project.featured ? "sm:col-span-2 xl:col-span-2" : ""}`}
+            className={`group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/90 transition duration-300 hover:-translate-y-1 hover:border-orange-300/70 hover:shadow-xl hover:shadow-zinc-900/5 dark:border-zinc-700/60 dark:bg-zinc-900/70 dark:hover:border-orange-500/40 dark:hover:shadow-black/20 ${project.featured ? "sm:col-span-2 xl:col-span-2" : ""}`}
           >
             <button
               type="button"
@@ -88,7 +88,7 @@ export default function ProjectsClient({ initialProjects = [] }) {
                   {project.category}
                 </span>
                 {project.featured && (
-                  <span className="absolute left-4 top-4 rounded-full bg-red-500 px-3 py-1.5 text-[11px] font-medium text-white">
+                  <span className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1.5 text-[11px] font-medium text-white">
                     پروژه منتخب
                   </span>
                 )}
@@ -125,7 +125,7 @@ export default function ProjectsClient({ initialProjects = [] }) {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition-colors hover:text-red-500 dark:text-zinc-200"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition-colors hover:text-orange-500 dark:text-zinc-200"
                 >
                   جزئیات پروژه
                   <FiArrowUpLeft className="h-4 w-4" />
@@ -136,7 +136,7 @@ export default function ProjectsClient({ initialProjects = [] }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(event) => event.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 text-xs text-zinc-400 transition-colors hover:text-red-500"
+                    className="inline-flex items-center gap-1.5 text-xs text-zinc-400 transition-colors hover:text-orange-500"
                   >
                     {project.link.label}
                     <FiExternalLink className="h-3.5 w-3.5" />
