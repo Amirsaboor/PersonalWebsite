@@ -121,3 +121,16 @@ body {
   .photo-ribbon-track { gap: 0.75rem; padding-inline: 0; }
   .photo-ribbon-card { width: min(72vw, 13rem); height: 13.5rem; }
 }
+
+
+/* Bilingual layout foundation. Bundle a licensed local Vazirmatn font before commercial release. */
+html.locale-fa body {
+  font-family: Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+}
+html[dir="rtl"] .photo-ribbon-track { direction: ltr; }
+html[dir="rtl"] .project-carousel { direction: ltr; }
+html[dir="rtl"] .site-shell { text-align: right; }
+html[dir="rtl"] .project-carousel button { text-align: right; }
+html[dir="rtl"] .project-carousel button h3,
+html[dir="rtl"] .project-carousel button p { text-align: right; }
+html[dir="rtl"] .project-carousel button > div + div { direction: rtl; }
