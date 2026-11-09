@@ -1,62 +1,31 @@
-import { PiBagSimple } from "react-icons/pi";
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiNextdotjs, SiWordpress, SiHyperskill } from "react-icons/si";
-import { SiTelegram, SiInstagram, SiGithub, SiGmail } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
+import { FiArrowUpLeft } from "react-icons/fi";
 
 export function SocialBox() {
-
-let contacts = [
-  {
-    title: "Telegram",
-    logo: SiTelegram,
-    link: "https://t.me/YourUsername",
-    color: "#0088cc",
-  },
-  {
-    title: "Instagram",
-    logo: SiInstagram,
-    link: "https://instagram.com/YourUsername",
-    color: "#C13584",
-  },
-  {
-    title: "GitHub",
-    logo: SiGithub,
-    link: "https://github.com/YourUsername",
-    color: "#181717",
-  },
-  {
-    title: "Email",
-    logo: SiGmail,
-    link: "mailto:your.email@example.com",
-    color: "#D14836",
-  },
-];
-
-
   return (
-    <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-700/40 mt-4">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <SiHyperskill className="h-6 w-6 flex-none" />
-        <span className="mx-3 ">راه های ارتباطی</span>
+    <section className="rounded-2xl border border-zinc-200/80 bg-white/70 p-6 dark:border-zinc-700/50 dark:bg-zinc-900/40">
+      <p className="text-xs font-medium tracking-wide text-red-500">LET'S CONNECT</p>
+      <h2 className="mt-1 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        راه‌های ارتباطی
       </h2>
-      <div className="mt-6 grid grid-cols-2 gap-4">
-        {contacts.map((role, roleIndex) => {
-          const Icon = role.logo;
-          return (
-            <div
-              key={roleIndex}
-              className="flex cursor-pointer items-center gap-4 rounded p-2 hover:bg-slate-100 dark:hover:bg-slate-900"
-            >
-              {Icon && (
-                <Icon className="h-6 w-6" style={{ color: role.color }} />
-              )}
-              <span className="text-zinc-900 dark:text-zinc-100">
-                {role.title}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+      <p className="mt-2 text-sm leading-7 text-zinc-500 dark:text-zinc-400">
+        برای مشاهده کدها، پروژه‌های جدید و فعالیت‌های برنامه‌نویسی من، به گیت‌هاب سر بزنید.
+      </p>
+      <a
+        href="https://github.com/Amirsaboor"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-5 flex items-center justify-between rounded-xl border border-zinc-200/80 px-4 py-3 transition-colors hover:border-red-200 hover:bg-red-50/50 dark:border-zinc-700/70 dark:hover:border-red-900/60 dark:hover:bg-red-950/20"
+      >
+        <span className="flex items-center gap-3">
+          <SiGithub className="h-5 w-5 text-zinc-700 dark:text-zinc-200" />
+          <span>
+            <span className="block text-sm font-medium text-zinc-800 dark:text-zinc-100">GitHub</span>
+            <span className="mt-0.5 block text-xs text-zinc-400">github.com/Amirsaboor</span>
+          </span>
+        </span>
+        <FiArrowUpLeft className="h-4 w-4 text-zinc-400" />
+      </a>
+    </section>
   );
 }
