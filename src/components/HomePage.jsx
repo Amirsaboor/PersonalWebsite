@@ -43,7 +43,7 @@ export default function Home() {
           {isFa ? 'طراح نرم‌افزار، سازنده محصولات دیجیتال و کاوشگر ایده‌های تازه.' : 'Software designer, founder, and amateur astronaut.'}
         </h1>
         <p className="mt-4 max-w-[32rem] text-[13px] leading-[1.95] text-zinc-600 dark:text-zinc-400">
-          {isFa ? 'من {siteConfig.name} هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در کپنهاگ. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.' : 'I’m {siteConfig.name}, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.'}
+          {isFa ? `من ${siteConfig.name} هستم؛ مهندس فرانت‌اند و طراح محصول دیجیتال در کپنهاگ. تجربه‌های دیجیتال می‌سازم و به نقطه تلاقی طراحی دقیق و مهندسی مدرن فرانت‌اند علاقه دارم.` : `I’m ${siteConfig.name}, a software designer and creative technologist based in Copenhagen. I build digital products, explore new ideas, and work at the intersection of thoughtful design and modern frontend engineering.`}
         </p>
         <div className="mt-5 flex items-center gap-5 text-zinc-500 dark:text-zinc-400">
           <a href={siteConfig.social.x} aria-label="X profile" className="transition hover:text-zinc-950 dark:hover:text-white"><span className="text-sm font-semibold">𝕏</span></a>
