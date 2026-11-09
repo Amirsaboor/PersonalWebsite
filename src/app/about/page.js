@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { FiArrowUpRight } from 'react-icons/fi'
+import { FiArrowUpRight, FiCode, FiLayers, FiDatabase, FiGitBranch, FiShield, FiMonitor, FiZap, FiFigma } from 'react-icons/fi'
 
 export const metadata = {
   title: 'About',
@@ -9,10 +9,10 @@ export const metadata = {
 }
 
 const skills = [
-  { group: 'Core frontend', items: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML & CSS'] },
-  { group: 'UI engineering', items: ['Tailwind CSS', 'CSS Modules', 'Radix UI', 'Responsive design', 'Accessibility'] },
-  { group: 'Data & integration', items: ['REST APIs', 'GraphQL basics', 'Node.js', 'Supabase', 'Authentication'] },
-  { group: 'Quality & workflow', items: ['Git & GitHub', 'Playwright', 'Jest', 'Figma', 'Performance tuning'] },
+  { group: 'Core frontend', Icon: FiCode, items: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML & CSS'] },
+  { group: 'UI engineering', Icon: FiLayers, items: ['Tailwind CSS', 'CSS Modules', 'Radix UI', 'Responsive design', 'Accessibility'] },
+  { group: 'Data & integration', Icon: FiDatabase, items: ['REST APIs', 'GraphQL basics', 'Node.js', 'Supabase', 'Authentication'] },
+  { group: 'Quality & workflow', Icon: FiGitBranch, items: ['Git & GitHub', 'Playwright', 'Jest', 'Figma', 'Performance tuning'] },
 ]
 
 const experience = [
@@ -37,7 +37,7 @@ export default function About() {
           <p>Outside the editor, this fictional profile enjoys architecture books, long city walks, specialty coffee, and collecting ideas from well-made everyday objects.</p>
         </div>
         <aside className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-200 ring-1 ring-black/5 dark:bg-zinc-800 dark:ring-white/10">
-          <Image src="/images/portrait.jpg" alt="Portrait of Alex Morgan" fill sizes="(max-width: 1024px) 80vw, 280px" className="object-cover" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="Portrait of a fictional creative professional" className="h-full w-full object-cover" loading="lazy" />
         </aside>
       </div>
 
@@ -45,7 +45,7 @@ export default function About() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">Capabilities</p>
         <h2 className="mt-3 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">A toolkit for building complete experiences.</h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-2">
-          {skills.map((group) => <div key={group.group}><h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">{group.group}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item} className="rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{item}</span>)}</div></div>)}
+          {skills.map((group) => <div key={group.group}><h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100"><group.Icon className="h-4 w-4 text-violet-600 dark:text-violet-300" />{group.group}</h3><div className="mt-3 flex flex-wrap gap-2">{group.items.map((item) => <span key={item} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"><FiZap className="h-3 w-3 text-violet-500" />{item}</span>)}</div></div>)}
         </div>
       </section>
 
