@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { ProjectCarousel } from '@/components/ProjectCarousel'
-import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase, FiCode, FiLayers, FiDatabase, FiGitBranch, FiMonitor, FiZap, FiFigma } from 'react-icons/fi'
+import { FiArrowUpRight, FiGithub, FiInstagram, FiLinkedin, FiMail, FiExternalLink, FiBriefcase } from 'react-icons/fi'
+import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiFigma, SiNodedotjs, SiGithub } from 'react-icons/si'
 
 export const metadata = {
   title: 'Alex Morgan — Software designer, founder, and amateur astronaut',
@@ -31,10 +32,10 @@ const work = [
 ]
 
 const skills = [
-  { name: 'React', Icon: FiCode }, { name: 'Next.js', Icon: FiLayers },
-  { name: 'TypeScript', Icon: FiCode }, { name: 'JavaScript', Icon: FiZap },
-  { name: 'Tailwind CSS', Icon: FiMonitor }, { name: 'Design systems', Icon: FiLayers },
-  { name: 'Motion design', Icon: FiZap }, { name: 'Creative coding', Icon: FiFigma },
+  { name: 'React', Icon: SiReact }, { name: 'Next.js', Icon: SiNextdotjs },
+  { name: 'TypeScript', Icon: SiTypescript }, { name: 'JavaScript', Icon: SiJavascript },
+  { name: 'Tailwind CSS', Icon: SiTailwindcss }, { name: 'Figma', Icon: SiFigma },
+  { name: 'Node.js', Icon: SiNodedotjs }, { name: 'GitHub', Icon: SiGithub },
 ]
 
 export default function Home() {
