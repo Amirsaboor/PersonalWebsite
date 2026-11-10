@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       <section aria-label="A few things that inspire me" className="photo-ribbon mt-12 sm:mt-14">
-        <div className="photo-ribbon-track">{gallery.map((photo) => <div key={photo.src} className={'photo-ribbon-card ' + photo.className}><img src={photo.src} alt={photo.alt} loading="lazy" className="h-full w-full object-cover" /></div>)}</div>
+        <div className="photo-ribbon-track">{gallery.map((photo) => <div key={photo.src} className={'photo-ribbon-card ' + photo.className}><img src={photo.src} alt={photo.alt} loading="lazy" className="block h-full w-full object-cover" /></div>)}</div>
       </section>
 
       <section id="projects" className="mt-16 scroll-mt-24 sm:mt-20" aria-labelledby="projects-heading">

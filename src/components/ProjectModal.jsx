@@ -69,7 +69,7 @@ export function ProjectModal({ project, onClose }) {
           <FiX />
         </button>
         <div className="relative aspect-[16/9] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-          <img src={project.image} alt={project.imageAlt || project.name} className="h-full w-full object-cover" />
+          <img src={project.image} alt={project.imageAlt || project.name} className="block h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
           <div className="absolute bottom-5 left-6 right-6 text-white sm:bottom-7 sm:left-8 sm:right-8">
             <p className="text-xs font-medium text-white/75">{isFa ? project.categoryFa : project.category}</p>

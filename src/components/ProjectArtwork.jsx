@@ -5,7 +5,7 @@ export function ProjectArtwork({ project, cover = false, isFa = false }) {
         src={project.image}
         alt={project.imageAlt || project.name}
         loading="lazy"
-        className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.045]"
+        className="block h-full w-full object-cover transition duration-700 group-hover:scale-[1.045]"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/5" />
       {cover && (
